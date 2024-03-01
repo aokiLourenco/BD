@@ -17,7 +17,60 @@ Considere um Sistema de Gestão de Stocks de uma empresa. O presente exercício 
 Identify the entities, attributes, and relationships of the database.
 
 ```
-... Write here your answer ...
+Entities:
+-Produtos
+-Items
+-Encomenda
+-Fornecedor
+-Condicao de pagamento
+-Tipo de fornecedor
+
+Atributos:
+-Produtos:
+    -Preco
+    -Nome
+    -TaxaIva
+    -Quatidade
+    -Codigo
+
+-Items:
+    -Quantidade
+
+-Encomenda:
+    -Data
+    -Numero da encomenda
+
+-Fornecedor:
+    -Nome
+    -Nif
+    -Endereço
+    -Email
+
+-Condição de Pagamento
+    -Prazo
+    -Codigo
+    -Designacao
+
+-Tipo Fornecedor:
+    -Codigo
+    -Designacao
+
+Relationships:
+
+Produto tem N Items
+Items tem 1 produto
+
+Items tem 1 Encomenda
+Encomenda tem N Items
+
+Encomenda tem 1 Fornecedor
+Fornecedor tem N Encomendas
+
+Fornecedor tem 1 Condicao de Pagamento
+Condicao de Pagamento tem N Fornecedor
+
+Fornecedor tem 1 Tipo de Fornecedor
+Tipo de Fornecedor tem N Fornecedor
 
 ```
 
@@ -25,8 +78,24 @@ Identify the entities, attributes, and relationships of the database.
 Specify the relationships regarding the degree, cardinality and instances mandatory participation of the entities in the relationship.
 
 ```
-... Write here your answer ...
+Para todas as entidades:
+Grau 2 (Só apenas relações entre 2 entidades)
 
+Cardinalidade:
+Produtos                - 5 
+Items                   - 1
+Encomenda               - 2
+Fornecedor              - 4
+Condicao de pagamento   - 3
+Tipo de fornecedor      - 2
+
+Obrigatoriedade:
+Items tem obrigatoriamento Produtos
+Items tem obrigatoriamento Encomenda
+Encomenda tem obrigatoriamento Items
+Encomenda tem obrigatoriamento Fornecedor
+Fornecedor tem obrigatoriamente Condicao de Pagamento
+Fornecedor tem obrigatoriamente Tipo de Fornecedor
 ```
 
 #### *c)* Desenvolva o desenho conceptual da base de dados com recurso a um diagrama entidade-relacionamento. Numa primeira fase, utilize lápis e papel para realizar o trabalho. Uma vez concluído o desenho em papel, transponha o diagrama para um formato eletrónico utilizando uma ferramenta gráfica como, por exemplo, o Microsoft Visio ou o Visual Paradigm.
