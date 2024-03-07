@@ -53,7 +53,47 @@ Pesado{
 ### *b)* 
 
 ```
-... Write here your answer ...
+Cliente{
+    Chave candidata:  NIF , Num_carta
+    Chave primária: NIF
+    Chaves Estranjeiras: Nenhuma
+}
+
+Aluger{
+    Chave candidata: Numero, (Cliente_NIF + Veiculo_Matricula + Balcao_Numero)
+    Chave primária: Numero
+    Chaves Estranjeiras: Cliente_NIF, Veiculo_Matricula, Balcao_Numero
+}
+
+Balcão{
+    Chave candidata: Numero
+    Chave primária: Numero
+    Chaves Estranjeiras: Nenhuma
+}
+
+Veiculo{
+    Chave candidata: Matricula
+    Chave primária: Matricula
+    Chaves Estranjeiras: Tipo_Veiculo_Codigo
+}
+
+Tipo_Veiculo{
+    Chave candidata: Codigo
+    Chave primária: Codigo
+    Chaves Estranjeiras: Nenhuma
+}
+
+Ligeiro{
+    Chave candidata: Não tem
+    Chave primária: Não tem
+    Chaves Estranjeiras: Tipo_Veiculo_Codigo
+}
+
+Pesado{
+    Chave candidata: Não tem
+    Chave primária: Não tem
+    Chaves Estranjeiras: Tipo_Veiculo_Codigo
+}
 ```
 
 
