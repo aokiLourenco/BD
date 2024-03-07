@@ -6,7 +6,47 @@
 ### *a)*
 
 ```
-... Write here your answer ...
+Cliente{
+    NIF:Integer
+    nome:String
+    endereço:String
+    num_carta:Integer
+}
+
+Aluger{
+    número:Integer
+    duração:Integer
+    data:Integer
+}
+
+Balcão{
+    número:Integer
+    endereço:String
+    nome:String
+}
+
+Veículo{
+    matrícula:Integer
+    ano:Integer
+    marca:String
+}
+
+Tipo_Veículo{
+    código:Integer
+    arcondicionado:Boolean
+    designação:String
+}
+
+Ligeiro{
+    numLugares:Integer
+    portas:Integer
+    combustivel:String
+}
+
+Pesado{
+    peso:Integer
+    pessageiros:Integer
+}
 ```
 
 
