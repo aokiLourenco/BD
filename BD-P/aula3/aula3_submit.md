@@ -40,12 +40,12 @@ Tipo_Veículo{
 Ligeiro{
     numLugares:Integer
     portas:Integer
-    combustivel:String
+    combustível:String
 }
 
 Pesado{
     peso:Integer
-    pessageiros:Integer
+    passageiros:Integer
 }
 ```
 
@@ -105,7 +105,7 @@ Pesado{
 
 ### *c)* 
 
-![ex_3_1c!](ex_3_1c.jpg "AnImage")
+![ex_3_1c!](ex_3_1c.svg "AnImage")
 
 
 ## ​Problema 3.2
