@@ -83,6 +83,12 @@ Tipo_Veiculo{
     Chaves Estranjeiras: Nenhuma
 }
 
+Similaridade{
+    Chave candidate: Não tem
+    Chave primária: Não tem
+    Chaves Estranjeiras: Tipo_Veiculo_Codigo,Tipo_Veiculo_Codigo
+}
+
 Ligeiro{
     Chave candidata: Não tem
     Chave primária: Não tem
@@ -107,14 +113,92 @@ Pesado{
 ### *a)*
 
 ```
-... Write here your answer ...
+Flight(
+    Number:Integer,
+    
+    Airline:String,
+    Weekdays:String
+ );
+
+ Flight_Leg(
+    Flight_Number:Integer,
+    Leg_no:Integer,
+
+    Departure_Airport:Integer,
+    Arrival_Airport:Integer,
+    Schedule_dep_time:String,
+    Schedule_dep_time:String
+ );
+
+ Leg_Instance(
+    Date:String,
+    Flight_leg_Flight_Number:Integer,
+    Flight_leg_Leg_no:Integer,
+
+    Airplane_id:Integer,
+    Departs_Airport_Time:Integer,
+    Arrival_Airport_time:Integer,
+    Airport_Airport_code:Integer,
+ );
+
+ Seat(
+    Seat_no:Integer,
+    Date:String,
+    Flight_leg_Flight_Number:Integer,
+    Flight_leg_Leg_no:Integer,
+
+    Reservation_Customer_name:String,
+    Reservation_Cphone:Integer,
+ );
+
+Airport(
+    Airport_code:Integer,
+    City:String,
+    State:String,
+    Name:String
+ );
+
+ Airplane_Type(
+    Type_name:String,
+    Max_seats:Integer,
+    Company:String
+ );
+
+ Airplane(
+    Airplane_id:Integer,
+    Airplane_Type_name:String
+
+    Total_no_of_seats:Integer,
+ );
+
+ 
+ Fare(
+    Flight_Number:Integer,
+    Code:Integer,
+    Restrictions:String,
+    Amount:Integer
+ );
+
+
+ Can_Land(
+    Airport_code:Integer,
+    Airplane_Type_Name:String
+ );
 ```
 
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+Flight{
+    Chave candidata: Number
+    Chave primária: Matricula
+    Chaves Estranjeiras: Tipo_Veiculo_Codigo
+}
+
+
+
+
 ```
 
 
