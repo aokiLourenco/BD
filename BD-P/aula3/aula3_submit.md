@@ -245,7 +245,7 @@ Fare{
 
 ### *a)* 2.1
 
-![ex_3_3_a!](ex_3_3a.jpg "AnImage")
+![ex_3_3_a!](ex_3_3_a.svg "AnImage")
 
 ### *b)* 2.2
 
