@@ -127,7 +127,7 @@ Flight_Leg(
     Departure_Airport:Integer,
     Arrival_Airport:Integer,
     Schedule_dep_time:String,
-    Schedule_dep_time:String
+    Schedule_arr_time:String
  );
 
 Leg_Instance(
@@ -232,21 +232,12 @@ Fare{
     Chave primária: (Code + Flight_Number)
     Chaves Estranjeiras: Flight_Number
 }
-
-Can_Land{
-    Chave candidata:
-    Chave primária:
-    Chaves Estranjeiras:
-}
-
-
-
 ```
 
 
 ### *c)* 
 
-![ex_3_2c!](ex_3_2c.jpg "AnImage")
+![ex_3_2c!](ex_3_2c.svg "AnImage")
 
 
 ## ​Problema 3.3
