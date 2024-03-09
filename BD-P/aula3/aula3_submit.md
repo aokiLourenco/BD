@@ -249,12 +249,12 @@ Fare{
 
 ### *b)* 2.2
 
-![ex_3_3_b!](ex_3_3b.jpg "AnImage")
+![ex_3_3_b!](ex_3_3_b.svg "AnImage")
 
 ### *c)* 2.3
 
-![ex_3_3_c!](ex_3_3c.jpg "AnImage")
+![ex_3_3_c!](ex_3_3_c.svg "AnImage")
 
 ### *d)* 2.4
 
-![ex_3_3_d!](ex_3_3d.jpg "AnImage")
+![ex_3_3_d!](ex_3_3_d.svg "AnImage")
