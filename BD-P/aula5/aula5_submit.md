@@ -20,14 +20,28 @@
 ### *c)* 
 
 ```
-... Write here your answer ...
+γ Pname; THours←sum(Hours)
+(
+project
+⨝Pnumber=Pno
+works_on
+)
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+(π Fname, Minit, Lname σ Dnumber=3 ∧ Hours>20 ∧ Pname='Aveiro Digital'
+(employee
+⨝Ssn=Essn
+(department
+⨝Dnumber=Dnum
+(
+project
+⨝Pnumber=Pno
+works_on
+))))
 ```
 
 
@@ -41,14 +55,27 @@
 ### *f)* 
 
 ```
-... Write here your answer ...
+γ Dname;
+avgSalary←avg(Salary) σ Sex='F'
+(
+department
+⨝Dnumber=Dno
+employee
+)
 ```
 
 
 ### *g)* 
 
 ```
-... Write here your answer ...
+π Fname, Lname σ nDependentes > 2
+(
+γ Fname, Lname; count(Essn) -> nDependentes
+(
+employee
+⨝Ssn=Essn
+dependent
+))
 ```
 
 
@@ -71,27 +98,55 @@
 ### *a)*
 
 ```
-... Write here your answer ...
+π nome, nif
+σ numero=null
+(
+fornecedor
+⟕nif=fornecedor
+encomenda
+)
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+(γ codProd; avg(unidades) -> nMed
+(
+encomenda
+⨝numero=numEnc
+item
+))
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+γ avg(produtos) -> mediaProd
+(
+γ numEnc; count(codProd) -> produtos
+(
+encomenda
+⨝numero=numEnc
+item
+)
+)
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+γ fornecedor.nome, produto.nome; sum(item.unidades) -> unidades
+(
+produto
+⨝codigo=codProd
+item
+⨝numEnc=numero
+encomenda
+⨝fornecedor=nif
+fornecedor
+)
 ```
 
 
