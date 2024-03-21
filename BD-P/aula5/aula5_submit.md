@@ -175,17 +175,17 @@ fornecedor
 ### *d)* 
 
 ```
-... Write here your answer ...
+π farmaco.nome σ presc_farmaco.numPresc = null ( σ numRegFarm = 906 farmaco ⟕ presc_farmaco.nomeFarmaco = farmaco.nome (presc_farmaco ⨝ presc_farmaco.numPresc = prescricao.numPresc prescricao))
 ```
 
 ### *e)* 
 
 ```
-... Write here your answer ...
+γ prescricao.farmacia, numReg; COUNT(farmaco.nome)→Number σ prescricao.farmacia ≠ null (farmaceutica ⨝ numReg = numRegFarm farmaco ⨝ farmaco.numRegFarm = presc_farmaco.numRegFarm presc_farmaco ⨝ presc_farmaco.numPresc = prescricao.numPresc prescricao)
 ```
 
 ### *f)* 
 
 ```
-... Write here your answer ...
+π nome σ medicoCount > 1 ( γ nome; COUNT(prescricao.numMedico)→medicoCount (paciente ⨝ paciente.numUtente = prescricao.numUtente prescricao))
 ```
