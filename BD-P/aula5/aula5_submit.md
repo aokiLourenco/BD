@@ -6,15 +6,14 @@
 ### *a)*
 
 ```
-Write here your answer e.g:
-(π Pname, Pnumber (project) ⨝ Pno=Pnumber (works_on)) ⨝.... 
+π Fname, Lname, Ssn, Pname (employee ⨝ Ssn = Essn works_on ⨝ Pno = Pnumber project)
 ```
 
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+π employee.Fname, employee.Lname, employee.Ssn, employee.Super_ssn ( σ Chefe.Fname = 'Carlos' and Chefe.Lname = 'Gomes' (employee ⨝ employee.Super_ssn = Chefe.Ssn ρ Chefe employee))
 ```
 
 
@@ -35,7 +34,7 @@ Write here your answer e.g:
 ### *e)* 
 
 ```
-... Write here your answer ...
+π Fname, Lname σ Essn = null (employee ⟕ Ssn = Essn works_on)
 ```
 
 
@@ -56,14 +55,14 @@ Write here your answer e.g:
 ### *h)* 
 
 ```
-... Write here your answer ...
+π employee.Fname, employee.Minit, employee.Lname ( σ Essn = null (employee ⟕ Ssn = Essn dependent) ⨝ employee.Ssn = Gestor_Department.Ssn ρ Gestor_Department (employee ⨝ Ssn = Mgr_ssn department))
 ```
 
 
 ### *i)* 
 
 ```
-... Write here your answer ...
+π Fname, Minit, Lname, Address ( σ Dlocation ≠ 'Aveiro' (dept_location ⨝ Dnumber = Dno σ Plocation = 'Aveiro' (employee ⨝ Ssn = Essn works_on ⨝ Pno = Pnumber project)))
 ```
 
 
@@ -101,20 +100,20 @@ Write here your answer e.g:
 ### *a)*
 
 ```
-... Write here your answer ...
+π nome ( σ prescricao.numPresc = null (paciente ⟕ paciente.numUtente = prescricao.numUtente prescricao))
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+γ especialidade; COUNT(especialidade)→Npresc (medico ⨝ numSNS = numMedico prescricao)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+γ farmacia; COUNT(numPresc)→N_presc (prescricao ⨝ farmacia = nome farmacia)
 ```
 
 
