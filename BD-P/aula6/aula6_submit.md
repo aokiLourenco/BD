@@ -43,8 +43,10 @@ SELECT authors.au_fname AS first_name, authors.au_lname AS last_name, authors.ph
 
 ### *f)* Todas as editoras (publishers) que tenham ‘Bo’ em qualquer parte do nome; 
 
-```
-... Write here your answer ...
+```SQL
+SELECT pub_name
+    FROM publishers
+    WHERE pub_name LIKE '%Bo%'
 ```
 
 ### *g)* Nome das editoras que têm pelo menos uma publicação do tipo ‘Business’; 
@@ -58,14 +60,24 @@ SELECT publishers.pub_name
 
 ### *h)* Número total de vendas de cada editora; 
 
-```
-... Write here your answer ...
+```SQL
+SELECT publishers.pub_name, SUM(sales.qty) as total_sales
+    FROM sales
+        INNER JOIN titles ON sales.title_id = titles.title_id
+        INNER JOIN publishers ON titles.pub_id = publishers.pub_id
+    GROUP BY publishers.pub_name
+    ORDER BY publishers.pub_name
 ```
 
 ### *i)* Número total de vendas de cada editora agrupado por título; 
 
-```
-... Write here your answer ...
+```sql
+SELECT publishers.pub_name, titles.title, SUM(sales.qty) as total_sales
+    FROM sales
+        INNER JOIN titles ON sales.title_id = titles.title_id
+        INNER JOIN publishers ON titles.pub_id = publishers.pub_id
+    GROUP BY publishers.pub_name, titles.title
+    ORDER BY publishers.pub_name, titles.title
 ```
 
 ### *j)* Nome dos títulos vendidos pela loja ‘Bookbeat’; 
@@ -78,8 +90,13 @@ SELECT titles.title
 
 ### *k)* Nome de autores que tenham publicações de tipos diferentes; 
 
-```
-... Write here your answer ...
+```sql
+SELECT authors.au_fname, authors.au_lname, COUNT(*) AS types_c
+    FROM authors
+        INNER JOIN titleauthor ON authors.au_id = titleauthor.au_id
+        INNER JOIN titles ON titleauthor.title_id = titles.title_id
+    GROUP BY authors.au_fname, authors.au_lname
+    HAVING COUNT(DISTINCT titles.type) > 1
 ```
 
 ### *l)* Para os títulos, obter o preço médio e o número total de vendas agrupado por tipo (type) e editora (pub_id);
@@ -93,8 +110,11 @@ SELECT [type], pub_id, AVG(price) AS average_price, SUM(ytd_sales) AS all_time_s
 
 ### *m)* Obter o(s) tipo(s) de título(s) para o(s) qual(is) o máximo de dinheiro “à cabeça” (advance) é uma vez e meia superior à média do grupo (tipo);
 
-```
-... Write here your answer ...
+```sql
+SELECT titles.type
+    FROM titles
+    GROUP BY titles.type
+    HAVING MAX(titles.advance) > 1.5 * AVG(titles.advance)
 ```
 
 ### *n)* Obter, para cada título, nome dos autores e valor arrecadado por estes com a sua venda;
@@ -108,8 +128,13 @@ SELECT titles.title, authors.au_fname,authors.au_lname, ( (titles.price*titles.y
 
 ### *o)* Obter uma lista que incluía o número de vendas de um título (ytd_sales), o seu nome, a faturação total, o valor da faturação relativa aos autores e o valor da faturação relativa à editora;
 
-```
-... Write here your answer ...
+```sql
+SELECT titles.title, titles.ytd_sales, titles.ytd_sales * titles.price AS profit, 
+                                        titles.ytd_sales * titles.price * titles.royalty / 100 AS auth_revenue,
+                                        titles.price * titles.ytd_sales - titles.price * titles.ytd_sales * titles.royalty / 100 AS pub_revenue
+    FROM titles
+	ORDER BY titles.title
+
 ```
 
 ### *p)* Obter uma lista que incluía o número de vendas de um título (ytd_sales), o seu nome, o nome de cada autor, o valor da faturação de cada autor e o valor da faturação relativa à editora;
