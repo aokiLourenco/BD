@@ -5,31 +5,40 @@
 ### *a)* Todos os tuplos da tabela autores (authors);
 
 ```
-... Write here your answer ...
+SELECT *
+    FROM authors
 ```
 
 ### *b)* O primeiro nome, o último nome e o telefone dos autores;
 
 ```
-... Write here your answer ...
+SELECT authors.au_fname, authors.au_lname, authors.phone
+    FROM authors
 ```
 
 ### *c)* Consulta definida em b) mas ordenada pelo primeiro nome (ascendente) e depois o último nome (ascendente); 
 
 ```
-... Write here your answer ...
+SELECT authors.au_fname, authors.au_lname, authors.phone 
+    FROM authors
+    ORDER BY authors.au_fname, authors.au_lname
 ```
 
 ### *d)* Consulta definida em c) mas renomeando os atributos para (first_name, last_name, telephone); 
 
 ```
-... Write here your answer ...
+SELECT authors.au_fname AS first_name, authors.au_lname AS last_name, authors.phone AS telephone
+    FROM authors
+    ORDER BY authors.au_fname, authors.au_lname
 ```
 
 ### *e)* Consulta definida em d) mas só os autores da Califórnia (CA) cujo último nome é diferente de ‘Ringer’; 
 
 ```
-... Write here your answer ...
+SELECT authors.au_fname AS first_name, authors.au_lname AS last_name, authors.phone AS telephone
+    FROM authors
+    WHERE authors.au_lname != 'Ringer'
+    ORDER BY authors.au_fname, authors.au_lname
 ```
 
 ### *f)* Todas as editoras (publishers) que tenham ‘Bo’ em qualquer parte do nome; 
@@ -41,7 +50,10 @@
 ### *g)* Nome das editoras que têm pelo menos uma publicação do tipo ‘Business’; 
 
 ```
-... Write here your answer ...
+SELECT publishers.pub_name
+	FROM publishers, titles
+	WHERE publishers.pub_id=titles.pub_id AND titles.type='business'
+	GROUP BY publishers.pub_name
 ```
 
 ### *h)* Número total de vendas de cada editora; 
@@ -59,7 +71,9 @@
 ### *j)* Nome dos títulos vendidos pela loja ‘Bookbeat’; 
 
 ```
-... Write here your answer ...
+SELECT titles.title
+	FROM titles, stores, sales
+	WHERE stores.stor_name='Bookbeat' AND stores.stor_id=sales.stor_id AND sales.title_id=titles.title_id
 ```
 
 ### *k)* Nome de autores que tenham publicações de tipos diferentes; 
@@ -71,7 +85,10 @@
 ### *l)* Para os títulos, obter o preço médio e o número total de vendas agrupado por tipo (type) e editora (pub_id);
 
 ```
-... Write here your answer ...
+SELECT [type], pub_id, AVG(price) AS average_price, SUM(ytd_sales) AS all_time_sales
+	FROM titles
+	WHERE [type]!='UNDECIDED'
+	GROUP BY [type], pub_id
 ```
 
 ### *m)* Obter o(s) tipo(s) de título(s) para o(s) qual(is) o máximo de dinheiro “à cabeça” (advance) é uma vez e meia superior à média do grupo (tipo);
@@ -83,7 +100,10 @@
 ### *n)* Obter, para cada título, nome dos autores e valor arrecadado por estes com a sua venda;
 
 ```
-... Write here your answer ...
+SELECT titles.title, authors.au_fname,authors.au_lname, ( (titles.price*titles.ytd_sales * titles.royalty / 100) * titleauthor.royaltyper / 100) AS [money]
+	FROM titles,titleauthor,authors
+	WHERE titles.ytd_sales IS NOT NULL AND titles.title_id=titleauthor.title_id AND titleauthor.au_id=authors.au_id
+	ORDER BY titles.title
 ```
 
 ### *o)* Obter uma lista que incluía o número de vendas de um título (ytd_sales), o seu nome, a faturação total, o valor da faturação relativa aos autores e o valor da faturação relativa à editora;
