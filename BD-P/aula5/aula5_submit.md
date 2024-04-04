@@ -6,15 +6,14 @@
 ### *a)*
 
 ```
-Write here your answer e.g:
-(π Pname, Pnumber (project) ⨝ Pno=Pnumber (works_on)) ⨝.... 
+π Fname, Lname, Ssn, Pname (employee ⨝ Ssn = Essn works_on ⨝ Pno = Pnumber project)
 ```
 
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+π employee.Fname, employee.Lname, employee.Ssn, employee.Super_ssn ( σ Chefe.Fname = 'Carlos' and Chefe.Lname = 'Gomes' (employee ⨝ employee.Super_ssn = Chefe.Ssn ρ Chefe employee))
 ```
 
 
@@ -49,7 +48,7 @@ works_on
 ### *e)* 
 
 ```
-... Write here your answer ...
+π Fname, Lname σ Essn = null (employee ⟕ Ssn = Essn works_on)
 ```
 
 
@@ -83,14 +82,14 @@ dependent
 ### *h)* 
 
 ```
-... Write here your answer ...
+π employee.Fname, employee.Minit, employee.Lname ( σ Essn = null (employee ⟕ Ssn = Essn dependent) ⨝ employee.Ssn = Gestor_Department.Ssn ρ Gestor_Department (employee ⨝ Ssn = Mgr_ssn department))
 ```
 
 
 ### *i)* 
 
 ```
-... Write here your answer ...
+π Fname, Minit, Lname, Address ( σ Dlocation ≠ 'Aveiro' (dept_location ⨝ Dnumber = Dno σ Plocation = 'Aveiro' (employee ⨝ Ssn = Essn works_on ⨝ Pno = Pnumber project)))
 ```
 
 
@@ -156,37 +155,37 @@ fornecedor
 ### *a)*
 
 ```
-... Write here your answer ...
+π nome ( σ prescricao.numPresc = null (paciente ⟕ paciente.numUtente = prescricao.numUtente prescricao))
 ```
 
 ### *b)* 
 
 ```
-... Write here your answer ...
+γ especialidade; COUNT(especialidade)→Npresc (medico ⨝ numSNS = numMedico prescricao)
 ```
 
 
 ### *c)* 
 
 ```
-... Write here your answer ...
+γ farmacia; COUNT(numPresc)→N_presc (prescricao ⨝ farmacia = nome farmacia)
 ```
 
 
 ### *d)* 
 
 ```
-... Write here your answer ...
+π farmaco.nome σ presc_farmaco.numPresc = null ( σ numRegFarm = 906 farmaco ⟕ presc_farmaco.nomeFarmaco = farmaco.nome (presc_farmaco ⨝ presc_farmaco.numPresc = prescricao.numPresc prescricao))
 ```
 
 ### *e)* 
 
 ```
-... Write here your answer ...
+γ prescricao.farmacia, numReg; COUNT(farmaco.nome)→Number σ prescricao.farmacia ≠ null (farmaceutica ⨝ numReg = numRegFarm farmaco ⨝ farmaco.numRegFarm = presc_farmaco.numRegFarm presc_farmaco ⨝ presc_farmaco.numPresc = prescricao.numPresc prescricao)
 ```
 
 ### *f)* 
 
 ```
-... Write here your answer ...
+π nome σ medicoCount > 1 ( γ nome; COUNT(prescricao.numMedico)→medicoCount (paciente ⨝ paciente.numUtente = prescricao.numUtente prescricao))
 ```
