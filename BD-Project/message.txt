@@ -128,4 +128,37 @@ erDiagram
     * Efeito
     * Requisitos de uso
 * Feitiço/Magia:
-    * idFeitiçoMagia (chave
+    * idFeitiçoMagia (chave primária)
+    * Nome
+    * Descrição
+    * Tipo de dano
+    * Custo de mana
+    * Requisitos de atributos
+* Inimigo:
+    * idInimigo (chave primária)
+    * Nome
+    * Descrição
+    * Aparência
+    * Localização
+    * Atributos
+    * Ataques
+    * Fraquezas
+    * Drops
+* Local:
+    * idLocal (chave primária)
+    * Nome
+    * Descrição
+    * Área
+    * Pontos de interesse
+    * Inimigos (relacionado a idInimigo)
+    * Itens (relacionado a idItem)
+* Chefe:
+    * idChefe (chave primária)
+    * Nome
+    * Descrição
+    * Aparência
+    * Localização
+    * Atributos
+    * Ataques
+    * Fraquezas
+    * Drops (relacionado a idItem)
