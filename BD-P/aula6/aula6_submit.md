@@ -152,19 +152,31 @@ SELECT titles.title, titles.ytd_sales, titles.ytd_sales * titles.price AS profit
 ### *r)* Lista de lojas que venderam mais livros do que a média de todas as lojas;
 
 ```
-... Write here your answer ...
+SELECT stor_name 
+	FROM sales
+		INNER JOIN stores ON stores.stor_id=sales.stor_id
+	GROUP BY stores.stor_name
+	HAVING SUM(sales.qty)>(SELECT AVG(sales.qty) FROM sales);
 ```
 
 ### *s)* Nome dos títulos que nunca foram vendidos na loja “Bookbeat”;
 
 ```
-... Write here your answer ...
+SELECT title FROM titles
+	EXCEPT
+	SELECT DISTINCT title 
+		FROM titlesINNER JOIN sales ON sales.title_id=titles.title_id
+			INNER JOIN stores ON stores.stor_id=sales.stor_id
+		WHERE stor_name='Bookbeat'
 ```
 
 ### *t)* Para cada editora, a lista de todas as lojas que nunca venderam títulos dessa editora; 
 
 ```
-... Write here your answer ...
+SELECT pub_name, stor_name 
+FROM publishers 
+	JOIN stores ON stor_id NOT IN (SELECT stor_id FROM sales INNER JOIN titles ON sales.title_id = titles.title_id) 
+	ORDER BY pub_name 
 ```
 
 ## Problema 6.2
@@ -184,55 +196,93 @@ SELECT titles.title, titles.ytd_sales, titles.ytd_sales * titles.price AS profit
 ##### *a)*
 
 ```
-... Write here your answer ...
+SELECT Pname, Ssn, Fname, Lname 
+	FROM project
+		INNER JOIN works_on ON Pno=Pnumber
+		INNER JOIN employee ON Essn=Ssn
 ```
 
 ##### *b)* 
 
 ```
-... Write here your answer ...
+SELECT e.Fname, e.Lname 
+	FROM Company.Employee e 
+		JOIN Company.Employee s ON e.Super_ssn = s.Ssn 
+	WHERE s.Fname = 'Carlos' AND s.Minit = 'D' AND s.Lname = 'Gomes';
 ```
 
 ##### *c)* 
 
 ```
-... Write here your answer ...
+SELECT Pname, SUM(Hours) AS THours
+	FROM project 
+		INNER JOIN works_on ON Pnumber=Pno
+	GROUP BY Pname
 ```
 
 ##### *d)* 
 
 ```
-... Write here your answer ...
+SELECT e.Fname, e.Minit, e.Lname
+	FROM employee e
+		JOIN works_on w ON e.Ssn = w.Essn
+		JOIN project p ON w.Pno = p.Pnumber
+		JOIN department d ON p.Dnum = d.Dnumber
+	WHERE d.Dnumber = 3 AND w.Hours > 20 AND p.Pname = 'Aveiro Digital'
 ```
 
 ##### *e)* 
 
 ```
-... Write here your answer ...
+SELECT Fname, Minit, Lname
+	FROM  employee 
+		LEFT outer JOIN works_on ON Ssn=Essn
+	WHERE Pno IS NULL
 ```
 
 ##### *f)* 
 
 ```
-... Write here your answer ...
+SELECT department.Dname, AVG(employee.Salary) AS AvgSalary
+	FROM department
+		JOIN employee ON department.Dnumber = employee.Dno
+	WHERE employee.Sex = 'F'
+	GROUP BY department.Dname;
 ```
 
 ##### *g)* 
 
 ```
-... Write here your answer ...
+SELECT Fname, Minit, Lname FROM employee
+INNER JOIN (
+			SELECT Essn, COUNT(Essn) AS quantos FROM dependent
+			GROUP BY Essn
+			HAVING quantos > 2
+			) AS dependentes
+ON Ssn=Essn
 ```
 
 ##### *h)* 
 
 ```
-... Write here your answer ...
+SELECT Fname, Minit, Lname 
+	FROM department
+		INNER JOIN employee ON Ssn=Mgr_ssn
+		LEFT outer JOIN dependent ON Essn=Ssn
+	WHERE Dependent_name IS NULL
 ```
 
 ##### *i)* 
 
 ```
-... Write here your answer ...
+SELECT Fname, Minit, Lname, Address FROM employee
+INNER JOIN (
+			SELECT * 
+				FROM project
+					INNER JOIN dept_location ON Dnum=Dnumber
+				WHERE Dlocation!='Aveiro' AND Plocation='Aveiro'
+			) AS PROJECT_LST
+ON Dno=Dnum
 ```
 
 ### 5.2
