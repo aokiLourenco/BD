@@ -4,21 +4,21 @@
 
 ### *a)* Todos os tuplos da tabela autores (authors);
 
-```
+```sql
 SELECT *
     FROM authors
 ```
 
 ### *b)* O primeiro nome, o último nome e o telefone dos autores;
 
-```
+```sql
 SELECT authors.au_fname, authors.au_lname, authors.phone
     FROM authors
 ```
 
 ### *c)* Consulta definida em b) mas ordenada pelo primeiro nome (ascendente) e depois o último nome (ascendente); 
 
-```
+```sql
 SELECT authors.au_fname, authors.au_lname, authors.phone 
     FROM authors
     ORDER BY authors.au_fname, authors.au_lname
@@ -26,7 +26,7 @@ SELECT authors.au_fname, authors.au_lname, authors.phone
 
 ### *d)* Consulta definida em c) mas renomeando os atributos para (first_name, last_name, telephone); 
 
-```
+```sql
 SELECT authors.au_fname AS first_name, authors.au_lname AS last_name, authors.phone AS telephone
     FROM authors
     ORDER BY authors.au_fname, authors.au_lname
@@ -34,7 +34,7 @@ SELECT authors.au_fname AS first_name, authors.au_lname AS last_name, authors.ph
 
 ### *e)* Consulta definida em d) mas só os autores da Califórnia (CA) cujo último nome é diferente de ‘Ringer’; 
 
-```
+```sql
 SELECT authors.au_fname AS first_name, authors.au_lname AS last_name, authors.phone AS telephone
     FROM authors
     WHERE authors.au_lname != 'Ringer'
@@ -43,7 +43,7 @@ SELECT authors.au_fname AS first_name, authors.au_lname AS last_name, authors.ph
 
 ### *f)* Todas as editoras (publishers) que tenham ‘Bo’ em qualquer parte do nome; 
 
-```SQL
+```sql
 SELECT pub_name
     FROM publishers
     WHERE pub_name LIKE '%Bo%'
@@ -51,7 +51,7 @@ SELECT pub_name
 
 ### *g)* Nome das editoras que têm pelo menos uma publicação do tipo ‘Business’; 
 
-```
+```sql
 SELECT publishers.pub_name
 	FROM publishers, titles
 	WHERE publishers.pub_id=titles.pub_id AND titles.type='business'
@@ -82,7 +82,7 @@ SELECT publishers.pub_name, titles.title, SUM(sales.qty) as total_sales
 
 ### *j)* Nome dos títulos vendidos pela loja ‘Bookbeat’; 
 
-```
+```sql
 SELECT titles.title
 	FROM titles, stores, sales
 	WHERE stores.stor_name='Bookbeat' AND stores.stor_id=sales.stor_id AND sales.title_id=titles.title_id
@@ -101,7 +101,7 @@ SELECT authors.au_fname, authors.au_lname, COUNT(*) AS types_c
 
 ### *l)* Para os títulos, obter o preço médio e o número total de vendas agrupado por tipo (type) e editora (pub_id);
 
-```
+```sql
 SELECT [type], pub_id, AVG(price) AS average_price, SUM(ytd_sales) AS all_time_sales
 	FROM titles
 	WHERE [type]!='UNDECIDED'
@@ -119,8 +119,8 @@ SELECT titles.type
 
 ### *n)* Obter, para cada título, nome dos autores e valor arrecadado por estes com a sua venda;
 
-```
-SELECT titles.title, authors.au_fname,authors.au_lname, ( (titles.price*titles.ytd_sales * titles.royalty / 100) * titleauthor.royaltyper / 100) AS [money]
+```sql
+SELECT titles.title, (authors.au_fname +' '+  authors.au_lname) AS [author], ( (titles.price*titles.ytd_sales * titles.royalty / 100) * titleauthor.royaltyper / 100) AS [money]
 	FROM titles,titleauthor,authors
 	WHERE titles.ytd_sales IS NOT NULL AND titles.title_id=titleauthor.title_id AND titleauthor.au_id=authors.au_id
 	ORDER BY titles.title
@@ -139,8 +139,11 @@ SELECT titles.title, titles.ytd_sales, titles.ytd_sales * titles.price AS profit
 
 ### *p)* Obter uma lista que incluía o número de vendas de um título (ytd_sales), o seu nome, o nome de cada autor, o valor da faturação de cada autor e o valor da faturação relativa à editora;
 
-```
-... Write here your answer ...
+```sql
+SELECT titles.title, (authors.au_fname +' '+  authors.au_lname) AS [author], ( (titles.price*titles.ytd_sales * titles.royalty / 100) * titleauthor.royaltyper / 100) AS auth_revenue, (titles.price*titles.ytd_sales *( 100- titles.royalty) / 100) AS publisher_revenue
+	FROM titles,titleauthor,authors, publishers
+	WHERE titles.ytd_sales IS NOT NULL AND titles.title_id=titleauthor.title_id AND titleauthor.au_id=authors.au_id AND titles.pub_id = publishers.pub_id
+	ORDER BY titles.title,titles.ytd_sales, titles.price, titles.royalty, au_fname, au_lname
 ```
 
 ### *q)* Lista de lojas que venderam pelo menos um exemplar de todos os livros;
@@ -249,28 +252,46 @@ SELECT titles.title, titles.ytd_sales, titles.ytd_sales * titles.price AS profit
 
 ##### *a)*
 
-```
-... Write here your answer ...
+```sql
+SELECT fornecedor.nome, fornecedor.nif
+    FROM fornecedor
+    LEFT JOIN encomenda ON fornecedor.nif = encomenda.fornecedor
+    WHERE encomenda.numero IS NULL;
 ```
 
 ##### *b)* 
 
-```
-... Write here your answer ...
+```sql
+SELECT codProd, AVG(unidades) AS nMed
+    FROM encomenda
+    JOIN item ON encomenda.numero = item.numEnc
+    GROUP BY codProd;
 ```
 
 
 ##### *c)* 
 
-```
-... Write here your answer ...
+```sql
+SELECT AVG(produtos) AS mediaProd
+FROM (
+    SELECT numEnc, COUNT(codProd) AS produtos
+    FROM encomenda
+    JOIN item ON encomenda.numero = item.numEnc
+    GROUP BY numEnc
+) AS subquery;
+
 ```
 
 
 ##### *d)* 
 
-```
-... Write here your answer ...
+```sql
+SELECT fornecedor.nome, produto.nome, SUM(item.unidades) AS unidades
+    FROM fornecedor
+    INNER JOIN encomenda ON fornecedor.nif = encomenda.fornecedor
+    INNER JOIN item ON encomenda.numero = item.numEnc
+    INNER JOIN produto ON item.codProd = produto.codigo
+    GROUP BY fornecedor.nome, produto.nome;
 ```
 
 ### 5.3
@@ -287,38 +308,66 @@ SELECT titles.title, titles.ytd_sales, titles.ytd_sales * titles.price AS profit
 
 ##### *a)*
 
-```
-... Write here your answer ...
+```sql
+SELECT paciente.nome 
+FROM paciente 
+LEFT JOIN prescricao ON paciente.numUtente = prescricao.numUtente 
+WHERE prescricao.numPresc IS NULL;
 ```
 
 ##### *b)* 
 
-```
-... Write here your answer ...
+```sql
+SELECT medico.especialidade, COUNT(medico.especialidade) AS Npresc
+FROM medico 
+JOIN prescricao ON medico.numSNS = prescricao.numMedico
+GROUP BY medico.especialidade;
+
 ```
 
 
 ##### *c)* 
 
-```
-... Write here your answer ...
+```sql
+SELECT farmacia.nome, COUNT(prescricao.numPresc) AS N_presc
+FROM prescricao
+JOIN farmacia ON prescricao.farmacia = farmacia.nome
+GROUP BY farmacia.nome; 
 ```
 
 
 ##### *d)* 
 
-```
-... Write here your answer ...
+```sql
+SELECT farmaco.nome 
+FROM farmaco 
+LEFT JOIN presc_farmaco ON farmaco.numRegFarm = presc_farmaco.numRegFarm AND farmaco.nome = presc_farmaco.nomeFarmaco 
+WHERE presc_farmaco.numPresc IS NULL 
+AND farmaco.numRegFarm = 906;
+
 ```
 
 ##### *e)* 
 
-```
-... Write here your answer ...
+```sql
+SELECT prescricao.farmacia, numReg, COUNT(farmaco.nome) AS Number
+    FROM farmaceutica
+    JOIN farmaco ON numReg = numRegFarm
+    JOIN presc_farmaco ON farmaco.numRegFarm = presc_farmaco.numRegFarm
+    JOIN prescricao ON presc_farmaco.numPresc = prescricao.numPresc
+    WHERE prescricao.farmacia IS NOT NULL
+    GROUP BY prescricao.farmacia, numReg
 ```
 
 ##### *f)* 
 
-```
-... Write here your answer ...
+```sql
+SELECT nome FROM
+    (
+        SELECT nome, COUNT(prescricao.numMedico) AS medicoCount
+            FROM paciente
+            JOIN prescricao ON paciente.numUtente = prescricao.numUtente
+            GROUP BY nome
+    ) AS P
+    WHERE medicoCount > 1
 ```
