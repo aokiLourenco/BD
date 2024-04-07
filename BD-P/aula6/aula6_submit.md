@@ -148,13 +148,17 @@ SELECT titles.title, (authors.au_fname +' '+  authors.au_lname) AS [author], ( (
 
 ### *q)* Lista de lojas que venderam pelo menos um exemplar de todos os livros;
 
-```
-... Write here your answer ...
+```sql
+SELECT stores.stor_name
+    FROM stores,sales,titles
+	WHERE stores.stor_id = sales.stor_id AND sales.title_id = titles.title_id
+    GROUP BY stores.stor_name
+    HAVING (COUNT(stores.stor_name)) = (SELECT COUNT(*) FROM titles WHERE titles.ytd_sales IS NOT NULL)
 ```
 
 ### *r)* Lista de lojas que venderam mais livros do que a média de todas as lojas;
 
-```
+```sql
 SELECT stor_name 
 	FROM sales
 		INNER JOIN stores ON stores.stor_id=sales.stor_id
@@ -164,7 +168,7 @@ SELECT stor_name
 
 ### *s)* Nome dos títulos que nunca foram vendidos na loja “Bookbeat”;
 
-```
+```sql
 SELECT title FROM titles
 	EXCEPT
 	SELECT DISTINCT title 
@@ -175,7 +179,7 @@ SELECT title FROM titles
 
 ### *t)* Para cada editora, a lista de todas as lojas que nunca venderam títulos dessa editora; 
 
-```
+```sql
 SELECT pub_name, stor_name 
 FROM publishers 
 	JOIN stores ON stor_id NOT IN (SELECT stor_id FROM sales INNER JOIN titles ON sales.title_id = titles.title_id) 
@@ -198,7 +202,7 @@ FROM publishers
 
 ##### *a)*
 
-```
+```sql
 SELECT Pname, Ssn, Fname, Lname 
 	FROM project
 		INNER JOIN works_on ON Pno=Pnumber
@@ -207,7 +211,7 @@ SELECT Pname, Ssn, Fname, Lname
 
 ##### *b)* 
 
-```
+```sql
 SELECT e.Fname, e.Lname 
 	FROM Company.Employee e 
 		JOIN Company.Employee s ON e.Super_ssn = s.Ssn 
@@ -216,7 +220,7 @@ SELECT e.Fname, e.Lname
 
 ##### *c)* 
 
-```
+```sql
 SELECT Pname, SUM(Hours) AS THours
 	FROM project 
 		INNER JOIN works_on ON Pnumber=Pno
@@ -225,7 +229,7 @@ SELECT Pname, SUM(Hours) AS THours
 
 ##### *d)* 
 
-```
+```sql
 SELECT e.Fname, e.Minit, e.Lname
 	FROM employee e
 		JOIN works_on w ON e.Ssn = w.Essn
@@ -236,7 +240,7 @@ SELECT e.Fname, e.Minit, e.Lname
 
 ##### *e)* 
 
-```
+```sql
 SELECT Fname, Minit, Lname
 	FROM  employee 
 		LEFT outer JOIN works_on ON Ssn=Essn
@@ -245,7 +249,7 @@ SELECT Fname, Minit, Lname
 
 ##### *f)* 
 
-```
+```sql
 SELECT department.Dname, AVG(employee.Salary) AS AvgSalary
 	FROM department
 		JOIN employee ON department.Dnumber = employee.Dno
@@ -255,7 +259,7 @@ SELECT department.Dname, AVG(employee.Salary) AS AvgSalary
 
 ##### *g)* 
 
-```
+```sql
 SELECT Fname, Minit, Lname FROM employee
 INNER JOIN (
 			SELECT Essn, COUNT(Essn) AS quantos FROM dependent
@@ -267,7 +271,7 @@ ON Ssn=Essn
 
 ##### *h)* 
 
-```
+```sql
 SELECT Fname, Minit, Lname 
 	FROM department
 		INNER JOIN employee ON Ssn=Mgr_ssn
@@ -277,7 +281,7 @@ SELECT Fname, Minit, Lname
 
 ##### *i)* 
 
-```
+```sql
 SELECT Fname, Minit, Lname, Address FROM employee
 INNER JOIN (
 			SELECT * 
@@ -303,18 +307,18 @@ ON Dno=Dnum
 ##### *a)*
 
 ```sql
-SELECT fornecedor.nome, fornecedor.nif
-    FROM fornecedor
-    LEFT JOIN encomenda ON fornecedor.nif = encomenda.fornecedor
-    WHERE encomenda.numero IS NULL;
+SELECT GestStock_fornecedor.nome, GestStock_fornecedor.nif
+    FROM GestStock_fornecedor
+    LEFT JOIN GestStock_encomenda ON GestStock_fornecedor.nif = GestStock_encomenda.fornecedor
+    WHERE GestStock_encomenda.numero IS NULL;
 ```
 
 ##### *b)* 
 
 ```sql
 SELECT codProd, AVG(unidades) AS nMed
-    FROM encomenda
-    JOIN item ON encomenda.numero = item.numEnc
+    FROM GestStock_encomenda
+    JOIN GestStock_item ON GestStock_encomenda.numero = GestStock_item.numEnc
     GROUP BY codProd;
 ```
 
@@ -325,8 +329,8 @@ SELECT codProd, AVG(unidades) AS nMed
 SELECT AVG(produtos) AS mediaProd
 FROM (
     SELECT numEnc, COUNT(codProd) AS produtos
-    FROM encomenda
-    JOIN item ON encomenda.numero = item.numEnc
+    FROM GestStock_encomenda
+    JOIN GestStock_item ON GestStock_encomenda.numero = GestStock_item.numEnc
     GROUP BY numEnc
 ) AS subquery;
 
@@ -336,12 +340,12 @@ FROM (
 ##### *d)* 
 
 ```sql
-SELECT fornecedor.nome, produto.nome, SUM(item.unidades) AS unidades
-    FROM fornecedor
-    INNER JOIN encomenda ON fornecedor.nif = encomenda.fornecedor
-    INNER JOIN item ON encomenda.numero = item.numEnc
-    INNER JOIN produto ON item.codProd = produto.codigo
-    GROUP BY fornecedor.nome, produto.nome;
+SELECT GestStock_fornecedor.nome, GestStock_produto.nome, SUM(GestStock_item.unidades) AS unidades
+    FROM GestStock_fornecedor
+    INNER JOIN GestStock_encomenda ON GestStock_fornecedor.nif = GestStock_encomenda.fornecedor
+    INNER JOIN GestStock_item ON GestStock_encomenda.numero = GestStock_item.numEnc
+    INNER JOIN GestStock_produto ON GestStock_item.codProd = GestStock_produto.codigo
+    GROUP BY GestStock_fornecedor.nome, GestStock_produto.nome;
 ```
 
 ### 5.3
@@ -359,19 +363,19 @@ SELECT fornecedor.nome, produto.nome, SUM(item.unidades) AS unidades
 ##### *a)*
 
 ```sql
-SELECT paciente.nome 
-FROM paciente 
-LEFT JOIN prescricao ON paciente.numUtente = prescricao.numUtente 
-WHERE prescricao.numPresc IS NULL;
+SELECT PRESCRICAO_Paciente.nome 
+FROM PRESCRICAO_Paciente 
+LEFT JOIN PRESCRICAO_Prescricao ON PRESCRICAO_Paciente.numUtente = PRESCRICAO_Prescricao.numUtente 
+WHERE PRESCRICAO_Prescricao.numPresc IS NULL;
 ```
 
 ##### *b)* 
 
 ```sql
-SELECT medico.especialidade, COUNT(medico.especialidade) AS Npresc
-FROM medico 
-JOIN prescricao ON medico.numSNS = prescricao.numMedico
-GROUP BY medico.especialidade;
+SELECT PRESCRICAO_Medico.especialidade, COUNT(PRESCRICAO_Medico.especialidade) AS Npresc
+FROM PRESCRICAO_Medico 
+JOIN PRESCRICAO_Prescricao ON PRESCRICAO_Medico.numSNS = PRESCRICAO_Prescricao.numMedico
+GROUP BY PRESCRICAO_Medico.especialidade;
 
 ```
 
@@ -379,34 +383,34 @@ GROUP BY medico.especialidade;
 ##### *c)* 
 
 ```sql
-SELECT farmacia.nome, COUNT(prescricao.numPresc) AS N_presc
-FROM prescricao
-JOIN farmacia ON prescricao.farmacia = farmacia.nome
-GROUP BY farmacia.nome; 
+SELECT PRESCRICAO_Farmacia.nome, COUNT(PRESCRICAO_Prescricao.numPresc) AS N_presc
+FROM PRESCRICAO_Prescricao
+JOIN PRESCRICAO_Farmacia ON PRESCRICAO_Prescricao.farmacia = PRESCRICAO_Farmacia.nome
+GROUP BY PRESCRICAO_Farmacia.nome; 
 ```
 
 
 ##### *d)* 
 
 ```sql
-SELECT farmaco.nome 
-FROM farmaco 
-LEFT JOIN presc_farmaco ON farmaco.numRegFarm = presc_farmaco.numRegFarm AND farmaco.nome = presc_farmaco.nomeFarmaco 
-WHERE presc_farmaco.numPresc IS NULL 
-AND farmaco.numRegFarm = 906;
+SELECT PRESCRICAO_Farmaco.nome 
+FROM PRESCRICAO_Farmaco 
+LEFT JOIN PRESCRICAO_Presc_farmaco ON PRESCRICAO_Farmaco.numRegFarm = PRESCRICAO_Presc_farmaco.numRegFarm AND PRESCRICAO_Farmaco.nome = PRESCRICAO_Presc_farmaco.nomeFarmaco 
+WHERE PRESCRICAO_Presc_farmaco.numPresc IS NULL 
+AND PRESCRICAO_Farmaco.numRegFarm = 906;
 
 ```
 
 ##### *e)* 
 
 ```sql
-SELECT prescricao.farmacia, numReg, COUNT(farmaco.nome) AS Number
-    FROM farmaceutica
-    JOIN farmaco ON numReg = numRegFarm
-    JOIN presc_farmaco ON farmaco.numRegFarm = presc_farmaco.numRegFarm
-    JOIN prescricao ON presc_farmaco.numPresc = prescricao.numPresc
-    WHERE prescricao.farmacia IS NOT NULL
-    GROUP BY prescricao.farmacia, numReg
+SELECT PRESCRICAO_Prescricao.farmacia, numReg, COUNT(PRESCRICAO_Farmaco.nome) AS Number
+    FROM PRESCRICAO_Farmaceutica
+    JOIN PRESCRICAO_Farmaco ON numReg = numRegFarm
+    JOIN PRESCRICAO_Presc_farmaco ON PRESCRICAO_Farmaco.numRegFarm = PRESCRICAO_Presc_farmaco.numRegFarm
+    JOIN PRESCRICAO_Prescricao ON PRESCRICAO_Presc_farmaco.numPresc = PRESCRICAO_Prescricao.numPresc
+    WHERE PRESCRICAO_Prescricao.farmacia IS NOT NULL
+    GROUP BY PRESCRICAO_Prescricao.farmacia, numReg
 ```
 
 ##### *f)* 
@@ -414,9 +418,9 @@ SELECT prescricao.farmacia, numReg, COUNT(farmaco.nome) AS Number
 ```sql
 SELECT nome FROM
     (
-        SELECT nome, COUNT(prescricao.numMedico) AS medicoCount
-            FROM paciente
-            JOIN prescricao ON paciente.numUtente = prescricao.numUtente
+        SELECT nome, COUNT(PRESCRICAO_Prescricao.numMedico) AS medicoCount
+            FROM PRESCRICAO_Paciente
+            JOIN PRESCRICAO_Prescricao ON PRESCRICAO_Paciente.numUtente = PRESCRICAO_Prescricao.numUtente
             GROUP BY nome
     ) AS P
     WHERE medicoCount > 1
