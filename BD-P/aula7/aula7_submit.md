@@ -46,7 +46,7 @@ A relação está na forma 2FN:
 -> R2 (_A_, D, E)
 -> R3 (_B_, F)
 -> R4 (_F_, G, H)
--> R5 (_D_, I, F)
+-> R5 (_D_, I, J)
 ```
 
 
@@ -97,7 +97,7 @@ A relação está na forma 2FN:
 ### *c)* 
 
 ```
--> R1 (_A_,_B_, C)
+-> R1 (_A_,_B_, E)
 -> R2 (_A_, C)
 -> R3 (_C_, D)
 ```
@@ -105,7 +105,7 @@ A relação está na forma 2FN:
 ### *d)* 
 
 ```
--> R1 (_A_,_B_, C)
+-> R1 (_A_,_B_, E)
 -> R2 (_A_, C)
 -> R3 (_C_, D)
 ```
