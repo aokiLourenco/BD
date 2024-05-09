@@ -71,7 +71,7 @@ CREATE NONCLUSTERED INDEX IxAt2 ON mytemp(at2)
 CREATE NONCLUSTERED INDEX IxAt3 ON mytemp(at3)
 CREATE NONCLUSTERED INDEX IxAt1 ON mytemp(at1)
 
-Com indexes os tempos de inserção são mais demorados pois a inserção não é eficiente, é lenta.
+Com indexes os tempos de inserção são mais demorados porque a inserção é lenta.
 ```
 
 ## ​8.3.
