@@ -3,20 +3,20 @@
 
 ## ​8.1. Complete a seguinte tabela.
 Complete the following table.
+| #    | Query                                                                                                      | Rows  | Cost  | Pag. Reads | Time (ms) | Index used | Index Op.            |
+| :--- | :--------------------------------------------------------------------------------------------------------- | :---- | :---- | :--------- | :-------- | :--------- | :------------------- |
+| 1    | SELECT * from Production.WorkOrder                                                                         | 72591 | 0.474 | 552        | 16        |[PK_WorkOrder_WorkOrderID]| Clustered Index Scan |
+| 2    | SELECT * from Production.WorkOrder where WorkOrderID=1234                                                  | 1     |0.00328| 220        | 0         |[PK_WorkOrder_WorkOrderID] | Clustered Index Seek |
+| 3.1  | SELECT * FROM Production.WorkOrder WHERE WorkOrderID between 10000 and 10010                               | 11    |0.003295|  26       | 0         |[PK_WorkOrder_WorkOrderID]| Clustered Index Seek |
+| 3.2  | SELECT * FROM Production.WorkOrder WHERE WorkOrderID between 1 and 72591                                   | 72591 |0.474   |  746      | 18        |[PK_WorkOrder_WorkOrderID]| Clustered Index Seek |
+| 4    | SELECT * FROM Production.WorkOrder WHERE StartDate = '2012-05-14'                                          | 55    |0.474   |  1915     | 7         |[PK_WorkOrder_WorkOrderID]| Clustered Index Scan |
+| 5    | SELECT * FROM Production.WorkOrder WHERE ProductID = 757                                                   | 9     |0.034   |  240      | 3         |[PK_WorkOrder_WorkOrderID]| Clustered Key Lookup |
+| 6.1  | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 757                              | 9     |0.00329 | 26        | 0         |[IX_WorkOrder_ProductID]  | Non Clustered Index Seek |
+| 6.2  | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945                              | 1105  |0.00602 | 30        | 1         |[IX_WorkOrder_ProductID]  | Non Clustered Index Seek |
+| 6.3  | SELECT WorkOrderID FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2011-12-04'            | 1     |0.00623 | 32        | 0         |[IX_WorkOrder_ProductID]  | Non Clustered Index Seek |
+| 7    | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2011-12-04' | 1     |0.00623 | 36        | 0         |[IX_WorkOrder_ProductID]  | Non Clustered Index Seek |
+| 8    | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2011-12-04' | 1     |0,00328 | 60        | 0         |Composite (ProductID, StartDate)  | Non Clustered Index Seek |
 
-| #    | Query                                                                                                      | Rows  | Cost  | Pag. Reads | Time (ms) | Index used | Index Op.            | Discussion |
-| :--- | :--------------------------------------------------------------------------------------------------------- | :---- | :---- | :--------- | :-------- | :--------- | :------------------- | :--------- |
-| 1    | SELECT * from Production.WorkOrder                                                                         | 72591 | 0.474 | 552        | 16        |[PK_WorkOrder_WorkOrderID]| Clustered Index Scan |            |
-| 2    | SELECT * from Production.WorkOrder where WorkOrderID=1234                                                  | 1     |0.00328| 220        | 0         |[PK_WorkOrder_WorkOrderID] | Clustered Index Seek |            |
-| 3.1  | SELECT * FROM Production.WorkOrder WHERE WorkOrderID between 10000 and 10010                               | 11    |0.003295|  26       | 0         |[PK_WorkOrder_WorkOrderID]| Clustered Index Seek |            |
-| 3.2  | SELECT * FROM Production.WorkOrder WHERE WorkOrderID between 1 and 72591                                   | 72591 |0.474   |  746      | 18        |[PK_WorkOrder_WorkOrderID]| Clustered Index Seek |            |
-| 4    | SELECT * FROM Production.WorkOrder WHERE StartDate = '2012-05-14'                                          | 55    |0.474   |  1915     | 7         |[PK_WorkOrder_WorkOrderID]| Clustered Index Scan |            |
-| 5    | SELECT * FROM Production.WorkOrder WHERE ProductID = 757                                                   | 9     |0.034   |  240      | 3         |[PK_WorkOrder_WorkOrderID]| Clustered Key Lookup     |            |
-| 6.1  | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 757                              | 9     |0.00329 | 26        | 0         |[IX_WorkOrder_ProductID]  | Non Clustered Index Seek |            |
-| 6.2  | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945                              | 1105  |0.00602 | 30        | 1         |[IX_WorkOrder_ProductID]  | Non Clustered Index Seek |            |
-| 6.3  | SELECT WorkOrderID FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2011-12-04'            | 1     |0.00623 | 32        | 0         |[IX_WorkOrder_ProductID]  | Non Clustered Index Seek |            |
-| 7    | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2011-12-04' | 1     |0.00623 | 36        | 0         |[IX_WorkOrder_ProductID]  | Non Clustered Index Seek |            |
-| 8    | SELECT WorkOrderID, StartDate FROM Production.WorkOrder WHERE ProductID = 945 AND StartDate = '2011-12-04' | 1     |0,00328 | 60        | 0         |Composite (ProductID, StartDate)  | Non Clustered Index Seek |            |
 
 ## ​8.2.
 
