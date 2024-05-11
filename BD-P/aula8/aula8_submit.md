@@ -37,13 +37,13 @@ Percentagem de ocupação das páginas dos índices: 68,35%
 
 ```
 CREATE UNIQUE CLUSTERED INDEX  IxRid_c1 ON mytemp(rid) WITH (FILLFACTOR = 65, PAD_INDEX = ON)
-Tempo de inserção(ms) : 140810
+Tempo de inserção(ms) : 40810
 
 CREATE UNIQUE CLUSTERED INDEX  IxRid_c2 ON mytemp(rid) WITH (FILLFACTOR = 80, PAD_INDEX = ON)
-Tempo de inserção(ms) : 136992
+Tempo de inserção(ms) : 36992
 
 CREATE UNIQUE CLUSTERED INDEX  IxRid_c3 ON mytemp(rid) WITH (FILLFACTOR = 90, PAD_INDEX = ON)
-Tempo de inserção(ms) : 167983
+Tempo de inserção(ms) : 37983
 ```
 
 ### d)
@@ -58,9 +58,9 @@ CREATE TABLE mytemp (
 );
 SET IDENTITY_INSERT mytemp ON ;
 
-Tempo de inserção(ms) : 143989 (-> FILLFACTOR = 65)
-Tempo de inserção(ms) : 140390 (-> FILLFACTOR = 80)
-Tempo de inserção(ms) : 140156 (-> FILLFACTOR = 90)
+Tempo de inserção(ms) : 143889 (-> FILLFACTOR = 65)
+Tempo de inserção(ms) : 140410 (-> FILLFACTOR = 80)
+Tempo de inserção(ms) : 140236 (-> FILLFACTOR = 90)
 ```
 
 ### e)
@@ -71,7 +71,7 @@ CREATE NONCLUSTERED INDEX IxAt2 ON mytemp(at2)
 CREATE NONCLUSTERED INDEX IxAt3 ON mytemp(at3)
 CREATE NONCLUSTERED INDEX IxAt1 ON mytemp(at1)
 
-Com indexes os tempos de inserção são mais demorados pois a inserção não é eficiente, é lenta.
+Com indexes os tempos de inserção são mais demorados porque a inserção é lenta.
 ```
 
 ## ​8.3.
