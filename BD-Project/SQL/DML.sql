@@ -26,6 +26,8 @@ VALUES
 "ALTUS PLATEAU",
 "GOLDEN LINEAGE EVERGAOL")
 
+--
+
 INSERT INTO Dungeons (DungeonID, LocationID, Area, Name, MainBoss)
 VALUES 
 (1, 1, 'Limgrave', 'Castle of Storms', 'Lord of Lightning'),
@@ -58,6 +60,8 @@ VALUES
 (28, 3, 'Liurnia of the Lakes', 'Caelid Bluffs', 'Lady of the Recluse'),
 (29, 3, 'Liurnia of the Lakes', 'Vargalt Castle', 'Vargalt'),
 (30, 3, 'Liurnia of the Lakes', 'Stormveil Castle', 'King Renn, Lord of Storms')
+
+--
 
 INSERT INTO Characters (CharacterID, Attacks, Attributes, DESCRIPTION, Name, Class, Weakness, LocationID, LEVEL)
 VALUES
