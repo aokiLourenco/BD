@@ -1,3 +1,4 @@
+--Query to populate the tables
 INSERT INTO Locations (LocationID, Area, DESCRIPTION, Name, PointsOfInterest)
 VALUES
 (1, 
