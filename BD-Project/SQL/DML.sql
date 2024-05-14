@@ -66,7 +66,15 @@ VALUES
 
 INSERT INTO Characters (CharacterID, Attacks, Attributes, DESCRIPTION, Name, Class, Weakness, LocationID, LEVEL)
 VALUES
-(),
+(1, "Ground Dive", "Health & Poise", "The Giant Bats of Limgrave are nocturnal creatures and often rest during the day, unless they are disturbed.", "Giant Bat", "Confessor", "Fire", 1, 1),
+(2, "Swift Strikes", "Dexterity & Speed", "Agile and aggressive creatures found in the Murkwater Cave.", "Murkwater Skeleton", "Bandit", "Blunt", 2, 5),
+(3, "Charging Thrust", "Strength & Defense", "These spectral knights patrol the halls of Stormveil Castle.", "Banished Knight", "Veteran", "Magic", 3, 12),
+(4, "Flame Breath", "Intelligence & Faith", "These magma wyrms guard the smoldering ruins of Mt. Gelmir.", "Magma Wyrm", "Draconic", "Water", 4, 35),
+(5, "Poisonous Darts", "Dexterity & Arcane", "Lesser Erdtree Guardians utilize ranged attacks alongside melee strikes.", "Lesser Erdtree Guardian", "Sentinel", "Fire", 5, 20),
+(6, "Grappling Slam", "Strength & Endurance", "These colossal trolls inhabit the caverns of the Sellia Crystal Tunnel.", "Crystal Troll", "Brute", "Cold", 2, 42),
+(7, "Multi-Slam Combo", "Strength & Poise", "Mimic Teardrop Soldiers disguise themselves as chests, waiting for unsuspecting Tarnished.", "Mimic Teardrop Soldier", "Ambusher", "Lightning", 3, 18),
+
+
 
 INSERT INTO IsAt (CharacterID, LocationID)
 VALUES
