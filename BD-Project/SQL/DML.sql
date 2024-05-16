@@ -25,7 +25,7 @@ VALUES
 'North-West Region of The Lands Between',
 'NO-DATA',
 'ALTUS PLATEAU',
-'GOLDEN LINEAGE EVERGAOL')
+'GOLDEN LINEAGE EVERGAOL');
 
 --
 
@@ -60,7 +60,7 @@ VALUES
 (27, 5, 'Altus Plateau', 'Siofra Riverhead', 'Siofra the Water Wraith'),
 (28, 3, 'Liurnia of the Lakes', 'Caelid Bluffs', 'Lady of the Recluse'),
 (29, 3, 'Liurnia of the Lakes', 'Vargalt Castle', 'Vargalt'),
-(30, 3, 'Liurnia of the Lakes', 'Stormveil Castle', 'King Renn, Lord of Storms')
+(30, 3, 'Liurnia of the Lakes', 'Stormveil Castle', 'King Renn, Lord of Storms');
 
 --
 
@@ -437,7 +437,7 @@ VALUES
 (377, 'Necrotic Aura', 'Intelligence & Necrotic', 'Necrotic energy emanating from the cursed lands of the Necrotic Wasteland.', 'Necrotic Wraith', 'Deathbringer', 'Light', 4, 46),
 (378, 'Frostbite', 'Intelligence & Frost', 'Frostbite elementals freezing the unwary in the Frostbite Caves.', 'Frostbite Elemental', 'Ice Elemental', 'Fire', 2, 36),
 (379, 'Mind Control', 'Intelligence & Control', 'Mind-controlling entities in the depths of the Mind Control Nexus.', 'Mind Control Entity', 'Mind Manipulator', 'Light', 1, 39),
-(380, 'Chaos Nova', 'Intelligence & Chaos', 'Chaos demons unleashing chaos in the Chaos Citadel.', 'Chaos Citadel Demon', 'Chaos Demon', 'Order', 5, 50)
+(380, 'Chaos Nova', 'Intelligence & Chaos', 'Chaos demons unleashing chaos in the Chaos Citadel.', 'Chaos Citadel Demon', 'Chaos Demon', 'Order', 5, 50);
 
 INSERT INTO IsAt (CharacterID, LocationID)
 VALUES
@@ -820,7 +820,7 @@ VALUES
 (377, 4),
 (378, 1),
 (379, 5),
-(380, 5)
+(380, 5);
 
 INSERT INTO Bosses (CharacterID, Cutscene)
 VALUES
@@ -943,7 +943,7 @@ VALUES
 (117, 'CXVII'),
 (118, 'CXVIII'),
 (119, 'CXIX'),
-(120, 'CXX')
+(120, 'CXX');
 
 INSERT INTO Enemies (CharacterID)
 VALUES
@@ -1246,7 +1246,7 @@ VALUES
 (297),
 (298),
 (299),
-(300)
+(300);
 
 INSERT INTO Items (ItemID, DESCRIPTION, UseRequisites, Name, Owner, Award)
 VALUES
@@ -1280,8 +1280,8 @@ VALUES
 (28, 'A mystical rune that grants protection against dark forces.', 'Faith Level 3', 'Rune of Warding', 363, 25),
 (29, 'A cursed artifact that corrupts the mind of its bearer.', 'Corruption Level 4', 'Corrupted Idol', 54, 13),
 (30, 'An ancient scroll containing forbidden spells.', 'Arcane Knowledge Level 5', 'Scroll of Forbidden Magic', 76, 1),
-(31, 'A relic from a forgotten civilization,  radiating with ancient power.', 'Mystic Knowledge Level 4', 'Mystic something', 350, 11),
-(32, 'A potion brewed from rare herbs,  known for its healing properties.', 'Herbalism Level 3', 'Nice Weed', 181, 15),
+(31, 'A relic from a forgotten civilization, radiating with ancient power.', 'Mystic Knowledge Level 4', 'Mystic something', 350, 11),
+(32, 'A potion brewed from rare herbs, known for its healing properties.', 'Herbalism Level 3', 'Nice Weed', 181, 15),
 (33, 'A cursed amulet that saps the life force of its wearer.', 'Vampiric Aura Level 5', 'Amulet of the Damned', 333, 30),
 (34, 'A legendary weapon said to have been wielded by a mythical hero.', 'Legendary Weapon Proficiency Level 7', 'Excalibur', 270, 17),
 (35, 'A mysterious artifact that bends the fabric of reality.', 'Reality Manipulation Level 6', 'Chrono Crystal', 304, 28),
@@ -1290,7 +1290,7 @@ VALUES
 (38, 'A magical ring that enhances the wearers elemental affinity.', 'Elemental Mastery Level 4', 'Ring of Elements', 27, 14),
 (39, 'A dark artifact that feeds on the souls of the innocent.', 'Soul Consumption Level 6', 'Soulrender', 25, 6),
 (40, 'A forbidden tome containing dark rituals and incantations.', 'Dark Magic Knowledge Level 5', 'Tome of Shadows', 354, 8),
-(41, 'A vial of potent poison,  lethal to the touch.', 'Poisoncraft Level 4', 'Sheesh posion', 338, 5),
+(41, 'A vial of potent poison, lethal to the touch.', 'Poisoncraft Level 4', 'Sheesh posion', 338, 5),
 (42, 'An ancient relic imbued with the power of the elements.', 'Elemental Attunement Level 6', 'Elemental Totem', 284, 8),
 (43, 'A legendary artifact said to grant immortality to its bearer.', 'Immortality Level 10', 'Eternal Heart', 144, 23),
 (44, 'A celestial orb that channels the energy of the cosmos.', 'Celestial Harmony Level 7', 'Stellar Sphere', 333, 1),
@@ -1300,7 +1300,7 @@ VALUES
 (48, 'A cursed dagger that consumes the souls of its victims.', 'Soul Devourer Level 7', 'Soulthief Dagger', 111, 7),
 (49, 'An ancient scroll containing lost knowledge of the gods.', 'Divine Wisdom Level 6', 'Scroll of Divine Secrets', 216, 21),
 (50, 'A potion infused with the essence of dragons,  granting immense power.', 'Dragonblood Infusion Level 8', 'Dragon potion', 238, 29),
-(51, 'A relic from a fallen kingdom,  said to hold the key to unlocking ancient secrets.', 'Ancient Knowledge Level 5', 238, 17),
+(51, 'A relic from a fallen kingdom,  said to hold the key to unlocking ancient secrets.', 'Ancient Knowledge Level 5', 'Losers Relic', 238, 17),
 (52, 'A legendary sword forged in the heart of a dying star.', 'Stellar Blade Mastery Level 9', 'Starfire Blade', 293, 20),
 (53, 'A sacred artifact blessed by the gods themselves.', 'Divine Blessing Level 8', 'Sacred Talisman', 38, 22),
 (54, 'A rare plant with healing properties,  known to cure even the most deadly of poisons.', 'Herbal Remedies Level 6', 'Remedy for a Heart Broken', 203, 22),
@@ -1369,7 +1369,7 @@ VALUES
 (117, 'Restore things', 'Blosson Level 40','Elixir of Restoration', 283, 29),
 (118, 'You get a new look!', 'Divine Health Level 51','Elixir of Renewal', 211, 24),
 (119, 'A deathstalker poison xd', 'Intelligence Level 1000', 'Deathstalker Poison', 161, 30),
-(120, 'An elixir from a very nice dragon', 'Shadow Manipulation Level 8', 'Draconic Elixir', 208, 11)
+(120, 'An elixir from a very nice dragon', 'Shadow Manipulation Level 8', 'Draconic Elixir', 208, 11);
 
 INSERT INTO CraftingMaterials (CraftingMaterialID, Quantity, Source, CraftingUse, UsedItems)
 VALUES
@@ -1412,7 +1412,7 @@ VALUES
 (37, 6, 'Harvesting', 'Poison Crafting', 101),
 (38, 1, 'Treasure Chest', 'Relic Forging', 32),
 (39, 3, 'Rare Enemy Drop', 'Artifact Enchantment', 61),
-(40, 8, 'Crafted', 'Alchemy', 62)
+(40, 8, 'Crafted', 'Alchemy', 62);
 
 INSERT INTO Crafts (ItemID, CraftingMaterialID)
 VALUES
@@ -1535,7 +1535,7 @@ VALUES
 (117, 40),
 (118, 7),
 (119, 22),
-(120, 19)
+(120, 19);
 
 INSERT INTO Weapons (Name, ItemID, Range, Damage, Abilities, ScallingAttributes)
 VALUES
@@ -1548,9 +1548,9 @@ VALUES
 ('Eldritch Orb', 74, 54, 81, 'Eldritch Blast', 'Intelligence'),
 ('Elemental Staff', 91, 1, 19, 'Elemental Wave', 'Intelligence'),
 ('Starfall Talisman', 96, 32, 5, 'Starfall Explosion', 'Intelligence'),
-('Primordial Orb', 103, 10, 106, 'Primordial Blast', 'Intelligence')
+('Primordial Orb', 103, 10, 106, 'Primordial Blast', 'Intelligence');
 
-INSERT INTO Armours (Name, ItemID, Weight, MagicDefense, PhysicalDefense, ElementDefense)
+INSERT INTO Armours (Name, ItemID, Weight, MagicDefense, PhysicalDefense, ElementResistance)
 VALUES
 ('Guardian Plate', 9, 25, 10, 30, 'None'),
 ('Armor of the Titans', 27, 30, 15, 35, 'Light'),
@@ -1582,7 +1582,7 @@ VALUES
 ('Spacewarp Pendant', 107, 'Allows passage through dimensional rifts.'),
 ('Doomstone Orb', 108, 'Brings calamity upon foes.'),
 ('Grimoire of Shadows', 109, 'Unleashes dark and forbidden magic.'),
-('Ancient Crown', 111, 'Bestows the authority of ancient rulers.')
+('Ancient Crown', 111, 'Bestows the authority of ancient rulers.');
 
 INSERT INTO Magics (Name, ItemID, Effect, ManaCost, DamageType)
 VALUES
