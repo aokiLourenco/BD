@@ -177,6 +177,14 @@ VALUES
 (89, 'Frostbite', 'Intelligence & Frost', 'Frostbite elementals freezing the unwary in the Frostbite Caves.', 'Frostbite Elemental', 'Ice Elemental', 'Fire', 2, 36),
 (90, 'Mind Control', 'Intelligence & Control', 'Mind-controlling entities in the depths of the Mind Control Nexus.', 'Mind Control Entity', 'Mind Manipulator', 'Light', 1, 39),
 (91, 'Chaos Nova', 'Intelligence & Chaos', 'Chaos demons unleashing chaos in the Chaos Citadel.', 'Chaos Citadel Demon', 'Chaos Demon', 'Order', 5, 50),
+(92, 'Frostbite Aura', 'Intelligence & Frost', 'Chilling aura emanating from the Frostbite Caves.', 'Frostbite Wraith', 'Ice Elemental', 'Fire', 4, 39),
+(93, 'Soul Drain', 'Intelligence & Soul', 'Soul-draining specters haunting the Haunted Mausoleum.', 'Haunted Specter', 'Soul Reaper', 'Holy', 3, 34),
+(94, 'Chaos Surge', 'Intelligence & Chaos', 'Surges of chaotic energy pulsating in the Chaotic Nexus.', 'Chaotic Surge', 'Chaos Sorcerer', 'Order', 1, 37),
+(95, 'Abyssal Terror', 'Strength & Abyss', 'Terrifying abyssal entities lurking in the Depths of Despair.', 'Despair Abyssal', 'Abyssal', 'Light', 5, 44),
+(96, 'Blade Fury', 'Dexterity & Blade', 'Furious blade dancers in the Dance of Blades Academy.', 'Blade Dance Fury', 'Blademaster', 'Fire', 3, 31),
+(97, 'Necrotic Emanation', 'Intelligence & Necrotic', 'Necrotic energies radiating from the Necrotic Plains.', 'Necrotic Emissary', 'Deathbringer', 'Light', 4, 47),
+(98, 'Frostbite', 'Intelligence & Frost', 'Frostbite elementals chilling the Frostbite Caves.', 'Frostbite Spirit', 'Ice Elemental', 'Fire', 2, 36),
+(99, 'Mind Control', 'Intelligence & Control', 'Mind-controlling entities in the depths of the Control Nexus.', 'Mind Manipulation Master', 'Mind Manipulator', 'Light', 1, 39),
 (100, 'Shadowmeld', 'Dexterity & Stealth', 'Shadowy creatures blending into the darkness of the Midnight Forest.', 'Midnight Shadow', 'Shadow', 'Light', 2, 30),
 (101, 'Frostbite Aura', 'Intelligence & Frost', 'Cold aura emanating from Frostbite Caverns.', 'Frostbite Guardian', 'Ice Elemental', 'Fire', 4, 39),
 (102, 'Soul Devour', 'Intelligence & Soul', 'Souls reaping entities in the Soul Harvest Fields.', 'Soul Harvester', 'Reaper', 'Holy', 3, 34),
@@ -976,7 +984,7 @@ VALUES
 
 --
 
-SET IDENTITY_INSERT Enemies ON;
+-- SET IDENTITY_INSERT Enemies ON;
 INSERT INTO Enemies (CharacterID)
 VALUES
 (1),
@@ -1279,7 +1287,7 @@ VALUES
 (298),
 (299),
 (300);
-SET IDENTITY_INSERT Enemies OFF;
+-- SET IDENTITY_INSERT Enemies OFF;
 
 --
 
@@ -1457,7 +1465,7 @@ SET IDENTITY_INSERT CraftingMaterials OFF;
 
 --
 
-SET IDENTITY_INSERT Crafts ON;
+-- SET IDENTITY_INSERT Crafts ON;
 INSERT INTO Crafts (ItemID, CraftingMaterialID)
 VALUES
 (1, 33),
@@ -1580,11 +1588,11 @@ VALUES
 (118, 7),
 (119, 22),
 (120, 19);
-SET IDENTITY_INSERT Crafts OFF;
+-- SET IDENTITY_INSERT Crafts OFF;
 
 --
 
-SET IDENTITY_INSERT Weapons ON;
+-- SET IDENTITY_INSERT Weapons ON;
 INSERT INTO Weapons (Name, ItemID, Range, Damage, Abilities, ScallingAttributes)
 VALUES
 ('Dragons Bane', 8, 104, 84, 'Dragons Fury', 'Strength & Dexterity'),
@@ -1597,11 +1605,11 @@ VALUES
 ('Elemental Staff', 91, 1, 19, 'Elemental Wave', 'Intelligence'),
 ('Starfall Talisman', 96, 32, 5, 'Starfall Explosion', 'Intelligence'),
 ('Primordial Orb', 103, 10, 106, 'Primordial Blast', 'Intelligence');
-SET IDENTITY_INSERT Weapons OFF;
+-- SET IDENTITY_INSERT Weapons OFF;
 
 --
 
-SET IDENTITY_INSERT Armours ON;
+-- SET IDENTITY_INSERT Armours ON;
 INSERT INTO Armours (Name, ItemID, Weight, MagicDefense, PhysicalDefense, ElementResistance)
 VALUES
 ('Guardian Plate', 9, 25, 10, 30, 'None'),
@@ -1612,11 +1620,11 @@ VALUES
 ('Boots of Swiftness', 55, 5, 10, 5, 'None'),
 ('Boots of Agility', 73, 5, 15, 5, 'None'),
 ('Amulet of Protection', 80, 2, 15, 5, 'None');
-SET IDENTITY_INSERT Armours OFF;
+-- SET IDENTITY_INSERT Armours OFF;
 
 --
 
-SET IDENTITY_INSERT Talismans ON;
+-- SET IDENTITY_INSERT Talismans ON;
 INSERT INTO Talismans (Name, ItemID, Effect)
 VALUES
 ('Elden Key', 6, 'Unlocks hidden doors and passages.'),
@@ -1639,11 +1647,11 @@ VALUES
 ('Doomstone Orb', 108, 'Brings calamity upon foes.'),
 ('Grimoire of Shadows', 109, 'Unleashes dark and forbidden magic.'),
 ('Ancient Crown', 111, 'Bestows the authority of ancient rulers.');
-SET IDENTITY_INSERT Talismans OFF;
+-- SET IDENTITY_INSERT Talismans OFF;
 
 --
 
-SET IDENTITY_INSERT Magics ON;
+-- SET IDENTITY_INSERT Magics ON;
 INSERT INTO Magics (Name, ItemID, Effect, ManaCost, DamageType)
 VALUES
 ('Arcane Fury', 10, 'Unleashes a powerful burst of arcane energy.', 50, 'Arcane'),
@@ -1658,4 +1666,4 @@ VALUES
 ('Elixir of Renewal', 118, 'Restores health and vitality to the drinker.', 50, 'None'),
 ('Elixir of Restoration', 117, 'Restores magical energy to the drinker.', 40, 'None'),
 ('Panacea Elixir', 116, 'Cures all ailments and restores the drinker to full health.', 100, 'None');
-SET IDENTITY_INSERT Magics OFF;
+-- SET IDENTITY_INSERT Magics OFF;
