@@ -1,4 +1,5 @@
 --Query to populate the tables
+SET IDENTITY_INSERT Locations ON;
 INSERT INTO Locations (LocationID, Area, DESCRIPTION, Name, PointsOfInterest)
 VALUES
 (1, 
@@ -26,9 +27,11 @@ VALUES
 'NO-DATA',
 'ALTUS PLATEAU',
 'GOLDEN LINEAGE EVERGAOL');
+SET IDENTITY_INSERT Locations OFF;
 
 --
 
+SET IDENTITY_INSERT Dungeons ON;
 INSERT INTO Dungeons (DungeonID, LocationID, Area, Name, MainBoss)
 VALUES 
 (1, 1, 'Limgrave', 'Castle of Storms', 'Lord of Lightning'),
@@ -61,9 +64,11 @@ VALUES
 (28, 3, 'Liurnia of the Lakes', 'Caelid Bluffs', 'Lady of the Recluse'),
 (29, 3, 'Liurnia of the Lakes', 'Vargalt Castle', 'Vargalt'),
 (30, 3, 'Liurnia of the Lakes', 'Stormveil Castle', 'King Renn, Lord of Storms');
+SET IDENTITY_INSERT Dungeons OFF;
 
 --
 
+SET IDENTITY_INSERT Characters ON;
 INSERT INTO Characters (CharacterID, Attacks, Attributes, DESCRIPTION, Name, Class, Weakness, LocationID, LEVEL)
 VALUES
 (1, 'Ground Dive', 'Health & Poise', 'The Giant Bats of Limgrave are nocturnal creatures and often rest during the day, unless they are disturbed.', 'Giant Bat', 'Confessor', 'Fire', 1, 1),
@@ -438,7 +443,11 @@ VALUES
 (378, 'Frostbite', 'Intelligence & Frost', 'Frostbite elementals freezing the unwary in the Frostbite Caves.', 'Frostbite Elemental', 'Ice Elemental', 'Fire', 2, 36),
 (379, 'Mind Control', 'Intelligence & Control', 'Mind-controlling entities in the depths of the Mind Control Nexus.', 'Mind Control Entity', 'Mind Manipulator', 'Light', 1, 39),
 (380, 'Chaos Nova', 'Intelligence & Chaos', 'Chaos demons unleashing chaos in the Chaos Citadel.', 'Chaos Citadel Demon', 'Chaos Demon', 'Order', 5, 50);
+SET IDENTITY_INSERT Characters OFF;
 
+--
+
+SET IDENTITY_INSERT IsAt ON;
 INSERT INTO IsAt (CharacterID, LocationID)
 VALUES
 (1, 2),
@@ -821,7 +830,11 @@ VALUES
 (378, 1),
 (379, 5),
 (380, 5);
+SET IDENTITY_INSERT IsAt OFF;
 
+--
+
+SET IDENTITY_INSERT Bosses ON;
 INSERT INTO Bosses (CharacterID, Cutscene)
 VALUES
 (1, 'I'),
@@ -944,7 +957,11 @@ VALUES
 (118, 'CXVIII'),
 (119, 'CXIX'),
 (120, 'CXX');
+SET IDENTITY_INSERT Bosses OFF;
 
+--
+
+SET IDENTITY_INSERT Enemies ON;
 INSERT INTO Enemies (CharacterID)
 VALUES
 (1),
@@ -1247,7 +1264,11 @@ VALUES
 (298),
 (299),
 (300);
+SET IDENTITY_INSERT Enemies OFF;
 
+--
+
+SET IDENTITY_INSERT Items ON;
 INSERT INTO Items (ItemID, DESCRIPTION, UseRequisites, Name, Owner, Award)
 VALUES
 (1, 'A basic healing item that replenishes a small amount of health.', 'None', 'Healing Herb', 308, 3),
@@ -1370,7 +1391,11 @@ VALUES
 (118, 'You get a new look!', 'Divine Health Level 51','Elixir of Renewal', 211, 24),
 (119, 'A deathstalker poison xd', 'Intelligence Level 1000', 'Deathstalker Poison', 161, 30),
 (120, 'An elixir from a very nice dragon', 'Shadow Manipulation Level 8', 'Draconic Elixir', 208, 11);
+SET IDENTITY_INSERT Items OFF;
 
+--
+
+SET IDENTITY_INSERT CraftingMaterials ON;
 INSERT INTO CraftingMaterials (CraftingMaterialID, Quantity, Source, CraftingUse, UsedItems)
 VALUES
 (2, 3, 'Loot Drops', 'Weapon Enhancement', 23),
@@ -1413,7 +1438,11 @@ VALUES
 (38, 1, 'Treasure Chest', 'Relic Forging', 32),
 (39, 3, 'Rare Enemy Drop', 'Artifact Enchantment', 61),
 (40, 8, 'Crafted', 'Alchemy', 62);
+SET IDENTITY_INSERT CraftingMaterials OFF;
 
+--
+
+SET IDENTITY_INSERT Crafts ON;
 INSERT INTO Crafts (ItemID, CraftingMaterialID)
 VALUES
 (1, 33),
@@ -1536,7 +1565,11 @@ VALUES
 (118, 7),
 (119, 22),
 (120, 19);
+SET IDENTITY_INSERT Crafts OFF;
 
+--
+
+SET IDENTITY_INSERT Weapons ON;
 INSERT INTO Weapons (Name, ItemID, Range, Damage, Abilities, ScallingAttributes)
 VALUES
 ('Dragons Bane', 8, 104, 84, 'Dragons Fury', 'Strength & Dexterity'),
@@ -1549,7 +1582,11 @@ VALUES
 ('Elemental Staff', 91, 1, 19, 'Elemental Wave', 'Intelligence'),
 ('Starfall Talisman', 96, 32, 5, 'Starfall Explosion', 'Intelligence'),
 ('Primordial Orb', 103, 10, 106, 'Primordial Blast', 'Intelligence');
+SET IDENTITY_INSERT Weapons OFF;
 
+--
+
+SET IDENTITY_INSERT Armours ON;
 INSERT INTO Armours (Name, ItemID, Weight, MagicDefense, PhysicalDefense, ElementResistance)
 VALUES
 ('Guardian Plate', 9, 25, 10, 30, 'None'),
@@ -1560,7 +1597,11 @@ VALUES
 ('Boots of Swiftness', 55, 5, 10, 5, 'None'),
 ('Boots of Agility', 73, 5, 15, 5, 'None'),
 ('Amulet of Protection', 80, 2, 15, 5, 'None');
+SET IDENTITY_INSERT Armours OFF;
 
+--
+
+SET IDENTITY_INSERT Talismans ON;
 INSERT INTO Talismans (Name, ItemID, Effect)
 VALUES
 ('Elden Key', 6, 'Unlocks hidden doors and passages.'),
@@ -1583,7 +1624,11 @@ VALUES
 ('Doomstone Orb', 108, 'Brings calamity upon foes.'),
 ('Grimoire of Shadows', 109, 'Unleashes dark and forbidden magic.'),
 ('Ancient Crown', 111, 'Bestows the authority of ancient rulers.');
+SET IDENTITY_INSERT Talismans OFF;
 
+--
+
+SET IDENTITY_INSERT Magics ON;
 INSERT INTO Magics (Name, ItemID, Effect, ManaCost, DamageType)
 VALUES
 ('Arcane Fury', 10, 'Unleashes a powerful burst of arcane energy.', 50, 'Arcane'),
@@ -1598,3 +1643,4 @@ VALUES
 ('Elixir of Renewal', 118, 'Restores health and vitality to the drinker.', 50, 'None'),
 ('Elixir of Restoration', 117, 'Restores magical energy to the drinker.', 40, 'None'),
 ('Panacea Elixir', 116, 'Cures all ailments and restores the drinker to full health.', 100, 'None');
+SET IDENTITY_INSERT Magics OFF;
