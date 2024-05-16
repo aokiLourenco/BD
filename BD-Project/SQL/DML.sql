@@ -1,4 +1,19 @@
 --Query to populate the tables
+DELETE FROM Magics
+DELETE FROM Talismans
+DELETE FROM Armours
+DELETE FROM Weapons
+DELETE FROM Crafts
+DELETE FROM CraftingMaterials
+DELETE FROM Items
+DELETE FROM Enemies
+DELETE FROM Bosses
+DELETE FROM IsAt
+DELETE FROM Characters
+DELETE FROM Dungeons
+DELETE FROM Locations
+
+
 SET IDENTITY_INSERT Locations ON;
 INSERT INTO Locations (LocationID, Area, DESCRIPTION, Name, PointsOfInterest)
 VALUES
@@ -447,7 +462,7 @@ SET IDENTITY_INSERT Characters OFF;
 
 --
 
-SET IDENTITY_INSERT IsAt ON;
+-- SET IDENTITY_INSERT IsAt ON;
 INSERT INTO IsAt (CharacterID, LocationID)
 VALUES
 (1, 2),
@@ -830,11 +845,11 @@ VALUES
 (378, 1),
 (379, 5),
 (380, 5);
-SET IDENTITY_INSERT IsAt OFF;
+-- SET IDENTITY_INSERT IsAt OFF;
 
 --
 
-SET IDENTITY_INSERT Bosses ON;
+-- SET IDENTITY_INSERT Bosses ON;
 INSERT INTO Bosses (CharacterID, Cutscene)
 VALUES
 (1, 'I'),
@@ -957,7 +972,7 @@ VALUES
 (118, 'CXVIII'),
 (119, 'CXIX'),
 (120, 'CXX');
-SET IDENTITY_INSERT Bosses OFF;
+-- SET IDENTITY_INSERT Bosses OFF;
 
 --
 
