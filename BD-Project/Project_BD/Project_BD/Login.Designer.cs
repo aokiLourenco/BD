@@ -29,6 +29,7 @@ namespace Project_BD
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             button1 = new Button();
             textBox1 = new TextBox();
             label1 = new Label();
@@ -47,54 +48,63 @@ namespace Project_BD
             button1.TabIndex = 0;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += this.button1_Click;
+            button1.Click += button1_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(481, 284);
+            textBox1.Location = new Point(497, 282);
+            textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(300, 23);
+            textBox1.Size = new Size(364, 25);
             textBox1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(372, 282);
+            label1.Location = new Point(394, 282);
             label1.Name = "label1";
             label1.Size = new Size(97, 25);
             label1.TabIndex = 2;
             label1.Text = "Username";
+            label1.Click += label1_Click_1;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(481, 351);
+            textBox2.Location = new Point(497, 349);
+            textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(300, 23);
+            textBox2.Size = new Size(364, 25);
             textBox2.TabIndex = 3;
+            textBox2.TextChanged += textBox2_TextChanged_1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(372, 349);
+            label2.Location = new Point(396, 349);
             label2.Name = "label2";
             label2.Size = new Size(91, 25);
             label2.TabIndex = 4;
             label2.Text = "Password";
+            label2.Click += label2_Click_2;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1264, 681);
             Controls.Add(label2);
             Controls.Add(textBox2);
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(button1);
+            DoubleBuffered = true;
             Name = "Login";
             Text = "Welcome";
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
