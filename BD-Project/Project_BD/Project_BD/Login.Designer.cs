@@ -1,4 +1,5 @@
-﻿namespace Project_BD
+﻿
+namespace Project_BD
 {
     partial class Login
     {
@@ -96,6 +97,11 @@
             Text = "Welcome";
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
