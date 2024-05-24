@@ -1669,5 +1669,5 @@ VALUES
 -- SET IDENTITY_INSERT Magics OFF;
 
 UPDATE Characters
-SET Password_Character = '12345'
+SET LEVEL = '12345'
 WHERE CharacterID >= 1;

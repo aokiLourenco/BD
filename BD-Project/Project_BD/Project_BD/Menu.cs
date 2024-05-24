@@ -16,6 +16,8 @@ namespace Project_BD
     public partial class Menu : Form
     {
 
+        public static string SQLConnectionString = "Data Source = (localdb)\\LocalEldenVault;Initial Catalog=master;Integrated Security=True;Encrypt=False";
+
         private SqlConnection CN;
 
         public Menu()
@@ -28,7 +30,7 @@ namespace Project_BD
         {
             public static SqlConnection getSGBDConnection()
             {
-                return new SqlConnection("data source = tcp:mednat.ieeta.pt\\SQLSERVER,12; Initial Catalog = p1g2; uid = p1g2; password = #Escr@v0sD01t; TrustServerCertificate=true");
+                return new SqlConnection(SQLConnectionString);
             }
         }
 

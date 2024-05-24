@@ -62,11 +62,11 @@ namespace Project_BD
                     {
                         connection.Open();
 
-                        string query = "SELECT COUNT(*) FROM Characters WHERE CharacterID = @CharacterID AND Password_Character = @Password_Character";
+                        string query = "SELECT COUNT(*) FROM Characters WHERE CharacterID = @CharacterID AND LEVEL = @LEVEL";
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
                             command.Parameters.AddWithValue("@CharacterID", id_elden);
-                            command.Parameters.AddWithValue("@Password_Character", password);
+                            command.Parameters.AddWithValue("@LEVEL", password);
 
                             int count = (int)command.ExecuteScalar();
 
