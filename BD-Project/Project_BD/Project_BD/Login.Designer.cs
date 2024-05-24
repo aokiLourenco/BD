@@ -35,6 +35,7 @@ namespace Project_BD
             label1 = new Label();
             textBox2 = new TextBox();
             label2 = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -42,7 +43,7 @@ namespace Project_BD
             button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 6;
             button1.Font = new Font("Segoe UI", 14F);
-            button1.Location = new Point(481, 501);
+            button1.Location = new Point(481, 447);
             button1.Name = "button1";
             button1.Size = new Size(300, 60);
             button1.TabIndex = 0;
@@ -89,6 +90,19 @@ namespace Project_BD
             label2.Text = "Password";
             label2.Click += label2_Click_2;
             // 
+            // button2
+            // 
+            button2.Cursor = Cursors.Hand;
+            button2.FlatAppearance.BorderSize = 6;
+            button2.Font = new Font("Segoe UI", 10F);
+            button2.Location = new Point(887, 312);
+            button2.Name = "button2";
+            button2.Size = new Size(89, 34);
+            button2.TabIndex = 5;
+            button2.Text = "Clear";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -96,6 +110,7 @@ namespace Project_BD
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1264, 681);
+            Controls.Add(button2);
             Controls.Add(label2);
             Controls.Add(textBox2);
             Controls.Add(label1);
@@ -109,11 +124,6 @@ namespace Project_BD
             PerformLayout();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
 
         private Button button1;
@@ -121,5 +131,6 @@ namespace Project_BD
         private Label label1;
         private TextBox textBox2;
         private Label label2;
+        private Button button2;
     }
 }

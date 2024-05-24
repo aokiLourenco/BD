@@ -1667,3 +1667,7 @@ VALUES
 ('Elixir of Restoration', 117, 'Restores magical energy to the drinker.', 40, 'None'),
 ('Panacea Elixir', 116, 'Cures all ailments and restores the drinker to full health.', 100, 'None');
 -- SET IDENTITY_INSERT Magics OFF;
+
+UPDATE Characters
+SET Password_Character = '12345'
+WHERE CharacterID >= 1;

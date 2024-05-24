@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\project_bd\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -27,6 +35,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
+              "RelativeDocumentMoniker": "Project_BD\\Menu.cs",
+              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
+              "RelativeToolTip": "Project_BD\\Menu.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T10:16:53.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Menu.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
+              "RelativeDocumentMoniker": "Project_BD\\Menu.cs",
+              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs [Design]",
+              "RelativeToolTip": "Project_BD\\Menu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-24T10:15:25.031Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Login.cs",
               "RelativeDocumentMoniker": "Project_BD\\Login.cs",
@@ -38,26 +71,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Login.Designer.cs",
               "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Login.Designer.cs",
               "RelativeDocumentMoniker": "Project_BD\\Login.Designer.cs",
               "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Login.Designer.cs",
               "RelativeToolTip": "Project_BD\\Login.Designer.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAUwHEAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-23T20:56:05.386Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Login.cs",
               "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Login.cs",
               "RelativeDocumentMoniker": "Project_BD\\Login.cs",
               "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Login.cs",
               "RelativeToolTip": "Project_BD\\Login.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE0AAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-23T19:59:32.079Z",
               "EditorCaption": ""
