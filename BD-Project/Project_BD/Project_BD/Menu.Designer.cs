@@ -108,16 +108,17 @@
             // 
             // button8
             // 
-            button8.Location = new Point(822, 76);
+            button8.Location = new Point(1146, 550);
             button8.Name = "button8";
             button8.Size = new Size(75, 23);
             button8.TabIndex = 7;
             button8.Text = "Crafts";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button9
             // 
-            button9.Location = new Point(903, 76);
+            button9.Location = new Point(1065, 637);
             button9.Name = "button9";
             button9.Size = new Size(75, 23);
             button9.TabIndex = 8;
@@ -126,7 +127,7 @@
             // 
             // button10
             // 
-            button10.Location = new Point(984, 76);
+            button10.Location = new Point(1065, 608);
             button10.Name = "button10";
             button10.Size = new Size(75, 23);
             button10.TabIndex = 9;
@@ -135,7 +136,7 @@
             // 
             // button11
             // 
-            button11.Location = new Point(1065, 76);
+            button11.Location = new Point(1065, 579);
             button11.Name = "button11";
             button11.Size = new Size(75, 23);
             button11.TabIndex = 10;
@@ -144,7 +145,7 @@
             // 
             // button12
             // 
-            button12.Location = new Point(1158, 76);
+            button12.Location = new Point(1065, 550);
             button12.Name = "button12";
             button12.Size = new Size(75, 23);
             button12.TabIndex = 11;
