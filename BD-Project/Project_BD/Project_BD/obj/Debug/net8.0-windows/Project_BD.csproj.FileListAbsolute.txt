@@ -79,3 +79,10 @@ C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\bin\Debu
 C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.csproj.AssemblyReference.cache
 C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Menu.resources
 C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.csproj.Up2Date
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Bosses.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Characters.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.CraftingMaterials.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Dungeons.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Enemies.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Items.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Locations.resources
