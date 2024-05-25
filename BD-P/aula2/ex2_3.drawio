@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-01T22:19:57.031Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="3JNWsdI16e3svPGTwxPe" version="24.0.0" type="device">
+<mxfile host="app.diagrams.net" modified="2024-03-02T12:31:08.600Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="oQltYFhOO3ytACyxljIY" version="24.0.0" type="device">
   <diagram name="Página-1" id="U_ZhXe9Kxc5wxK5xduxr">
-    <mxGraphModel dx="1903" dy="639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1626" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -193,11 +193,11 @@
         <mxCell id="vV1U9XySq1Pf1qRB2HZf-6" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="320" y="592" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Gv51Gw8MIM_1CRvPnEDy-2" value="Is a" style="triangle;whiteSpace=wrap;html=1;rotation=-89;" vertex="1" parent="1">
-          <mxGeometry x="285" y="342" width="60" height="80" as="geometry" />
+        <mxCell id="lqbGOn5seDo92mtcWmO9-1" value="Is a" style="triangle;whiteSpace=wrap;html=1;direction=north;" vertex="1" parent="1">
+          <mxGeometry x="280" y="352" width="60" height="38" as="geometry" />
         </mxCell>
-        <mxCell id="Gv51Gw8MIM_1CRvPnEDy-3" value="Is a Disjoint" style="triangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="240" y="520" width="60" height="80" as="geometry" />
+        <mxCell id="lqbGOn5seDo92mtcWmO9-2" value="Is a&lt;div&gt;Disjoint&lt;/div&gt;" style="triangle;whiteSpace=wrap;html=1;direction=north;" vertex="1" parent="1">
+          <mxGeometry x="230" y="532" width="80" height="48" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

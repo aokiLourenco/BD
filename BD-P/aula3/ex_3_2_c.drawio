@@ -1,0 +1,190 @@
+<mxfile host="app.diagrams.net" modified="2024-03-08T18:06:58.722Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="dzaAO72B6I-gfOANUsXD" version="24.0.2" type="device">
+  <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
+    <mxGraphModel dx="901" dy="499" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-2" value="&lt;u&gt;Number&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="50" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="5akX8QHyq344Yt8WoX7Z-3" target="5akX8QHyq344Yt8WoX7Z-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-3" value="&lt;u&gt;Flight_Number&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="150" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-4" value="Flight" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="20" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-5" value="Flight_Leg" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="30" y="120" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-7" value="Leg_Instance" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="20" y="220" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-8" value="Seat" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="390" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-9" value="Airport" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="890" y="20" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-10" value="Airplane_Type" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="20" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-11" value="Airplane" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1200" y="148" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-12" value="Fare" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1190" y="368" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-13" value="Airline" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="50" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-14" value="Weekdays" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="50" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-17" value="&lt;u&gt;Leg_No&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="150" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-18" value="Departure_Airport" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-19" value="Arrival_Airport" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="150" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-20" value="Schedule_dep_time" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="150" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-21" value="Schedule_arr_time" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="510" y="150" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="5akX8QHyq344Yt8WoX7Z-22" target="5akX8QHyq344Yt8WoX7Z-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="145" y="220" />
+              <mxPoint x="85" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-22" value="&lt;u&gt;Flight_Number&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="290" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="5akX8QHyq344Yt8WoX7Z-23" target="5akX8QHyq344Yt8WoX7Z-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-23" value="&lt;u&gt;Flight_Leg_No&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="290" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-24" value="&lt;u&gt;Date&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="290" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-25" value="Airplane_ID" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="290" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-26" value="Airplane_ID" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="290" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-27" value="Departs_Airport_Time" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="290" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-28" value="Arrival_Airport_Time" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="590" y="290" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-29" value="Airport_Airport_Code" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="720" y="290" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="5akX8QHyq344Yt8WoX7Z-30" target="5akX8QHyq344Yt8WoX7Z-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="265" y="370" />
+              <mxPoint x="145" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-30" value="&lt;u&gt;Flight_Number&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="220" y="450" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="5akX8QHyq344Yt8WoX7Z-31" target="5akX8QHyq344Yt8WoX7Z-23">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="365" y="360" />
+              <mxPoint x="245" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-31" value="&lt;u&gt;Flight_Leg_No&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="310" y="450" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="5akX8QHyq344Yt8WoX7Z-32" target="5akX8QHyq344Yt8WoX7Z-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-32" value="&lt;u&gt;Leg_Instance_Date&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="450" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5akX8QHyq344Yt8WoX7Z-33" value="&lt;u&gt;Seat_Num&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="450" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-1" value="&lt;u&gt;Airport_Code&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="50" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-2" value="City" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="50" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-3" value="State" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="50" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-4" value="Name" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="50" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-5" value="&lt;u&gt;Type_name&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="50" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-6" value="&amp;nbsp;Max_seats" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="50" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-8" value="Company" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="50" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="MSDBwLyu4rdvEuBbyv-S-9" target="MSDBwLyu4rdvEuBbyv-S-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-9" value="&lt;u&gt;Airplane_Type_name&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="200" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-10" value="&lt;u&gt;Airplane_ID&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="200" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-11" value="Total_Num_Seats" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1410" y="200" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-12" value="&lt;u&gt;Code&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="400" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="MSDBwLyu4rdvEuBbyv-S-13" target="5akX8QHyq344Yt8WoX7Z-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="420" />
+              <mxPoint x="870" y="100" />
+              <mxPoint x="85" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-13" value="&lt;u&gt;Flight_Number&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="400" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-14" value="Amount" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="400" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-15" value="Restrictions" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="400" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-24" value="Reservation_Custumer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="450" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MSDBwLyu4rdvEuBbyv-S-25" value="Reservation_Cphone" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="450" width="130" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
