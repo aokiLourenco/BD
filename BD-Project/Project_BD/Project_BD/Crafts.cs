@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_BD
 {
-    public partial class Enemies : Form
+    public partial class Crafts : Form
     {
-        public Enemies()
+        public Crafts()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Project_BD
 {
-    partial class Bosses
+    partial class Crafts
     {
         /// <summary>
         /// Required designer variable.
@@ -62,14 +62,14 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // Bosses
+            // Crafts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
-            Name = "Bosses";
-            Text = "Bosses";
+            Name = "Crafts";
+            Text = "Crafts";
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }

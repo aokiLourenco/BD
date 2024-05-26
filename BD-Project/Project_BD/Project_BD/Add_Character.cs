@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace Project_BD
 {
-    public partial class Enemies : Form
+    public partial class Add_Character : Form
     {
-        public Enemies()
+        public Add_Character()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu menu = new Menu();
-            menu.Show();
         }
     }
 }
