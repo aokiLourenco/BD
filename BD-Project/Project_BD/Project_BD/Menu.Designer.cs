@@ -28,165 +28,251 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox1 = new TextBox();
-            button3 = new Button();
-            button1 = new Button();
-            button4 = new Button();
-            button2 = new Button();
-            button7 = new Button();
-            button5 = new Button();
-            button8 = new Button();
-            button6 = new Button();
+            CharactersButton = new Button();
+            LocationsButton = new Button();
+            BossesButton = new Button();
+            DugeonsButton = new Button();
+            CraftingButton = new Button();
+            EnemiesButton = new Button();
+            CraftsButton = new Button();
+            ItemsButton = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
+            dataGridView1 = new DataGridView();
+            DropBox = new ComboBox();
+            SearchDataBox = new TextBox();
+            ClearFilter = new Button();
+            AddButton = new Button();
+            DeleteButton = new Button();
+            EditButton = new Button();
+            ClearSelectionButton = new Button();
             tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // CharactersButton
             // 
-            label1.Anchor = AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(240, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(73, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Search:";
-            label1.Click += label1_Click;
+            CharactersButton.Anchor = AnchorStyles.None;
+            CharactersButton.Font = new Font("Segoe UI", 14F);
+            CharactersButton.Location = new Point(205, 16);
+            CharactersButton.Name = "CharactersButton";
+            CharactersButton.Size = new Size(137, 38);
+            CharactersButton.TabIndex = 2;
+            CharactersButton.Text = "Characters";
+            CharactersButton.UseVisualStyleBackColor = true;
+            CharactersButton.Click += button3_Click;
             // 
-            // textBox1
+            // LocationsButton
             // 
-            textBox1.Anchor = AnchorStyles.Left;
-            tableLayoutPanel1.SetColumnSpan(textBox1, 3);
-            textBox1.Location = new Point(319, 38);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(692, 23);
-            textBox1.TabIndex = 13;
-            textBox1.TextChanged += textBox1_TextChanged;
+            LocationsButton.Anchor = AnchorStyles.None;
+            LocationsButton.Font = new Font("Segoe UI", 14F);
+            LocationsButton.Location = new Point(491, 16);
+            LocationsButton.Name = "LocationsButton";
+            LocationsButton.Size = new Size(137, 38);
+            LocationsButton.TabIndex = 0;
+            LocationsButton.Text = "Locations";
+            LocationsButton.UseVisualStyleBackColor = true;
+            LocationsButton.Click += button1_Click;
             // 
-            // button3
+            // BossesButton
             // 
-            button3.Anchor = AnchorStyles.None;
-            button3.Font = new Font("Segoe UI", 14F);
-            button3.Location = new Point(374, 144);
-            button3.Name = "button3";
-            button3.Size = new Size(200, 200);
-            button3.TabIndex = 2;
-            button3.Text = "Characters";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            BossesButton.Anchor = AnchorStyles.None;
+            BossesButton.Font = new Font("Segoe UI", 14F);
+            BossesButton.Location = new Point(62, 16);
+            BossesButton.Name = "BossesButton";
+            BossesButton.Size = new Size(137, 38);
+            BossesButton.TabIndex = 3;
+            BossesButton.Text = "Bosses";
+            BossesButton.UseVisualStyleBackColor = true;
+            BossesButton.Click += button4_Click;
             // 
-            // button1
+            // DugeonsButton
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Font = new Font("Segoe UI", 14F);
-            button1.Location = new Point(1006, 144);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 200);
-            button1.TabIndex = 0;
-            button1.Text = "Locations";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            DugeonsButton.Anchor = AnchorStyles.None;
+            DugeonsButton.Font = new Font("Segoe UI", 14F);
+            DugeonsButton.Location = new Point(1063, 16);
+            DugeonsButton.Name = "DugeonsButton";
+            DugeonsButton.Size = new Size(137, 38);
+            DugeonsButton.TabIndex = 1;
+            DugeonsButton.Text = "Dungeons";
+            DugeonsButton.UseVisualStyleBackColor = true;
+            DugeonsButton.Click += button2_Click;
             // 
-            // button4
+            // CraftingButton
             // 
-            button4.Anchor = AnchorStyles.None;
-            button4.Font = new Font("Segoe UI", 14F);
-            button4.Location = new Point(58, 144);
-            button4.Name = "button4";
-            button4.Size = new Size(200, 200);
-            button4.TabIndex = 3;
-            button4.Text = "Bosses";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            CraftingButton.Anchor = AnchorStyles.None;
+            CraftingButton.Font = new Font("Segoe UI", 11F);
+            CraftingButton.Location = new Point(348, 16);
+            CraftingButton.Name = "CraftingButton";
+            CraftingButton.Size = new Size(137, 38);
+            CraftingButton.TabIndex = 6;
+            CraftingButton.Text = "Crafting Materials";
+            CraftingButton.UseVisualStyleBackColor = true;
+            CraftingButton.Click += button7_Click;
             // 
-            // button2
+            // EnemiesButton
             // 
-            button2.Anchor = AnchorStyles.None;
-            button2.Font = new Font("Segoe UI", 14F);
-            button2.Location = new Point(1006, 435);
-            button2.Name = "button2";
-            button2.Size = new Size(200, 200);
-            button2.TabIndex = 1;
-            button2.Text = "Dungeons";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            EnemiesButton.Anchor = AnchorStyles.None;
+            EnemiesButton.Font = new Font("Segoe UI", 14F);
+            EnemiesButton.Location = new Point(634, 16);
+            EnemiesButton.Name = "EnemiesButton";
+            EnemiesButton.Size = new Size(137, 38);
+            EnemiesButton.TabIndex = 4;
+            EnemiesButton.Text = "Enemies";
+            EnemiesButton.UseVisualStyleBackColor = true;
+            EnemiesButton.Click += button5_Click;
             // 
-            // button7
+            // CraftsButton
             // 
-            button7.Anchor = AnchorStyles.None;
-            button7.Font = new Font("Segoe UI", 14F);
-            button7.Location = new Point(690, 144);
-            button7.Name = "button7";
-            button7.Size = new Size(200, 200);
-            button7.TabIndex = 6;
-            button7.Text = "Crafting Materials";
-            button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
+            CraftsButton.Anchor = AnchorStyles.None;
+            CraftsButton.Font = new Font("Segoe UI", 14F);
+            CraftsButton.Location = new Point(920, 16);
+            CraftsButton.Name = "CraftsButton";
+            CraftsButton.Size = new Size(137, 38);
+            CraftsButton.TabIndex = 7;
+            CraftsButton.Text = "Crafts";
+            CraftsButton.UseVisualStyleBackColor = true;
+            CraftsButton.Click += button8_Click;
             // 
-            // button5
+            // ItemsButton
             // 
-            button5.Anchor = AnchorStyles.None;
-            button5.Font = new Font("Segoe UI", 14F);
-            button5.Location = new Point(58, 435);
-            button5.Name = "button5";
-            button5.Size = new Size(200, 200);
-            button5.TabIndex = 4;
-            button5.Text = "Enemies";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
-            // 
-            // button8
-            // 
-            button8.Anchor = AnchorStyles.None;
-            button8.Font = new Font("Segoe UI", 14F);
-            button8.Location = new Point(690, 435);
-            button8.Name = "button8";
-            button8.Size = new Size(200, 200);
-            button8.TabIndex = 7;
-            button8.Text = "Crafts";
-            button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
-            // 
-            // button6
-            // 
-            button6.Anchor = AnchorStyles.None;
-            button6.Font = new Font("Segoe UI", 14F);
-            button6.Location = new Point(374, 435);
-            button6.Name = "button6";
-            button6.Size = new Size(200, 200);
-            button6.TabIndex = 5;
-            button6.Text = "Items";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            ItemsButton.Anchor = AnchorStyles.None;
+            ItemsButton.Font = new Font("Segoe UI", 14F);
+            ItemsButton.Location = new Point(777, 16);
+            ItemsButton.Name = "ItemsButton";
+            ItemsButton.Size = new Size(137, 38);
+            ItemsButton.TabIndex = 5;
+            ItemsButton.Text = "Items";
+            ItemsButton.UseVisualStyleBackColor = true;
+            ItemsButton.Click += button6_Click;
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(button6, 1, 2);
-            tableLayoutPanel1.Controls.Add(button8, 2, 2);
-            tableLayoutPanel1.Controls.Add(button5, 0, 2);
-            tableLayoutPanel1.Controls.Add(button7, 2, 1);
-            tableLayoutPanel1.Controls.Add(button2, 3, 2);
-            tableLayoutPanel1.Controls.Add(button4, 0, 1);
-            tableLayoutPanel1.Controls.Add(button1, 3, 1);
-            tableLayoutPanel1.Controls.Add(button3, 1, 1);
-            tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
+            tableLayoutPanel1.ColumnCount = 10;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.668984F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3303127F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3303127F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3303127F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3303127F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3346605F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3346605F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3346605F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3346605F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.671115F));
+            tableLayoutPanel1.Controls.Add(BossesButton, 1, 1);
+            tableLayoutPanel1.Controls.Add(CharactersButton, 2, 1);
+            tableLayoutPanel1.Controls.Add(CraftingButton, 3, 1);
+            tableLayoutPanel1.Controls.Add(LocationsButton, 4, 1);
+            tableLayoutPanel1.Controls.Add(DugeonsButton, 8, 1);
+            tableLayoutPanel1.Controls.Add(CraftsButton, 7, 1);
+            tableLayoutPanel1.Controls.Add(ItemsButton, 6, 1);
+            tableLayoutPanel1.Controls.Add(EnemiesButton, 5, 1);
+            tableLayoutPanel1.Controls.Add(dataGridView1, 1, 4);
+            tableLayoutPanel1.Controls.Add(DropBox, 6, 3);
+            tableLayoutPanel1.Controls.Add(SearchDataBox, 7, 3);
+            tableLayoutPanel1.Controls.Add(ClearFilter, 8, 3);
+            tableLayoutPanel1.Controls.Add(AddButton, 1, 6);
+            tableLayoutPanel1.Controls.Add(EditButton, 2, 6);
+            tableLayoutPanel1.Controls.Add(DeleteButton, 3, 6);
+            tableLayoutPanel1.Controls.Add(ClearSelectionButton, 8, 6);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 99F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.RowCount = 8;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 1.96078444F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 6.46383429F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.094983F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.176749F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 21.5461082F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 21.5461082F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 21.5461082F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.6653252F));
             tableLayoutPanel1.Size = new Size(1264, 681);
             tableLayoutPanel1.TabIndex = 14;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tableLayoutPanel1.SetColumnSpan(dataGridView1, 8);
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(62, 170);
+            dataGridView1.Name = "dataGridView1";
+            tableLayoutPanel1.SetRowSpan(dataGridView1, 2);
+            dataGridView1.Size = new Size(1138, 286);
+            dataGridView1.TabIndex = 8;
+            // 
+            // DropBox
+            // 
+            DropBox.Anchor = AnchorStyles.None;
+            DropBox.FormattingEnabled = true;
+            DropBox.Location = new Point(785, 128);
+            DropBox.Name = "DropBox";
+            DropBox.Size = new Size(121, 23);
+            DropBox.TabIndex = 9;
+            DropBox.Text = "Search";
+            // 
+            // SearchDataBox
+            // 
+            SearchDataBox.Anchor = AnchorStyles.None;
+            SearchDataBox.ForeColor = SystemColors.WindowFrame;
+            SearchDataBox.Location = new Point(938, 128);
+            SearchDataBox.Name = "SearchDataBox";
+            SearchDataBox.Size = new Size(100, 23);
+            SearchDataBox.TabIndex = 11;
+            SearchDataBox.Text = "Search data";
+            // 
+            // ClearFilter
+            // 
+            ClearFilter.Anchor = AnchorStyles.None;
+            ClearFilter.Location = new Point(1094, 128);
+            ClearFilter.Name = "ClearFilter";
+            ClearFilter.Size = new Size(75, 23);
+            ClearFilter.TabIndex = 12;
+            ClearFilter.Text = "Clear";
+            ClearFilter.UseVisualStyleBackColor = true;
+            // 
+            // AddButton
+            // 
+            AddButton.Anchor = AnchorStyles.None;
+            AddButton.Font = new Font("Segoe UI", 14F);
+            AddButton.Location = new Point(67, 503);
+            AddButton.Name = "AddButton";
+            AddButton.Size = new Size(127, 58);
+            AddButton.TabIndex = 13;
+            AddButton.Text = "Add";
+            AddButton.UseVisualStyleBackColor = true;
+            // 
+            // DeleteButton
+            // 
+            DeleteButton.Anchor = AnchorStyles.None;
+            DeleteButton.Font = new Font("Segoe UI", 14F);
+            DeleteButton.Location = new Point(353, 503);
+            DeleteButton.Name = "DeleteButton";
+            DeleteButton.Size = new Size(127, 58);
+            DeleteButton.TabIndex = 14;
+            DeleteButton.Text = "Delete";
+            DeleteButton.UseVisualStyleBackColor = true;
+            // 
+            // EditButton
+            // 
+            EditButton.Anchor = AnchorStyles.None;
+            EditButton.Font = new Font("Segoe UI", 14F);
+            EditButton.Location = new Point(210, 503);
+            EditButton.Name = "EditButton";
+            EditButton.Size = new Size(127, 58);
+            EditButton.TabIndex = 15;
+            EditButton.Text = "Edit";
+            EditButton.UseVisualStyleBackColor = true;
+            // 
+            // ClearSelectionButton
+            // 
+            ClearSelectionButton.Anchor = AnchorStyles.None;
+            ClearSelectionButton.Font = new Font("Segoe UI", 14F);
+            ClearSelectionButton.Location = new Point(1068, 503);
+            ClearSelectionButton.Name = "ClearSelectionButton";
+            ClearSelectionButton.Size = new Size(127, 58);
+            ClearSelectionButton.TabIndex = 16;
+            ClearSelectionButton.Text = "Clear Selection";
+            ClearSelectionButton.UseVisualStyleBackColor = true;
             // 
             // Menu
             // 
@@ -199,20 +285,27 @@
             Load += Menu_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private Label label1;
-        private TextBox textBox1;
-        private Button button3;
-        private Button button1;
-        private Button button4;
-        private Button button2;
-        private Button button7;
-        private Button button5;
-        private Button button8;
-        private Button button6;
+        private Button CharactersButton;
+        private Button LocationsButton;
+        private Button BossesButton;
+        private Button DugeonsButton;
+        private Button CraftingButton;
+        private Button EnemiesButton;
+        private Button CraftsButton;
+        private Button ItemsButton;
         private TableLayoutPanel tableLayoutPanel1;
+        private DataGridView dataGridView1;
+        private ComboBox DropBox;
+        private TextBox SearchDataBox;
+        private Button ClearFilter;
+        private Button AddButton;
+        private Button DeleteButton;
+        private Button EditButton;
+        private Button ClearSelectionButton;
     }
 }

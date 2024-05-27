@@ -162,3 +162,5 @@ C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-w
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.genruntimeconfig.cache
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\ref\Project_BD.dll
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Crafts.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_Character.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Crafts.resources

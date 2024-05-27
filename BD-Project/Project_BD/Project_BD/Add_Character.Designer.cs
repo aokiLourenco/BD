@@ -30,15 +30,14 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             button1 = new Button();
-            button2 = new Button();
             textBox1 = new TextBox();
+            label1 = new Label();
             label2 = new Label();
             textBox2 = new TextBox();
             label3 = new Label();
             textBox3 = new TextBox();
             label4 = new Label();
             textBox4 = new TextBox();
-            label1 = new Label();
             label5 = new Label();
             textBox5 = new TextBox();
             label6 = new Label();
@@ -47,6 +46,7 @@
             textBox7 = new TextBox();
             label8 = new Label();
             textBox8 = new TextBox();
+            button2 = new Button();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,8 +58,8 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 144F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 130F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 71F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 67F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 46F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 92F));
             tableLayoutPanel1.Controls.Add(button1, 0, 0);
             tableLayoutPanel1.Controls.Add(textBox1, 1, 2);
             tableLayoutPanel1.Controls.Add(label1, 1, 1);
@@ -69,7 +69,6 @@
             tableLayoutPanel1.Controls.Add(textBox3, 3, 2);
             tableLayoutPanel1.Controls.Add(label4, 4, 1);
             tableLayoutPanel1.Controls.Add(textBox4, 4, 2);
-            tableLayoutPanel1.Controls.Add(button2, 6, 0);
             tableLayoutPanel1.Controls.Add(label5, 1, 3);
             tableLayoutPanel1.Controls.Add(textBox5, 1, 4);
             tableLayoutPanel1.Controls.Add(label6, 2, 3);
@@ -78,6 +77,7 @@
             tableLayoutPanel1.Controls.Add(textBox7, 3, 4);
             tableLayoutPanel1.Controls.Add(label8, 4, 3);
             tableLayoutPanel1.Controls.Add(textBox8, 4, 4);
+            tableLayoutPanel1.Controls.Add(button2, 6, 0);
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -89,7 +89,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 249F));
             tableLayoutPanel1.Size = new Size(800, 450);
             tableLayoutPanel1.TabIndex = 3;
-            tableLayoutPanel1.Paint += this.tableLayoutPanel1_Paint;
             // 
             // button1
             // 
@@ -103,20 +102,6 @@
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.ForeColor = SystemColors.ControlText;
-            button2.Location = new Point(735, 15);
-            button2.Margin = new Padding(3, 15, 15, 3);
-            button2.Name = "button2";
-            button2.Padding = new Padding(0, 1, 0, 0);
-            button2.Size = new Size(50, 46);
-            button2.TabIndex = 2;
-            button2.Text = "Confirm";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += this.button2_Click;
-            // 
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top;
@@ -124,6 +109,16 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(129, 23);
             textBox1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top;
+            label1.AutoSize = true;
+            label1.Location = new Point(160, 68);
+            label1.Name = "label1";
+            label1.Size = new Size(39, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Name";
             // 
             // label2
             // 
@@ -134,7 +129,6 @@
             label2.Size = new Size(46, 15);
             label2.TabIndex = 5;
             label2.Text = "Attacks";
-            label2.Click += this.label2_Click;
             // 
             // textBox2
             // 
@@ -180,17 +174,6 @@
             textBox4.Size = new Size(122, 23);
             textBox4.TabIndex = 10;
             // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top;
-            label1.AutoSize = true;
-            label1.Location = new Point(160, 68);
-            label1.Name = "label1";
-            label1.Size = new Size(39, 15);
-            label1.TabIndex = 4;
-            label1.Text = "Name";
-            label1.Click += this.label1_Click;
-            // 
             // label5
             // 
             label5.Anchor = AnchorStyles.Top;
@@ -200,7 +183,6 @@
             label5.Size = new Size(34, 15);
             label5.TabIndex = 11;
             label5.Text = "Class";
-            label5.Click += this.label5_Click;
             // 
             // textBox5
             // 
@@ -263,6 +245,19 @@
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(122, 23);
             textBox8.TabIndex = 18;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.ForeColor = SystemColors.ControlText;
+            button2.Location = new Point(715, 15);
+            button2.Margin = new Padding(3, 15, 15, 3);
+            button2.Name = "button2";
+            button2.Padding = new Padding(0, 1, 0, 0);
+            button2.Size = new Size(70, 46);
+            button2.TabIndex = 2;
+            button2.Text = "Confirm";
+            button2.UseVisualStyleBackColor = true;
             // 
             // Add_Character
             // 
