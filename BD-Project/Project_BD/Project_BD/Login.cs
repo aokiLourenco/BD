@@ -5,10 +5,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Project_BD.Menu;
+using System.Windows.Forms;
 
 namespace Project_BD
 {
@@ -51,10 +53,10 @@ namespace Project_BD
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string id_elden = textBox1.Text;
+            string username = textBox1.Text;
             string password = textBox2.Text;
 
-            if (!string.IsNullOrEmpty(id_elden) && !string.IsNullOrEmpty(password))
+            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
             {
                 using (SqlConnection connection = ConnectionManager.getSGBDConnection())
                 {
@@ -62,23 +64,44 @@ namespace Project_BD
                     {
                         connection.Open();
 
-                        string query = "SELECT COUNT(*) FROM Characters WHERE CharacterID = @CharacterID AND LEVEL = @LEVEL";
-                        using (SqlCommand command = new SqlCommand(query, connection))
+                        using (SHA512 sha512 = SHA512.Create())
                         {
-                            command.Parameters.AddWithValue("@CharacterID", id_elden);
-                            command.Parameters.AddWithValue("@LEVEL", password);
+                            byte[] passwordBytes = Encoding.Unicode.GetBytes(password);
+                            byte[] hashedPasswordBytes = sha512.ComputeHash(passwordBytes);
+                            string hashedPasswordHex = BitConverter.ToString(hashedPasswordBytes).Replace("-", "");
 
-                            int count = (int)command.ExecuteScalar();
+                            //MessageBox.Show("Hashed password: " + hashedPasswordHex);
 
-                            if (count > 0)
+                            string query = "SELECT Password FROM Users WHERE Username = @Username";
+                            using (SqlCommand command = new SqlCommand(query, connection))
                             {
-                                this.Hide();
-                                Menu menu = new Menu();
-                                menu.Show();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Invalid Elden ID or password");
+                                command.Parameters.AddWithValue("@Username", username);
+
+                                using (SqlDataReader reader = command.ExecuteReader())
+                                {
+                                    if (reader.Read())
+                                    {
+                                        byte[] storedHashedPasswordBytes = (byte[])reader["Password"];
+                                        string storedHashedPasswordHex = BitConverter.ToString(storedHashedPasswordBytes).Replace("-", ""); // Convert to lowercase hex string
+
+                                        if (storedHashedPasswordHex == hashedPasswordHex)
+                                        {
+                                            // Passwords match, proceed to login
+                                            this.Hide();
+                                            Menu menu = new Menu();
+                                            menu.Show();
+                                        }
+                                        else
+                                        {
+                                            // Incorrect password
+                                            MessageBox.Show("Invalid username or password");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Invalid username or password");
+                                    }
+                                }
                             }
                         }
                     }
@@ -88,7 +111,12 @@ namespace Project_BD
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Please enter both username and password.");
+            }
         }
+
 
         private void label2_Click_1(object sender, EventArgs e)
         {

@@ -12,7 +12,17 @@ DELETE FROM IsAt
 DELETE FROM Characters
 DELETE FROM Dungeons
 DELETE FROM Locations
+DELETE FROM Users
 
+--
+DECLARE @Username NVARCHAR(50) = 'admin';
+DECLARE @Password NVARCHAR(50) = 'admin';
+DECLARE @Email NVARCHAR(100) = 'admin@example.com';
+--
+
+INSERT INTO Users (Username, Password, Email)
+VALUES
+(@Username, HASHBYTES('SHA2_512', @Password), @Email);
 
 SET IDENTITY_INSERT Locations ON;
 INSERT INTO Locations (LocationID, Area, DESCRIPTION, Name, PointsOfInterest)
