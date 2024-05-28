@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,20 +40,88 @@ namespace Project_BD
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LocationsButton_Click(object sender, EventArgs e)
         {
-            //GO TO LOCATIONS PAGE
-            this.Hide();
-            Locations location  = new Locations();
-            location.Show();
+            ////GO TO LOCATIONS PAGE
+            //this.Hide();
+            //Locations location = new Locations();
+            //location.Show();
+            try
+            {
+                CN.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Locations ORDER BY Locations.LocationID", CN);
+                Debug.WriteLine(cmd);
+
+                DataTable detailsTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                Debug.WriteLine(sqlDataAdapter);
+                sqlDataAdapter.Fill(detailsTable);
+
+                //string[] columnsToKeep = { "Name", "Class", "Area" };
+
+                //// Drop unwanted columns
+                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
+                //{
+                //    DataColumn column = detailsTable.Columns[i];
+                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
+                //    {
+                //        detailsTable.Columns.Remove(column);
+                //    }
+                //}
+
+                ShowTableInfo.DataSource = detailsTable;
+                ShowTableInfo.AutoResizeRows();
+                ShowTableInfo.AutoResizeColumns();
+                ShowTableInfo.Visible = true;
+
+                CN.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please, try again");
+            }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void CraftsButton_Click(object sender, EventArgs e)
         {
-            //GO TO CRAFT PAGE
-            this.Hide();
-            Crafts craft = new Crafts();
-            craft.Show();
+            ////GO TO CRAFT PAGE
+            //this.Hide();
+            //Crafts craft = new Crafts();
+            //craft.Show();
+            try
+            {
+                CN.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Crafts ORDER BY Crafts.ItemID", CN);
+                Debug.WriteLine(cmd);
+
+                DataTable detailsTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                Debug.WriteLine(sqlDataAdapter);
+                sqlDataAdapter.Fill(detailsTable);
+
+                //string[] columnsToKeep = { "Name", "Class", "Area" };
+
+                //// Drop unwanted columns
+                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
+                //{
+                //    DataColumn column = detailsTable.Columns[i];
+                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
+                //    {
+                //        detailsTable.Columns.Remove(column);
+                //    }
+                //}
+
+                ShowTableInfo.DataSource = detailsTable;
+                ShowTableInfo.AutoResizeRows();
+                ShowTableInfo.AutoResizeColumns();
+                ShowTableInfo.Visible = true;
+
+                CN.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please, try again");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -60,63 +129,267 @@ namespace Project_BD
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void CharactersButton_Click(object sender, EventArgs e)
         {
-            //GO TO CHARACTER PAGE
-            this.Hide();
-            Characters character = new Characters();
-            character.Show();
+            //    //GO TO CHARACTER PAGE
+            //    this.Hide();
+            //    Characters character = new Characters();
+            //    character.Show();
 
+            try
+            {
+                CN.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Characters JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Characters.Name", CN);
+                Debug.WriteLine(cmd);
+
+                DataTable detailsTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                Debug.WriteLine(sqlDataAdapter);
+                sqlDataAdapter.Fill(detailsTable);
+
+                //string[] columnsToKeep = { "Name", "Class", "Area" };
+
+                //// Drop unwanted columns
+                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
+                //{
+                //    DataColumn column = detailsTable.Columns[i];
+                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
+                //    {
+                //        detailsTable.Columns.Remove(column);
+                //    }
+                //}
+                detailsTable.Columns["Area"].ColumnName = "Location";
+
+                ShowTableInfo.DataSource = detailsTable;
+                ShowTableInfo.AutoResizeRows();
+                ShowTableInfo.AutoResizeColumns();
+                ShowTableInfo.Visible = true;
+
+                CN.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please, try again");
+            }
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void BossesButton_Click(object sender, EventArgs e)
         {
-            //GO to bosses page
-            this.Hide();
-            Bosses boss = new Bosses();
-            boss.Show();
+            ////GO to bosses page
+            //this.Hide();
+            //Bosses boss = new Bosses();
+            //boss.Show();
+
+            try
+            {
+                CN.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Bosses JOIN Characters ON Bosses.CharacterID = Characters.CharacterID ORDER BY Bosses.CharacterID", CN);
+                Debug.WriteLine(cmd);
+
+                DataTable detailsTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                Debug.WriteLine(sqlDataAdapter);
+                sqlDataAdapter.Fill(detailsTable);
+
+                //string[] columnsToKeep = { "Name", "Class", "Area" };
+
+                //// Drop unwanted columns
+                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
+                //{
+                //    DataColumn column = detailsTable.Columns[i];
+                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
+                //    {
+                //        detailsTable.Columns.Remove(column);
+                //    }
+                //}
+
+                ShowTableInfo.DataSource = detailsTable;
+                ShowTableInfo.AutoResizeRows();
+                ShowTableInfo.AutoResizeColumns();
+                ShowTableInfo.Visible = true;
+
+                CN.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please, try again");
+            }
+        }
+
+        private void DungeonsButton_Click(object sender, EventArgs e)
+        {
+            ////GO TO DUNGEONS PAGE
+            //this.Hide();
+            //Dungeons dungeon = new Dungeons();
+            //dungeon.Show();
+
+            try
+            {
+                CN.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Dungeons ORDER BY Dungeons.DungeonID", CN);
+                Debug.WriteLine(cmd);
+
+                DataTable detailsTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                Debug.WriteLine(sqlDataAdapter);
+                sqlDataAdapter.Fill(detailsTable);
+
+                //string[] columnsToKeep = { "Name", "Class", "Area" };
+
+                //// Drop unwanted columns
+                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
+                //{
+                //    DataColumn column = detailsTable.Columns[i];
+                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
+                //    {
+                //        detailsTable.Columns.Remove(column);
+                //    }
+                //}
+
+                ShowTableInfo.DataSource = detailsTable;
+                ShowTableInfo.AutoResizeRows();
+                ShowTableInfo.AutoResizeColumns();
+                ShowTableInfo.Visible = true;
+
+                CN.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please, try again");
+            }
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void EnemiesButton_Click(object sender, EventArgs e)
         {
-            //GO TO DUNGEONS PAGE
-            this.Hide();
-            Dungeons dungeon = new Dungeons();
-            dungeon.Show();
+            ////GO TO ENEMY PAGE
+            //this.Hide();
+            //Enemies enemy = new Enemies();
+            //enemy.Show();
+
+            try
+            {
+                CN.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Enemies ORDER BY Enemies.CharacterID", CN);
+                Debug.WriteLine(cmd);
+
+                DataTable detailsTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                Debug.WriteLine(sqlDataAdapter);
+                sqlDataAdapter.Fill(detailsTable);
+
+                //string[] columnsToKeep = { "Name", "Class", "Area" };
+
+                //// Drop unwanted columns
+                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
+                //{
+                //    DataColumn column = detailsTable.Columns[i];
+                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
+                //    {
+                //        detailsTable.Columns.Remove(column);
+                //    }
+                //}
+
+                ShowTableInfo.DataSource = detailsTable;
+                ShowTableInfo.AutoResizeRows();
+                ShowTableInfo.AutoResizeColumns();
+                ShowTableInfo.Visible = true;
+
+                CN.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please, try again");
+            }
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void ItemsButton_Click(object sender, EventArgs e)
         {
-            //GO TO ENEMY PAGE
-            this.Hide();
-            Enemies enemy = new Enemies();
-            enemy.Show();
+            ////GO TO ITEMS PAGE
+            //this.Hide();
+            //Items item = new Items();
+            //item.Show();
+
+            try
+            {
+                CN.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Items ORDER BY Items.ItemID", CN);
+                Debug.WriteLine(cmd);
+
+                DataTable detailsTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                Debug.WriteLine(sqlDataAdapter);
+                sqlDataAdapter.Fill(detailsTable);
+
+                //string[] columnsToKeep = { "Name", "Class", "Area" };
+
+                //// Drop unwanted columns
+                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
+                //{
+                //    DataColumn column = detailsTable.Columns[i];
+                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
+                //    {
+                //        detailsTable.Columns.Remove(column);
+                //    }
+                //}
+
+                ShowTableInfo.DataSource = detailsTable;
+                ShowTableInfo.AutoResizeRows();
+                ShowTableInfo.AutoResizeColumns();
+                ShowTableInfo.Visible = true;
+
+                CN.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please, try again");
+            }
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void CraftingButton_Click(object sender, EventArgs e)
         {
-            //GO TO ITEMS PAGE
-            this.Hide();
-            Items item = new Items();
-            item.Show();
+            ////GO TO CRAFTING MATERIALS PAGE
+            //this.Hide();
+            //CraftingMaterials craftingMaterials = new CraftingMaterials();
+            //craftingMaterials.Show();
 
-        }
+            try
+            {
+                CN.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM CraftingMaterials ORDER BY CraftingMaterials.CraftingMaterialID", CN);
+                Debug.WriteLine(cmd);
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            //GO TO CRAFTING MATERIALS PAGE
-            this.Hide();
-            CraftingMaterials craftingMaterials = new CraftingMaterials();
-            craftingMaterials.Show();
+                DataTable detailsTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                Debug.WriteLine(sqlDataAdapter);
+                sqlDataAdapter.Fill(detailsTable);
 
-        }
+                //string[] columnsToKeep = { "Name", "Class", "Area" };
 
-        private void button9_Click(object sender, EventArgs e)
-        {
+                //// Drop unwanted columns
+                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
+                //{
+                //    DataColumn column = detailsTable.Columns[i];
+                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
+                //    {
+                //        detailsTable.Columns.Remove(column);
+                //    }
+                //}
+
+                ShowTableInfo.DataSource = detailsTable;
+                ShowTableInfo.AutoResizeRows();
+                ShowTableInfo.AutoResizeColumns();
+                ShowTableInfo.Visible = true;
+
+                CN.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please, try again");
+            }
 
         }
 
@@ -128,6 +401,23 @@ namespace Project_BD
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             // TEXT BOX SEARCH?
+        }
+
+        private void ShowTableInfo_CellContentClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClearSelectionButton_Click(object sender, EventArgs e)
+        {
+            // Clear the ShowTableInfo contents
+            ShowTableInfo.DataSource = false;
+
         }
     }
 }
