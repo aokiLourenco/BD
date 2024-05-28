@@ -16,6 +16,9 @@
     <Compile Update="Dungeons.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Edit_Characters.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Enemies.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -64,9 +64,7 @@ namespace Project_BD
 
         private void Back()
         {
-            this.Hide();
-            Menu menu = new Menu();
-            menu.Show();
+            this.Close();
         }
 
 
@@ -99,6 +97,7 @@ namespace Project_BD
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Character added successfully");
+                Back();
             }
             catch (Exception e)
             {
@@ -131,7 +130,7 @@ namespace Project_BD
 
 
             Add_Character_DB(name, attacks, Attributes, description, class_str, weakness, location, level);
-            Back();
+            
 
         }
 

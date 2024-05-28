@@ -200,6 +200,7 @@
             tableLayoutPanel1.SetRowSpan(ShowTableInfo, 3);
             ShowTableInfo.Size = new Size(1098, 380);
             ShowTableInfo.TabIndex = 8;
+            ShowTableInfo.CellClick += ShowTableInfo_CellClick;
             ShowTableInfo.CellContentClick += ShowTableInfo_CellContentClick;
             // 
             // DropBox
@@ -254,6 +255,7 @@
             EditButton.TabIndex = 15;
             EditButton.Text = "Edit";
             EditButton.UseVisualStyleBackColor = true;
+            EditButton.Click += EditButton_Click;
             // 
             // DeleteButton
             // 

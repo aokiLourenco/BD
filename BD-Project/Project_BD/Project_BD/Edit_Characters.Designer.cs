@@ -1,6 +1,6 @@
 ﻿namespace Project_BD
 {
-    partial class Add_Character
+    partial class Edit_Characters
     {
         /// <summary>
         /// Required designer variable.
@@ -78,7 +78,7 @@
             tableLayoutPanel1.Controls.Add(textBox_Location, 3, 4);
             tableLayoutPanel1.Controls.Add(textBox_Level, 4, 4);
             tableLayoutPanel1.Controls.Add(label8, 4, 3);
-            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Location = new Point(0, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 79.06977F));
@@ -88,7 +88,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 249F));
             tableLayoutPanel1.Size = new Size(800, 450);
-            tableLayoutPanel1.TabIndex = 3;
+            tableLayoutPanel1.TabIndex = 4;
             // 
             // button1
             // 
@@ -109,6 +109,7 @@
             textBox_Name.Name = "textBox_Name";
             textBox_Name.Size = new Size(129, 23);
             textBox_Name.TabIndex = 3;
+
             // 
             // label1
             // 
@@ -186,7 +187,6 @@
             button2.TabIndex = 2;
             button2.Text = "Confirm";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // label5
             // 
@@ -260,14 +260,14 @@
             label8.TabIndex = 18;
             label8.Text = "Level";
             // 
-            // Add_Character
+            // Edit_Characters
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
-            Name = "Add_Character";
-            Text = "Form1";
+            Name = "Edit_Characters";
+            Text = "Edit_Characters";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -277,15 +277,15 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Button button1;
-        private Button button2;
         private TextBox textBox_Name;
+        private Label label1;
         private Label label2;
         private TextBox textBox_Attacks;
         private Label label3;
         private TextBox textBox_Attributes;
         private Label label4;
         private TextBox textBox_Description;
-        private Label label1;
+        private Button button2;
         private Label label5;
         private TextBox textBox_Class;
         private Label label6;
