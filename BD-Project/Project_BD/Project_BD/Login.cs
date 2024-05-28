@@ -94,8 +94,6 @@ namespace Project_BD
                                         else
                                         {
                                             // Incorrect password
-                                            MessageBox.Show("Stored hashed password: " + storedHashedPasswordHex);
-                                            MessageBox.Show("Hashed password: " + hashedPasswordHex);
                                             MessageBox.Show("Invalid username or password");
                                         }
                                     }
