@@ -38,7 +38,6 @@
             textBox_Attributes = new TextBox();
             label4 = new Label();
             textBox_Description = new TextBox();
-            button2 = new Button();
             label5 = new Label();
             textBox_Class = new TextBox();
             label6 = new Label();
@@ -47,6 +46,7 @@
             textBox_Location = new TextBox();
             textBox_Level = new TextBox();
             label8 = new Label();
+            Confirm = new Button();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,7 +69,6 @@
             tableLayoutPanel1.Controls.Add(textBox_Attributes, 3, 2);
             tableLayoutPanel1.Controls.Add(label4, 4, 1);
             tableLayoutPanel1.Controls.Add(textBox_Description, 4, 2);
-            tableLayoutPanel1.Controls.Add(button2, 6, 0);
             tableLayoutPanel1.Controls.Add(label5, 1, 3);
             tableLayoutPanel1.Controls.Add(textBox_Class, 1, 4);
             tableLayoutPanel1.Controls.Add(label6, 2, 3);
@@ -78,6 +77,7 @@
             tableLayoutPanel1.Controls.Add(textBox_Location, 3, 4);
             tableLayoutPanel1.Controls.Add(textBox_Level, 4, 4);
             tableLayoutPanel1.Controls.Add(label8, 4, 3);
+            tableLayoutPanel1.Controls.Add(Confirm, 6, 0);
             tableLayoutPanel1.Location = new Point(0, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -109,7 +109,6 @@
             textBox_Name.Name = "textBox_Name";
             textBox_Name.Size = new Size(129, 23);
             textBox_Name.TabIndex = 3;
-
             // 
             // label1
             // 
@@ -174,19 +173,6 @@
             textBox_Description.Name = "textBox_Description";
             textBox_Description.Size = new Size(122, 23);
             textBox_Description.TabIndex = 10;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.ForeColor = SystemColors.ControlText;
-            button2.Location = new Point(714, 15);
-            button2.Margin = new Padding(3, 15, 15, 3);
-            button2.Name = "button2";
-            button2.Padding = new Padding(0, 1, 0, 0);
-            button2.Size = new Size(71, 46);
-            button2.TabIndex = 2;
-            button2.Text = "Confirm";
-            button2.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -260,6 +246,20 @@
             label8.TabIndex = 18;
             label8.Text = "Level";
             // 
+            // Confirm
+            // 
+            Confirm.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Confirm.ForeColor = SystemColors.ControlText;
+            Confirm.Location = new Point(710, 15);
+            Confirm.Margin = new Padding(3, 15, 15, 3);
+            Confirm.Name = "Confirm";
+            Confirm.Padding = new Padding(0, 1, 0, 0);
+            Confirm.Size = new Size(75, 46);
+            Confirm.TabIndex = 19;
+            Confirm.Text = "Confirm";
+            Confirm.UseVisualStyleBackColor = true;
+            Confirm.Click += Confirm_Click;
+            // 
             // Edit_Characters
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -285,7 +285,6 @@
         private TextBox textBox_Attributes;
         private Label label4;
         private TextBox textBox_Description;
-        private Button button2;
         private Label label5;
         private TextBox textBox_Class;
         private Label label6;
@@ -294,5 +293,6 @@
         private TextBox textBox_Location;
         private TextBox textBox_Level;
         private Label label8;
+        private Button Confirm;
     }
 }

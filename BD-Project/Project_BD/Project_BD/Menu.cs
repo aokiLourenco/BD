@@ -148,7 +148,7 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Characters.Name, Characters.Attacks, Characters.Attributes, Characters.DESCRIPTION,  Characters.Class, Characters.Weakness, Locations.Name, Characters.LEVEL FROM Characters JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Characters.Name", CN);
+                SqlCommand cmd = new SqlCommand("SELECT Characters.CharacterID, Characters.Name, Characters.Attacks, Characters.Attributes, Characters.DESCRIPTION,  Characters.Class, Characters.Weakness, Locations.Name, Characters.LEVEL FROM Characters JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Characters.Name", CN);
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -167,6 +167,7 @@ namespace Project_BD
                 //        detailsTable.Columns.Remove(column);
                 //    }
                 //}
+                detailsTable.Columns["CharacterID"].ColumnName = "ID";
                 detailsTable.Columns["Name1"].ColumnName = "Area";
 
                 ShowTableInfo.DataSource = detailsTable;
@@ -427,6 +428,8 @@ namespace Project_BD
 
         }
 
+
+        // ADD NEW INFORMATION
         private void AddButton_Click(object sender, EventArgs e)
         {
             var formPopup = new Form();
@@ -475,6 +478,10 @@ namespace Project_BD
             ShowTableInfo.DataSource = false;
 
         }
+
+
+
+        // EDIT INFORMATION ON A DB
 
         private Dictionary<string, Object> cell_value = new Dictionary<string, object>();
         private void EditButton_Click(object sender, EventArgs e)
