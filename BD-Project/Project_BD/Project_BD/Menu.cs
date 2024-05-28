@@ -435,12 +435,12 @@ namespace Project_BD
             var formPopup = new Form();
             switch (data_type)
             {
-                //case "Locations":
-                //    formPopup = new Add_Location();
-                //    break;
-                //case "Crafts":
-                //    formPopup = new Add_Craft();
-                //    break;
+                case "Locations":
+                    formPopup = new Add_Locations();
+                    break;
+                case "Crafts":
+                    formPopup = new Add_Crafts();
+                    break;
                 case "Characters":
                     formPopup = new Add_Character();
                     break;
@@ -469,6 +469,9 @@ namespace Project_BD
                 case "Characters":
                     formPopup.FormClosed += new FormClosedEventHandler(CharactersButton_Click);
                     break;
+                case "Locations":
+                    formPopup.FormClosed += new FormClosedEventHandler(LocationsButton_Click);
+                    break;
             }
         }
 
@@ -489,9 +492,9 @@ namespace Project_BD
             var formPopup = new Form();
             switch (data_type)
             {
-                //case "Locations":
-                //    formPopup = new Edit_Location();
-                //    break;
+                case "Locations":
+                    formPopup = new Edit_Locations(cell_value);
+                    break;
                 //case "Crafts":
                 //    formPopup = new Edit_Craft();
                 //    break;
@@ -524,6 +527,10 @@ namespace Project_BD
                 case "Characters":
                     formPopup.FormClosed += new FormClosedEventHandler(CharactersButton_Click);
                     break;
+                case "Locations":
+                    formPopup.FormClosed += new FormClosedEventHandler(LocationsButton_Click);
+                    break;
+
             }
         }
 

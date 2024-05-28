@@ -7,6 +7,24 @@ AS
 	END
 GO
 
+CREATE FUNCTION check_LocationID (@ID_Location INT) RETURNS INT
+AS
+	BEGIN
+		DECLARE @counter INT
+		SELECT @counter=COUNT(1) FROM Locations WHERE LocationID=@ID_Location
+		RETURN @counter
+	END
+GO
+
+CREATE FUNCTION check_DungeonID (@ID_Dungeon INT) RETURNS INT
+AS
+	BEGIN
+		DECLARE @counter INT
+		SELECT @counter=COUNT(1) FROM Dungeons WHERE DungeonID=@ID_Dungeon
+		RETURN @counter
+	END
+
+
 -- CREATE FUNCTION dbo.checkID_Festival (@ID_Festival INT) RETURNS INT
 -- AS
 -- 	BEGIN
