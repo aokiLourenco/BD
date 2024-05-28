@@ -30,102 +30,107 @@ namespace Project_BD
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            button1 = new Button();
+            LoginButton = new Button();
             textBox1 = new TextBox();
             label1 = new Label();
             textBox2 = new TextBox();
             label2 = new Label();
-            button2 = new Button();
+            ClearButton = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // LoginButton
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 6;
-            button1.Font = new Font("Segoe UI", 14F);
-            button1.Location = new Point(533, 543);
-            button1.Name = "button1";
-            button1.Size = new Size(300, 60);
-            button1.TabIndex = 0;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            LoginButton.Anchor = AnchorStyles.Left;
+            tableLayoutPanel1.SetColumnSpan(LoginButton, 2);
+            LoginButton.Cursor = Cursors.Hand;
+            LoginButton.FlatAppearance.BorderSize = 6;
+            LoginButton.Font = new Font("Segoe UI", 14F);
+            LoginButton.Location = new Point(451, 543);
+            LoginButton.Name = "LoginButton";
+            LoginButton.Size = new Size(353, 60);
+            LoginButton.TabIndex = 0;
+            LoginButton.Text = "Login";
+            LoginButton.UseVisualStyleBackColor = true;
+            LoginButton.Click += button1_Click;
             // 
             // textBox1
             // 
-            textBox1.Anchor = AnchorStyles.Left;
-            textBox1.Location = new Point(480, 303);
+            textBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.SetColumnSpan(textBox1, 2);
+            textBox1.Location = new Point(451, 303);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(407, 25);
+            textBox1.Size = new Size(486, 25);
             textBox1.TabIndex = 1;
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Right;
+            label1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F);
-            label1.Location = new Point(377, 303);
+            label1.Location = new Point(323, 303);
             label1.Name = "label1";
-            label1.Size = new Size(97, 25);
+            label1.Size = new Size(122, 25);
             label1.TabIndex = 2;
             label1.Text = "Username";
             label1.Click += label1_Click_1;
             // 
             // textBox2
             // 
-            textBox2.Anchor = AnchorStyles.Left;
-            textBox2.Location = new Point(480, 403);
+            textBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel1.SetColumnSpan(textBox2, 2);
+            textBox2.Location = new Point(451, 403);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(407, 25);
+            textBox2.Size = new Size(486, 25);
             textBox2.TabIndex = 3;
             textBox2.TextChanged += textBox2_TextChanged_1;
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Right;
+            label2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(383, 403);
+            label2.Location = new Point(323, 403);
             label2.Name = "label2";
-            label2.Size = new Size(91, 25);
+            label2.Size = new Size(122, 25);
             label2.TabIndex = 4;
             label2.Text = "Password";
             label2.Click += label2_Click_2;
             // 
-            // button2
+            // ClearButton
             // 
-            button2.Anchor = AnchorStyles.Left;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 6;
-            button2.Font = new Font("Segoe UI", 10F);
-            button2.Location = new Point(893, 349);
-            button2.Name = "button2";
-            tableLayoutPanel1.SetRowSpan(button2, 2);
-            button2.Size = new Size(89, 34);
-            button2.TabIndex = 5;
-            button2.Text = "Clear";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            ClearButton.Anchor = AnchorStyles.Left;
+            ClearButton.Cursor = Cursors.Hand;
+            ClearButton.FlatAppearance.BorderSize = 6;
+            ClearButton.Font = new Font("Segoe UI", 10F);
+            ClearButton.Location = new Point(943, 349);
+            ClearButton.Name = "ClearButton";
+            tableLayoutPanel1.SetRowSpan(ClearButton, 2);
+            ClearButton.Size = new Size(89, 34);
+            ClearButton.TabIndex = 5;
+            ClearButton.Text = "Clear";
+            ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += button2_Click;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.BackgroundImage = (Image)resources.GetObject("tableLayoutPanel1.BackgroundImage");
             tableLayoutPanel1.BackgroundImageLayout = ImageLayout.Stretch;
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.78656F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32.727272F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.4861641F));
-            tableLayoutPanel1.Controls.Add(textBox1, 1, 1);
-            tableLayoutPanel1.Controls.Add(label1, 0, 1);
-            tableLayoutPanel1.Controls.Add(textBox2, 1, 2);
-            tableLayoutPanel1.Controls.Add(label2, 0, 2);
-            tableLayoutPanel1.Controls.Add(button2, 2, 1);
-            tableLayoutPanel1.Controls.Add(button1, 1, 3);
+            tableLayoutPanel1.ColumnCount = 5;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.3933735F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.1564341F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.6695442F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.3903217F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.3903217F));
+            tableLayoutPanel1.Controls.Add(textBox1, 2, 1);
+            tableLayoutPanel1.Controls.Add(label1, 1, 1);
+            tableLayoutPanel1.Controls.Add(label2, 1, 2);
+            tableLayoutPanel1.Controls.Add(textBox2, 2, 2);
+            tableLayoutPanel1.Controls.Add(LoginButton, 2, 3);
+            tableLayoutPanel1.Controls.Add(ClearButton, 4, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -134,6 +139,7 @@ namespace Project_BD
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.70329F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.70329F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 31.4715462F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(1264, 681);
             tableLayoutPanel1.TabIndex = 0;
             // 
@@ -154,13 +160,13 @@ namespace Project_BD
         }
 
         #endregion
-        
-        private Button button1;
+
+        private Button LoginButton;
         private TextBox textBox1;
         private Label label1;
         private TextBox textBox2;
         private Label label2;
-        private Button button2;
+        private Button ClearButton;
         private TableLayoutPanel tableLayoutPanel1;
     }
 }
