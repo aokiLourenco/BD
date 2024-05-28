@@ -30,23 +30,23 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             button1 = new Button();
-            button2 = new Button();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            textBox2 = new TextBox();
-            label3 = new Label();
-            textBox3 = new TextBox();
-            label4 = new Label();
-            textBox4 = new TextBox();
+            textBox_Name = new TextBox();
             label1 = new Label();
+            label2 = new Label();
+            textBox_Attacks = new TextBox();
+            label3 = new Label();
+            textBox_Attributes = new TextBox();
+            label4 = new Label();
+            textBox_Description = new TextBox();
+            button2 = new Button();
             label5 = new Label();
-            textBox5 = new TextBox();
+            textBox_Class = new TextBox();
             label6 = new Label();
-            textBox6 = new TextBox();
+            textBox_Weakness = new TextBox();
             label7 = new Label();
-            textBox7 = new TextBox();
+            textBox_Location = new TextBox();
+            textBox_Level = new TextBox();
             label8 = new Label();
-            textBox8 = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,23 +61,23 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 71F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 67F));
             tableLayoutPanel1.Controls.Add(button1, 0, 0);
-            tableLayoutPanel1.Controls.Add(textBox1, 1, 2);
+            tableLayoutPanel1.Controls.Add(textBox_Name, 1, 2);
             tableLayoutPanel1.Controls.Add(label1, 1, 1);
             tableLayoutPanel1.Controls.Add(label2, 2, 1);
-            tableLayoutPanel1.Controls.Add(textBox2, 2, 2);
+            tableLayoutPanel1.Controls.Add(textBox_Attacks, 2, 2);
             tableLayoutPanel1.Controls.Add(label3, 3, 1);
-            tableLayoutPanel1.Controls.Add(textBox3, 3, 2);
+            tableLayoutPanel1.Controls.Add(textBox_Attributes, 3, 2);
             tableLayoutPanel1.Controls.Add(label4, 4, 1);
-            tableLayoutPanel1.Controls.Add(textBox4, 4, 2);
+            tableLayoutPanel1.Controls.Add(textBox_Description, 4, 2);
             tableLayoutPanel1.Controls.Add(button2, 6, 0);
             tableLayoutPanel1.Controls.Add(label5, 1, 3);
-            tableLayoutPanel1.Controls.Add(textBox5, 1, 4);
+            tableLayoutPanel1.Controls.Add(textBox_Class, 1, 4);
             tableLayoutPanel1.Controls.Add(label6, 2, 3);
-            tableLayoutPanel1.Controls.Add(textBox6, 2, 4);
+            tableLayoutPanel1.Controls.Add(textBox_Weakness, 2, 4);
             tableLayoutPanel1.Controls.Add(label7, 3, 3);
-            tableLayoutPanel1.Controls.Add(textBox7, 3, 4);
+            tableLayoutPanel1.Controls.Add(textBox_Location, 3, 4);
+            tableLayoutPanel1.Controls.Add(textBox_Level, 4, 4);
             tableLayoutPanel1.Controls.Add(label8, 4, 3);
-            tableLayoutPanel1.Controls.Add(textBox8, 4, 4);
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -89,7 +89,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 249F));
             tableLayoutPanel1.Size = new Size(800, 450);
             tableLayoutPanel1.TabIndex = 3;
-            tableLayoutPanel1.Paint += this.tableLayoutPanel1_Paint;
             // 
             // button1
             // 
@@ -103,6 +102,78 @@
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = true;
             // 
+            // textBox_Name
+            // 
+            textBox_Name.Anchor = AnchorStyles.Top;
+            textBox_Name.Location = new Point(115, 89);
+            textBox_Name.Name = "textBox_Name";
+            textBox_Name.Size = new Size(129, 23);
+            textBox_Name.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top;
+            label1.AutoSize = true;
+            label1.Location = new Point(160, 68);
+            label1.Name = "label1";
+            label1.Size = new Size(39, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Name";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top;
+            label2.AutoSize = true;
+            label2.Location = new Point(296, 68);
+            label2.Name = "label2";
+            label2.Size = new Size(46, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Attacks";
+            // 
+            // textBox_Attacks
+            // 
+            textBox_Attacks.Anchor = AnchorStyles.Top;
+            textBox_Attacks.Location = new Point(255, 89);
+            textBox_Attacks.Name = "textBox_Attacks";
+            textBox_Attacks.Size = new Size(127, 23);
+            textBox_Attacks.TabIndex = 6;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top;
+            label3.AutoSize = true;
+            label3.Location = new Point(426, 68);
+            label3.Name = "label3";
+            label3.Size = new Size(59, 15);
+            label3.TabIndex = 7;
+            label3.Text = "Attributes";
+            // 
+            // textBox_Attributes
+            // 
+            textBox_Attributes.Anchor = AnchorStyles.Top;
+            textBox_Attributes.Location = new Point(395, 89);
+            textBox_Attributes.Name = "textBox_Attributes";
+            textBox_Attributes.Size = new Size(122, 23);
+            textBox_Attributes.TabIndex = 8;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top;
+            label4.AutoSize = true;
+            label4.Location = new Point(557, 68);
+            label4.Name = "label4";
+            label4.Size = new Size(67, 15);
+            label4.TabIndex = 9;
+            label4.Text = "Description";
+            // 
+            // textBox_Description
+            // 
+            textBox_Description.Anchor = AnchorStyles.Top;
+            textBox_Description.Location = new Point(530, 89);
+            textBox_Description.Name = "textBox_Description";
+            textBox_Description.Size = new Size(122, 23);
+            textBox_Description.TabIndex = 10;
+            // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -115,81 +186,7 @@
             button2.TabIndex = 2;
             button2.Text = "Confirm";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += this.button2_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top;
-            textBox1.Location = new Point(115, 89);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(129, 23);
-            textBox1.TabIndex = 3;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top;
-            label2.AutoSize = true;
-            label2.Location = new Point(296, 68);
-            label2.Name = "label2";
-            label2.Size = new Size(46, 15);
-            label2.TabIndex = 5;
-            label2.Text = "Attacks";
-            label2.Click += this.label2_Click;
-            // 
-            // textBox2
-            // 
-            textBox2.Anchor = AnchorStyles.Top;
-            textBox2.Location = new Point(255, 89);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(127, 23);
-            textBox2.TabIndex = 6;
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top;
-            label3.AutoSize = true;
-            label3.Location = new Point(426, 68);
-            label3.Name = "label3";
-            label3.Size = new Size(59, 15);
-            label3.TabIndex = 7;
-            label3.Text = "Attributes";
-            // 
-            // textBox3
-            // 
-            textBox3.Anchor = AnchorStyles.Top;
-            textBox3.Location = new Point(395, 89);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(122, 23);
-            textBox3.TabIndex = 8;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Top;
-            label4.AutoSize = true;
-            label4.Location = new Point(557, 68);
-            label4.Name = "label4";
-            label4.Size = new Size(67, 15);
-            label4.TabIndex = 9;
-            label4.Text = "Description";
-            // 
-            // textBox4
-            // 
-            textBox4.Anchor = AnchorStyles.Top;
-            textBox4.Location = new Point(530, 89);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(122, 23);
-            textBox4.TabIndex = 10;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top;
-            label1.AutoSize = true;
-            label1.Location = new Point(160, 68);
-            label1.Name = "label1";
-            label1.Size = new Size(39, 15);
-            label1.TabIndex = 4;
-            label1.Text = "Name";
-            label1.Click += this.label1_Click;
+            button2.Click += button2_Click;
             // 
             // label5
             // 
@@ -200,15 +197,14 @@
             label5.Size = new Size(34, 15);
             label5.TabIndex = 11;
             label5.Text = "Class";
-            label5.Click += this.label5_Click;
             // 
-            // textBox5
+            // textBox_Class
             // 
-            textBox5.Anchor = AnchorStyles.Top;
-            textBox5.Location = new Point(115, 161);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(129, 23);
-            textBox5.TabIndex = 12;
+            textBox_Class.Anchor = AnchorStyles.Top;
+            textBox_Class.Location = new Point(115, 161);
+            textBox_Class.Name = "textBox_Class";
+            textBox_Class.Size = new Size(129, 23);
+            textBox_Class.TabIndex = 12;
             // 
             // label6
             // 
@@ -220,13 +216,13 @@
             label6.TabIndex = 13;
             label6.Text = "Weakness";
             // 
-            // textBox6
+            // textBox_Weakness
             // 
-            textBox6.Anchor = AnchorStyles.Top;
-            textBox6.Location = new Point(255, 161);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(127, 23);
-            textBox6.TabIndex = 14;
+            textBox_Weakness.Anchor = AnchorStyles.Top;
+            textBox_Weakness.Location = new Point(255, 161);
+            textBox_Weakness.Name = "textBox_Weakness";
+            textBox_Weakness.Size = new Size(127, 23);
+            textBox_Weakness.TabIndex = 14;
             // 
             // label7
             // 
@@ -238,31 +234,32 @@
             label7.TabIndex = 15;
             label7.Text = "Location";
             // 
-            // textBox7
+            // textBox_Location
             // 
-            textBox7.Anchor = AnchorStyles.Top;
-            textBox7.Location = new Point(395, 161);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(122, 23);
-            textBox7.TabIndex = 16;
+            textBox_Location.Anchor = AnchorStyles.Top;
+            textBox_Location.Location = new Point(395, 161);
+            textBox_Location.Name = "textBox_Location";
+            textBox_Location.Size = new Size(122, 23);
+            textBox_Location.TabIndex = 16;
+            // 
+            // textBox_Level
+            // 
+            textBox_Level.Anchor = AnchorStyles.Top;
+            textBox_Level.Location = new Point(530, 161);
+            textBox_Level.Name = "textBox_Level";
+            textBox_Level.Size = new Size(122, 23);
+            textBox_Level.TabIndex = 17;
             // 
             // label8
             // 
             label8.Anchor = AnchorStyles.Top;
             label8.AutoSize = true;
-            label8.Location = new Point(557, 126);
+            label8.Location = new Point(574, 126);
             label8.Name = "label8";
-            label8.Size = new Size(67, 15);
-            label8.TabIndex = 17;
-            label8.Text = "Description";
-            // 
-            // textBox8
-            // 
-            textBox8.Anchor = AnchorStyles.Top;
-            textBox8.Location = new Point(530, 161);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(122, 23);
-            textBox8.TabIndex = 18;
+            label8.Size = new Size(34, 15);
+            label8.TabIndex = 18;
+            label8.Text = "Level";
+
             // 
             // Add_Character
             // 
@@ -282,21 +279,21 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Button button1;
         private Button button2;
-        private TextBox textBox1;
+        private TextBox textBox_Name;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox textBox_Attacks;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox textBox_Attributes;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox textBox_Description;
         private Label label1;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox textBox_Class;
         private Label label6;
-        private TextBox textBox6;
+        private TextBox textBox_Weakness;
         private Label label7;
-        private TextBox textBox7;
+        private TextBox textBox_Location;
+        private TextBox textBox_Level;
         private Label label8;
-        private TextBox textBox8;
     }
 }
