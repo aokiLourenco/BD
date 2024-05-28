@@ -148,7 +148,7 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Characters JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Characters.Name", CN);
+                SqlCommand cmd = new SqlCommand("SELECT Characters.Name, Characters.Attacks, Characters.Attributes, Characters.DESCRIPTION,  Characters.Class, Characters.Weakness, Locations.Name, Characters.LEVEL FROM Characters JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Characters.Name", CN);
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -167,7 +167,7 @@ namespace Project_BD
                 //        detailsTable.Columns.Remove(column);
                 //    }
                 //}
-                detailsTable.Columns["Area"].ColumnName = "Location";
+                detailsTable.Columns["Name1"].ColumnName = "Area";
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -476,6 +476,7 @@ namespace Project_BD
 
         }
 
+        private Dictionary<string, Object> cell_value = new Dictionary<string, object>();
         private void EditButton_Click(object sender, EventArgs e)
         {
             var formPopup = new Form();
@@ -488,7 +489,7 @@ namespace Project_BD
                 //    formPopup = new Edit_Craft();
                 //    break;
                 case "Characters":
-                    formPopup = new Edit_Characters();
+                    formPopup = new Edit_Characters(cell_value);
                     break;
                 //case "Bosses":
                 //    formPopup = new Edit_Boss();
@@ -519,12 +520,22 @@ namespace Project_BD
             }
         }
 
+
         private void ShowTableInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            var formPopup = new Form();
             if (ShowTableInfo.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
+                cell_value.Clear();
                 ShowTableInfo.CurrentRow.Selected = true;
-                MessageBox.Show(ShowTableInfo.Rows[e.RowIndex].Cells["Name"].FormattedValue.ToString());
+
+
+                foreach (DataGridViewColumn column in ShowTableInfo.Columns)
+                {
+                    string columnName = column.Name;
+                    string cellValue = ShowTableInfo.Rows[e.RowIndex].Cells[columnName].FormattedValue.ToString();
+                    cell_value.Add(columnName, cellValue);
+                }
 
             }
         }

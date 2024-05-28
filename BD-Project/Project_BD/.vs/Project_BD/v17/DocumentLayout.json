@@ -3,36 +3,32 @@
   "WorkspaceRootPath": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\add_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\add_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\ua\\3_ano\\2_semestre\\bd\\bd\\bd-project\\project_bd\\project_bd\\add_character.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\add_character.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\ua\\3_ano\\2_semestre\\bd\\bd\\bd-project\\project_bd\\project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\ua\\3_ano\\2_semestre\\bd\\bd\\bd-project\\project_bd\\project_bd\\edit_characters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\edit_characters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\edit_characters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\ua\\3_ano\\2_semestre\\bd\\bd\\bd-project\\project_bd\\project_bd\\edit_characters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\edit_characters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\edit_characters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\ua\\3_ano\\2_semestre\\bd\\bd\\bd-project\\project_bd\\project_bd\\edit_characters.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\edit_characters.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\ua\\3_ano\\2_semestre\\bd\\bd\\bd-project\\project_bd\\project_bd\\add_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\add_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\add_character.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\add_character.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\add_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -58,17 +54,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Menu.cs",
               "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
               "RelativeDocumentMoniker": "Project_BD\\Menu.cs",
               "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
               "RelativeToolTip": "Project_BD\\Menu.cs",
-              "ViewState": "AQIAAPQBAAAAAAAAAAAnwA4CAABoAAAA",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAUwJYAAABCAQAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "OverriddenGroupName": "Project_BD",
               "WhenOpened": "2024-05-24T10:16:53.438Z",
@@ -77,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Edit_Characters.cs [Projeto]",
               "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Characters.cs",
               "RelativeDocumentMoniker": "Project_BD\\Edit_Characters.cs",
@@ -89,45 +85,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Edit_Characters.Designer.cs",
-              "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Characters.Designer.cs",
-              "RelativeDocumentMoniker": "Project_BD\\Edit_Characters.Designer.cs",
-              "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Characters.Designer.cs",
-              "RelativeToolTip": "Project_BD\\Edit_Characters.Designer.cs",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAvwG8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-28T11:15:09.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Edit_Characters.cs",
               "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Characters.cs",
               "RelativeDocumentMoniker": "Project_BD\\Edit_Characters.cs",
               "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Characters.cs",
               "RelativeToolTip": "Project_BD\\Edit_Characters.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAvwBMAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-28T11:14:51.573Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Add_Character.resx",
               "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Character.resx",
               "RelativeDocumentMoniker": "Project_BD\\Add_Character.resx",
               "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Character.resx",
               "RelativeToolTip": "Project_BD\\Add_Character.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-05-28T10:39:54.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-28T10:39:54.722Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Menu.cs [Projeto]",
               "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
               "RelativeDocumentMoniker": "Project_BD\\Menu.cs",
@@ -139,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "Menu.Designer.cs",
               "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.Designer.cs",
               "RelativeDocumentMoniker": "Project_BD\\Menu.Designer.cs",
@@ -152,44 +134,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Add_Character.cs",
               "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Character.cs",
               "RelativeDocumentMoniker": "Project_BD\\Add_Character.cs",
               "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Character.cs",
               "RelativeToolTip": "Project_BD\\Add_Character.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAcwGMAAAAXAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwGMAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T23:10:11.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Add_Character.cs [Projeto]",
               "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Character.cs",
               "RelativeDocumentMoniker": "Project_BD\\Add_Character.cs",
               "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Character.cs [Projeto]",
               "RelativeToolTip": "Project_BD\\Add_Character.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-27T22:05:23.762Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2024-05-27T22:05:23.762Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "Characters.cs [Projeto]",
               "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Characters.cs",
               "RelativeDocumentMoniker": "Project_BD\\Characters.cs",
               "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Characters.cs [Projeto]",
               "RelativeToolTip": "Project_BD\\Characters.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T15:42:24.831Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2024-05-26T15:42:24.831Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "Characters.Designer.cs",
               "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Characters.Designer.cs",
               "RelativeDocumentMoniker": "Project_BD\\Characters.Designer.cs",
@@ -197,12 +177,11 @@
               "RelativeToolTip": "Project_BD\\Characters.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T15:43:22.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T15:43:22.725Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "Characters.cs",
               "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Characters.cs",
               "RelativeDocumentMoniker": "Project_BD\\Characters.cs",
@@ -210,8 +189,7 @@
               "RelativeToolTip": "Project_BD\\Characters.cs",
               "ViewState": "AQIAACUAAAAAAAAAAAAqwEcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-26T15:28:50.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T15:28:50.103Z"
             }
           ]
         }
