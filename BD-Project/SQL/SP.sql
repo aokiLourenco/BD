@@ -491,3 +491,118 @@ AS
             END CATCH
         END
     END
+
+GO
+
+CREATE TABLE Bosses
+(
+    -- Needs Characters
+    CharacterID INT NOT NULL FOREIGN KEY REFERENCES Characters(CharacterID),
+    Cutscene VARCHAR(512) NOT NULL,
+)
+GO
+
+DROP PROCEDURE AddBoss;
+GO
+
+CREATE PROCEDURE AddBoss 
+    (
+    @CharacterID INT,
+    @Cutscene VARCHAR(512)
+    )
+AS
+BEGIN
+    DECLARE @error VARCHAR(512);
+    BEGIN TRY
+        INSERT INTO Bosses
+        (CharacterID, Cutscene)
+    VALUES
+        (@CharacterID, @Cutscene);
+    END TRY
+    BEGIN CATCH
+        SELECT @error = ERROR_MESSAGE();
+        --SET @error = 'Error, could not add boss to database. Value added incorrectly.'
+        RAISERROR(@error, 16, 1);
+    END CATCH
+END 
+
+GO
+
+DROP PROCEDURE EditBoss;
+
+GO
+
+CREATE PROCEDURE EditBoss
+    (
+    @ID_Boss INT,
+    @CharacterID INT,
+    @Cutscene VARCHAR(512)
+    )
+AS
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_BossID(@CharacterID));
+
+    IF (@verification = 0)
+        BEGIN
+        SET @error = 'CharacterID does not exist, please check the ID and try again';
+        RAISERROR (@error, 16, 1);
+        END
+    ELSE
+        SET NOCOUNT ON;
+        BEGIN
+            BEGIN TRY
+                BEGIN TRAN
+
+                    UPDATE Bosses 
+                    SET
+                        CharacterID = @CharacterID,
+                        Cutscene = @Cutscene
+                    WHERE
+                        CharacterID = @ID_Boss;
+                COMMIT TRAN
+            END TRY
+            BEGIN CATCH
+                    Rollback TRAN
+                    SELECT @error = ERROR_MESSAGE(); 
+                    SET @error =  'Error, could not edit boss in database. Value edited incorrectly.'
+                    RAISERROR (@error, 16,1);
+            END CATCH
+    END
+END
+
+GO
+
+DROP PROCEDURE DeleteBoss;
+GO
+
+CREATE PROCEDURE DeleteBoss (@ID_Boss INT)
+AS
+    BEGIN
+        DECLARE @verification INT;
+        DECLARE @error VARCHAR(100);
+    
+        SET @verification = (SELECT dbo.check_BossID(@ID_Boss));
+    
+        IF (@verification = 0)
+        BEGIN
+            SET @error = 'BossID does not exist, please check the ID and try again!';
+            RAISERROR (@error, 16, 1);
+        END
+        ELSE
+        BEGIN
+            BEGIN TRY
+                BEGIN TRAN
+                    DELETE FROM Bosses WHERE CharacterID = @ID_Boss;
+                COMMIT TRAN
+            END TRY
+            BEGIN CATCH
+                ROLLBACK TRAN
+                SELECT @error = ERROR_MESSAGE();
+                SET @error = 'Error, could not delete boss from database. Value deleted incorrectly.';
+                RAISERROR (@error, 16, 1);
+            END CATCH
+        END
+    END

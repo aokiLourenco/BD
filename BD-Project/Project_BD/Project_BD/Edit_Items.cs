@@ -12,19 +12,33 @@ using static Project_BD.Menu;
 
 namespace Project_BD
 {
-    public partial class Add_Items : Form
+    public partial class Edit_Items : Form
     {
         private SqlConnection CN;
-
+        private int id;
         private Dictionary<string, int> characters = new Dictionary<string, int>();
         private Dictionary<string, int> awards = new Dictionary<string, int>();
 
-        public Add_Items()
+        public Edit_Items(Dictionary<string,object> cell_values)
         {
             InitializeComponent();
             CN = ConnectionManager.getSGBDConnection();
             Load_Values();
+            id = Int32.Parse(cell_values["ID"].ToString());
+            Edit_Items_Load(cell_values);
+
         }
+
+        private void Edit_Items_Load(Dictionary<string, Object> cell_values)
+        {
+            textBox_Name.Text = cell_values["Name"].ToString();
+            textBox_Award.Text = cell_values["Location"].ToString();
+            textBox_Description.Text = cell_values["DESCRIPTION"].ToString();
+            textBox_Owner.Text = cell_values["Owner"].ToString();
+            textBox_UR.Text = cell_values["UseRequisites"].ToString();
+
+        }
+
 
         private void Load_Values()
         {
@@ -49,7 +63,7 @@ namespace Project_BD
             }
             catch (Exception ex)
             {
-               
+                
             }
             finally
             {
@@ -88,24 +102,25 @@ namespace Project_BD
         }
 
 
-        private void Add_Items_DB(string name, string Owner, string Award, string description, string UR)
+        private void Edit_Items_DB(string name, string Owner, string Award, string description, string UR)
         {
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("AddItem", CN);
+                SqlCommand cmd = new SqlCommand("EditItem", CN);
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@ID_Item", id);
                 cmd.Parameters.AddWithValue("@Name", name);
                 cmd.Parameters.AddWithValue("@Owner", characters[Owner.ToLower()]);
                 cmd.Parameters.AddWithValue("@Award", awards[Award.ToLower()]);
                 cmd.Parameters.AddWithValue("@DESCRIPTION", description);
                 cmd.Parameters.AddWithValue("@UseRequisites", UR);
 
-
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Character added successfully");
+                MessageBox.Show("Character Edited successfully");
                 Back();
+
             }
             catch (Exception e)
             {
@@ -120,21 +135,23 @@ namespace Project_BD
         }
 
 
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string name = textBox_Name.Text;
+            string Owner = textBox_Owner.Text;
+            string Award = textBox_Award.Text;
+            string description = textBox_Description.Text;
+            string UR = textBox_UR.Text;
+
+            Edit_Items_DB(name, Owner, Award, description, UR);
+        }
+
         private void Back()
         {
             this.Close();
         }
-            
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string name = textBox_Name.Text;
-            string description = textBox_Description.Text;
-            string Owner = textBox_Owner.Text;
-            string Award = textBox_Award.Text;
-            string UR = textBox_UR.Text;
 
-            Add_Items_DB(name, Owner, Award, description, UR);
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {

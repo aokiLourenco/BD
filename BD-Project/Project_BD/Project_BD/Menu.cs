@@ -354,6 +354,11 @@ namespace Project_BD
                 //        detailsTable.Columns.Remove(column);
                 //    }
                 //}
+                detailsTable.Columns["ItemID"].ColumnName = "ID";
+                detailsTable.Columns["Name1"].ColumnName = "Location";
+                detailsTable.Columns["Owner"].ColumnName = "Owner_ID";
+                detailsTable.Columns["Name2"].ColumnName = "Owner";
+
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -447,9 +452,9 @@ namespace Project_BD
                 case "Characters":
                     formPopup = new Add_Character();
                     break;
-                //case "Bosses":
-                //    formPopup = new Add_Boss();
-                //    break;
+                case "Bosses":
+                    formPopup = new Add_Bosses();
+                    break;
                 case "Dungeons":
                     formPopup = new Add_Dungeons();
                     break;
@@ -519,9 +524,9 @@ namespace Project_BD
                 //case "Enemies":
                 //    formPopup = new Edit_Enemy();
                 //    break;
-                //case "Items":
-                //    formPopup = new Edit_Item();
-                //    break;
+                case "Items":
+                    formPopup = new Edit_Items(cell_value);
+                    break;
                 //case "CraftingMaterials":
                 //    formPopup = new Edit_CraftingMaterial();
                 //    break;
@@ -541,6 +546,9 @@ namespace Project_BD
                     break;
                 case "Dungeons":
                     formPopup.FormClosed += new FormClosedEventHandler(DungeonsButton_Click);
+                    break;
+                case "Items":
+                    formPopup.FormClosed += new FormClosedEventHandler(ItemsButton_Click);
                     break;
 
             }
