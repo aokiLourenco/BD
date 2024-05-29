@@ -1,6 +1,6 @@
 ﻿namespace Project_BD
 {
-    partial class Add_Dungeons
+    partial class Add_Items
     {
         /// <summary>
         /// Required designer variable.
@@ -32,13 +32,15 @@
             button1 = new Button();
             textBox_Name = new TextBox();
             label1 = new Label();
-            button2 = new Button();
-            label7 = new Label();
-            textBox_Location = new TextBox();
-            textBox_Area = new TextBox();
             label2 = new Label();
-            textBox_MainBoss = new TextBox();
+            textBox_Award = new TextBox();
             label3 = new Label();
+            textBox_Owner = new TextBox();
+            label4 = new Label();
+            textBox_Description = new TextBox();
+            button2 = new Button();
+            label5 = new Label();
+            textBox_UR = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,13 +57,15 @@
             tableLayoutPanel1.Controls.Add(button1, 0, 0);
             tableLayoutPanel1.Controls.Add(textBox_Name, 1, 2);
             tableLayoutPanel1.Controls.Add(label1, 1, 1);
+            tableLayoutPanel1.Controls.Add(label2, 2, 1);
+            tableLayoutPanel1.Controls.Add(textBox_Award, 2, 2);
+            tableLayoutPanel1.Controls.Add(label3, 3, 1);
+            tableLayoutPanel1.Controls.Add(textBox_Owner, 3, 2);
+            tableLayoutPanel1.Controls.Add(label4, 4, 1);
+            tableLayoutPanel1.Controls.Add(textBox_Description, 4, 2);
             tableLayoutPanel1.Controls.Add(button2, 6, 0);
-            tableLayoutPanel1.Controls.Add(label7, 4, 1);
-            tableLayoutPanel1.Controls.Add(textBox_Location, 4, 2);
-            tableLayoutPanel1.Controls.Add(textBox_Area, 1, 4);
-            tableLayoutPanel1.Controls.Add(label2, 1, 3);
-            tableLayoutPanel1.Controls.Add(textBox_MainBoss, 4, 4);
-            tableLayoutPanel1.Controls.Add(label3, 4, 3);
+            tableLayoutPanel1.Controls.Add(label5, 1, 3);
+            tableLayoutPanel1.Controls.Add(textBox_UR, 1, 4);
             tableLayoutPanel1.Location = new Point(8, 8);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -105,6 +109,60 @@
             label1.TabIndex = 4;
             label1.Text = "Name";
             // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top;
+            label2.AutoSize = true;
+            label2.Location = new Point(298, 68);
+            label2.Name = "label2";
+            label2.Size = new Size(41, 15);
+            label2.TabIndex = 5;
+            label2.Text = "Award";
+            // 
+            // textBox_Award
+            // 
+            textBox_Award.Anchor = AnchorStyles.Top;
+            textBox_Award.Location = new Point(255, 89);
+            textBox_Award.Name = "textBox_Award";
+            textBox_Award.Size = new Size(127, 23);
+            textBox_Award.TabIndex = 6;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top;
+            label3.AutoSize = true;
+            label3.Location = new Point(435, 68);
+            label3.Name = "label3";
+            label3.Size = new Size(42, 15);
+            label3.TabIndex = 7;
+            label3.Text = "Owner";
+            // 
+            // textBox_Owner
+            // 
+            textBox_Owner.Anchor = AnchorStyles.Top;
+            textBox_Owner.Location = new Point(395, 89);
+            textBox_Owner.Name = "textBox_Owner";
+            textBox_Owner.Size = new Size(122, 23);
+            textBox_Owner.TabIndex = 8;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top;
+            label4.AutoSize = true;
+            label4.Location = new Point(557, 68);
+            label4.Name = "label4";
+            label4.Size = new Size(67, 15);
+            label4.TabIndex = 9;
+            label4.Text = "Description";
+            // 
+            // textBox_Description
+            // 
+            textBox_Description.Anchor = AnchorStyles.Top;
+            textBox_Description.Location = new Point(530, 89);
+            textBox_Description.Name = "textBox_Description";
+            textBox_Description.Size = new Size(122, 23);
+            textBox_Description.TabIndex = 10;
+            // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -119,68 +177,32 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // label7
+            // label5
             // 
-            label7.Anchor = AnchorStyles.Top;
-            label7.AutoSize = true;
-            label7.Location = new Point(564, 68);
-            label7.Name = "label7";
-            label7.Size = new Size(53, 15);
-            label7.TabIndex = 15;
-            label7.Text = "Location";
+            label5.Anchor = AnchorStyles.Top;
+            label5.AutoSize = true;
+            label5.Location = new Point(138, 126);
+            label5.Name = "label5";
+            label5.Size = new Size(82, 15);
+            label5.TabIndex = 11;
+            label5.Text = "Use Requisites";
             // 
-            // textBox_Location
+            // textBox_UR
             // 
-            textBox_Location.Anchor = AnchorStyles.Top;
-            textBox_Location.Location = new Point(530, 89);
-            textBox_Location.Name = "textBox_Location";
-            textBox_Location.Size = new Size(122, 23);
-            textBox_Location.TabIndex = 16;
+            textBox_UR.Anchor = AnchorStyles.Top;
+            textBox_UR.Location = new Point(115, 161);
+            textBox_UR.Name = "textBox_UR";
+            textBox_UR.Size = new Size(129, 23);
+            textBox_UR.TabIndex = 12;
             // 
-            // textBox_Area
-            // 
-            textBox_Area.Anchor = AnchorStyles.Top;
-            textBox_Area.Location = new Point(116, 161);
-            textBox_Area.Name = "textBox_Area";
-            textBox_Area.Size = new Size(127, 23);
-            textBox_Area.TabIndex = 6;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top;
-            label2.AutoSize = true;
-            label2.Location = new Point(164, 126);
-            label2.Name = "label2";
-            label2.Size = new Size(31, 15);
-            label2.TabIndex = 5;
-            label2.Text = "Area";
-            // 
-            // textBox_MainBoss
-            // 
-            textBox_MainBoss.Anchor = AnchorStyles.Top;
-            textBox_MainBoss.Location = new Point(530, 161);
-            textBox_MainBoss.Name = "textBox_MainBoss";
-            textBox_MainBoss.Size = new Size(122, 23);
-            textBox_MainBoss.TabIndex = 8;
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top;
-            label3.AutoSize = true;
-            label3.Location = new Point(562, 126);
-            label3.Name = "label3";
-            label3.Size = new Size(58, 15);
-            label3.TabIndex = 7;
-            label3.Text = "MainBoss";
-            // 
-            // Add_Dungeons
+            // Add_Items
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
-            Name = "Add_Dungeons";
-            Text = "Add_Dungeons";
+            Name = "Add_Items";
+            Text = "Add_Items";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -192,12 +214,14 @@
         private Button button1;
         private TextBox textBox_Name;
         private Label label1;
-        private Button button2;
-        private Label label7;
-        private TextBox textBox_Location;
-        private TextBox textBox_Area;
         private Label label2;
-        private TextBox textBox_MainBoss;
+        private TextBox textBox_Award;
         private Label label3;
+        private TextBox textBox_Owner;
+        private Label label4;
+        private TextBox textBox_Description;
+        private Button button2;
+        private Label label5;
+        private TextBox textBox_UR;
     }
 }

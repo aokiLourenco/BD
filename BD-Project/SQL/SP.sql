@@ -372,3 +372,122 @@ AS
             END CATCH
         END
     END
+
+
+Go 
+
+DROP PROCEDURE AddItem;
+GO
+CREATE PROCEDURE AddItem
+    (
+    @DESCRIPTION VARCHAR(1024),
+    @UseRequisites VARCHAR(36),
+    @Name VARCHAR(512),
+    @Owner INT,
+    @Award INT
+    )
+AS
+BEGIN
+    DECLARE @ItemID INT;
+    DECLARE @error VARCHAR(512);
+    SET @ItemID = (SELECT MAX(ItemID)
+    FROM Items) + 1;
+    BEGIN TRY
+        SET IDENTITY_INSERT Items ON;
+        INSERT INTO Items
+        (ItemID, DESCRIPTION, UseRequisites, Name, Owner, Award)
+    VALUES
+        (@ItemID, @DESCRIPTION, @UseRequisites, @Name, @Owner, @Award);
+    END TRY
+    BEGIN CATCH
+        SELECT @error = ERROR_MESSAGE();
+        --SET @error = 'Error, could not add item to database. Value added incorrectly.'
+        RAISERROR(@error, 16, 1);
+    END CATCH
+END
+
+GO
+
+DROP PROCEDURE EditItem;
+
+GO
+
+CREATE PROCEDURE EditItem
+    (
+    @ID_Item INT,
+    @DESCRIPTION VARCHAR(1024),
+    @UseRequisites VARCHAR(36),
+    @Name VARCHAR(512),
+    @Owner INT,
+    @Award INT
+    )
+AS
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_ItemID(@ID_Item));
+
+    IF (@verification = 0)
+        BEGIN
+        SET @error = 'ItemID does not exist, please check the ID and try again';
+        RAISERROR (@error, 16, 1);
+        END
+    ELSE
+        SET NOCOUNT ON;
+        BEGIN
+            BEGIN TRY
+                BEGIN TRAN
+
+                    UPDATE Items 
+                    SET
+                        DESCRIPTION = @DESCRIPTION,
+                        UseRequisites = @UseRequisites,
+                        Name = @Name,
+                        Owner = @Owner,
+                        Award = @Award
+                    WHERE
+                        ItemID = @ID_Item;
+                COMMIT TRAN
+            END TRY
+            BEGIN CATCH
+                    Rollback TRAN
+                    SELECT @error = ERROR_MESSAGE(); 
+                    SET @error =  'Error, could not edit item in database. Value edited incorrectly.'
+                    RAISERROR (@error, 16,1);
+            END CATCH
+    END
+END
+GO
+
+DROP PROCEDURE DeleteItem;
+GO
+
+CREATE PROCEDURE DeleteItem (@ID_Item INT)
+AS
+    BEGIN
+        DECLARE @verification INT;
+        DECLARE @error VARCHAR(100);
+    
+        SET @verification = (SELECT dbo.check_ItemID(@ID_Item));
+    
+        IF (@verification = 0)
+        BEGIN
+            SET @error = 'ItemID does not exist, please check the ID and try again!';
+            RAISERROR (@error, 16, 1);
+        END
+        ELSE
+        BEGIN
+            BEGIN TRY
+                BEGIN TRAN
+                    DELETE FROM Items WHERE ItemID = @ID_Item;
+                COMMIT TRAN
+            END TRY
+            BEGIN CATCH
+                ROLLBACK TRAN
+                SELECT @error = ERROR_MESSAGE();
+                SET @error = 'Error, could not delete item from database. Value deleted incorrectly.';
+                RAISERROR (@error, 16, 1);
+            END CATCH
+        END
+    END

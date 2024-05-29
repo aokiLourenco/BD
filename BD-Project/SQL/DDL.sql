@@ -15,7 +15,8 @@ DROP TABLE IF EXISTS Locations
 DROP TABLE IF EXISTS Users
 GO
 
-CREATE TABLE Users (
+CREATE TABLE Users
+(
     UserID INT IDENTITY(1,1) PRIMARY KEY,
     Username NVARCHAR(50) NOT NULL,
     Password VARBINARY(64) NOT NULL,
@@ -23,7 +24,8 @@ CREATE TABLE Users (
 )
 GO
 
-CREATE TABLE Locations (
+CREATE TABLE Locations
+(
     LocationID INT NOT NULL IDENTITY PRIMARY KEY,
     Area VARCHAR(512) NOT NULL,
     DESCRIPTION VARCHAR(1024) NOT NULL,
@@ -32,7 +34,9 @@ CREATE TABLE Locations (
 )
 GO
 
-CREATE TABLE Dungeons (  -- Needs Locations
+CREATE TABLE Dungeons
+(
+    -- Needs Locations
     DungeonID INT NOT NULL IDENTITY PRIMARY KEY,
     LocationID INT NOT NULL FOREIGN KEY REFERENCES Locations(LocationID),
     Area VARCHAR(512) NOT NULL,
@@ -41,7 +45,9 @@ CREATE TABLE Dungeons (  -- Needs Locations
 )
 GO
 
-CREATE TABLE Characters (  -- Needs Locations
+CREATE TABLE Characters
+(
+    -- Needs Locations
     CharacterID INT NOT NULL IDENTITY PRIMARY KEY,
     Attacks VARCHAR(512) NOT NULL,
     Attributes VARCHAR(512) NOT NULL,
@@ -54,25 +60,33 @@ CREATE TABLE Characters (  -- Needs Locations
 )
 GO
 
-CREATE TABLE IsAt (  -- Needs Locations and Characters
+CREATE TABLE IsAt
+(
+    -- Needs Locations and Characters
     CharacterID INT NOT NULL FOREIGN KEY REFERENCES Characters(CharacterID),
     LocationID INT NOT NULL FOREIGN KEY REFERENCES Locations(LocationID),
     PRIMARY KEY (CharacterID, LocationID),
 )
 GO
 
-CREATE TABLE Bosses (   -- Needs Characters
+CREATE TABLE Bosses
+(
+    -- Needs Characters
     CharacterID INT NOT NULL FOREIGN KEY REFERENCES Characters(CharacterID),
     Cutscene VARCHAR(512) NOT NULL,
 )
 GO
 
-CREATE TABLE Enemies (  -- Needs Characters
+CREATE TABLE Enemies
+(
+    -- Needs Characters
     CharacterID INT NOT NULL FOREIGN KEY REFERENCES Characters(CharacterID),
 )
 GO
 
-CREATE TABLE Items (  -- Needs Dungeons
+CREATE TABLE Items
+(
+    -- Needs Dungeons
     ItemID INT NOT NULL IDENTITY PRIMARY KEY,
     DESCRIPTION VARCHAR(1024) NOT NULL,
     UseRequisites VARCHAR(36),
@@ -82,7 +96,9 @@ CREATE TABLE Items (  -- Needs Dungeons
 )
 GO
 
-CREATE TABLE CraftingMaterials (  -- Needs Locations and Items
+CREATE TABLE CraftingMaterials
+(
+    -- Needs Locations and Items
     CraftingMaterialID INT NOT NULL IDENTITY PRIMARY KEY,
     Quantity INT NOT NULL,
     Source VARCHAR(512) NOT NULL,
@@ -91,14 +107,18 @@ CREATE TABLE CraftingMaterials (  -- Needs Locations and Items
 )
 GO
 
-CREATE TABLE Crafts (  -- Needs Items and CraftingMaterials
+CREATE TABLE Crafts
+(
+    -- Needs Items and CraftingMaterials
     ItemID INT NOT NULL FOREIGN KEY REFERENCES Items(ItemID),
     CraftingMaterialID INT NOT NULL FOREIGN KEY REFERENCES CraftingMaterials(CraftingMaterialID),
     PRIMARY KEY (ItemID, CraftingMaterialID),
 )
 GO
 
-CREATE TABLE Weapons (  -- Needs Items
+CREATE TABLE Weapons
+(
+    -- Needs Items
     Name VARCHAR(512) NOT NULL PRIMARY KEY,
     ItemID INT NOT NULL FOREIGN KEY REFERENCES Items(ItemID),
     Range INT NOT NULL,
@@ -108,7 +128,9 @@ CREATE TABLE Weapons (  -- Needs Items
 )
 GO
 
-CREATE TABLE Armours (  -- Needs Items
+CREATE TABLE Armours
+(
+    -- Needs Items
     Name VARCHAR(512) NOT NULL PRIMARY KEY,
     ItemID INT NOT NULL FOREIGN KEY REFERENCES Items(ItemID),
     Weight INT NOT NULL,
@@ -118,14 +140,18 @@ CREATE TABLE Armours (  -- Needs Items
 )
 GO
 
-CREATE TABLE Talismans (  -- Needs Items
+CREATE TABLE Talismans
+(
+    -- Needs Items
     Name VARCHAR(512) NOT NULL PRIMARY KEY,
     ItemID INT NOT NULL FOREIGN KEY REFERENCES Items(ItemID),
     Effect VARCHAR(512) NOT NULL,
 )
 GO
 
-CREATE TABLE Magics (  -- Needs Items
+CREATE TABLE Magics
+(
+    -- Needs Items
     Name VARCHAR(512) NOT NULL PRIMARY KEY,
     ItemID INT NOT NULL FOREIGN KEY REFERENCES Items(ItemID),
     Effect VARCHAR(512) NOT NULL,
@@ -133,3 +159,11 @@ CREATE TABLE Magics (  -- Needs Items
     DamageType VARCHAR(512) NOT NULL,
 )
 GO
+
+
+SELECT *
+FROM Items 
+JOIN Dungeons ON Items.Award = Dungeons.DungeonID 
+JOIN Characters ON Items.Owner = Characters.CharacterID
+ORDER BY Items.ItemID
+

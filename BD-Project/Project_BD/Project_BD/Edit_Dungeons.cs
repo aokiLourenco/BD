@@ -12,19 +12,30 @@ using static Project_BD.Menu;
 
 namespace Project_BD
 {
-    public partial class Add_Dungeons : Form
+    public partial class Edit_Dungeons : Form
     {
         private int id;
         private SqlConnection CN;
         private Dictionary<string, int> locations = new Dictionary<string, int>();
 
-        public Add_Dungeons()
+        public Edit_Dungeons(Dictionary<string,object> cell_values)
         {
+
             CN = ConnectionManager.getSGBDConnection();
             InitializeComponent();
             LoadLocations();
+            id = Int32.Parse(cell_values["ID"].ToString());
+            Edit_Characters_Load(cell_values);
+
         }
 
+        private void Edit_Characters_Load(Dictionary<string, Object> cell_values)
+        {
+            textBox_Name.Text = cell_values["Name"].ToString();
+            textBox_Area.Text = cell_values["Area"].ToString();
+            textBox_Location.Text = cell_values["Location"].ToString();
+            textBox_MainBoss.Text = cell_values["MainBoss"].ToString();
+        }
         private void LoadLocations()
         {
             try
@@ -57,22 +68,29 @@ namespace Project_BD
             }
         }
 
-        private void Add_Dungeons_DB(string name, string Area, string MainBoss,string location)
+
+        private void Edit_Dungeons_DB(string name, string location, string area, string mainboss)
         {
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("AddDungeon", CN);
+                SqlCommand cmd = new SqlCommand("EditDungeon", CN);
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@ID_Dungeon", id);
                 cmd.Parameters.AddWithValue("@Name", name);
-                cmd.Parameters.AddWithValue("@LocationID", locations[location.ToLower()]);
-                cmd.Parameters.AddWithValue("@MainBoss", MainBoss);
-                cmd.Parameters.AddWithValue("@Area", Area);
+                cmd.Parameters.AddWithValue("@Area", area);
+                cmd.Parameters.AddWithValue("@MainBoss", mainboss);
+
+                // Get the ID_Location from the dictionary
+                int idLocation = locations[location.ToLower()];
+                cmd.Parameters.AddWithValue("@LocationID", idLocation);
+
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Character added successfully");
+                MessageBox.Show("Character Edited successfully");
                 Back();
+
             }
             catch (Exception e)
             {
@@ -86,23 +104,20 @@ namespace Project_BD
 
         }
 
-
-
         private void Back()
         {
             this.Close();
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
-
             string area = textBox_Area.Text;
             string name = textBox_Name.Text;
-            string mainBoss = textBox_MainBoss.Text;
             string location = textBox_Location.Text;
+            string mainboss = textBox_MainBoss.Text;
 
-            Add_Dungeons_DB(name, area, mainBoss, location);
-
+            Edit_Dungeons_DB(name, location, area, mainboss);
 
         }
 

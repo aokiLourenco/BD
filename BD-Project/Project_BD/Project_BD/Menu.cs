@@ -18,10 +18,10 @@ namespace Project_BD
     {
 
         //AOKI
-        public static string SQLConnectionString = "data source = (localdb)\\localeldenvault;initial catalog=master;integrated security=true;encrypt=false";
+        //public static string SQLConnectionString = "data source = (localdb)\\localeldenvault;initial catalog=master;integrated security=true;encrypt=false";
 
         //TÓ
-        //public static string SQLConnectionString = "Data Source = localhost;Initial Catalog=master;Integrated Security=True;Encrypt=False";
+        public static string SQLConnectionString = "Data Source = localhost;Initial Catalog=master;Integrated Security=True;Encrypt=False";
 
         public string data_type = "";
         private string last_type = "";
@@ -240,7 +240,7 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Dungeons ORDER BY Dungeons.DungeonID", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Dungeons JOIN Locations ON Dungeons.LocationID = Locations.LocationID ORDER BY Dungeons.Name", CN);
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -259,6 +259,9 @@ namespace Project_BD
                 //        detailsTable.Columns.Remove(column);
                 //    }
                 //}
+                detailsTable.Columns["DungeonID"].ColumnName = "ID";
+                detailsTable.Columns["Name1"].ColumnName = "Location";
+
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -332,7 +335,7 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Items ORDER BY Items.ItemID", CN);
+                SqlCommand cmd = new SqlCommand("SELECT *\r\nFROM Items \r\nJOIN Dungeons ON Items.Award = Dungeons.DungeonID \r\nJOIN Characters ON Items.Owner = Characters.CharacterID\r\nORDER BY Items.ItemID\r\n", CN);
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -447,15 +450,15 @@ namespace Project_BD
                 //case "Bosses":
                 //    formPopup = new Add_Boss();
                 //    break;
-                //case "Dungeons":
-                //    formPopup = new Add_Dungeon();
-                //    break;
+                case "Dungeons":
+                    formPopup = new Add_Dungeons();
+                    break;
                 //case "Enemies":
                 //    formPopup = new Add_Enemy();
                 //    break;
-                //case "Items":
-                //    formPopup = new Add_Item();
-                //    break;
+                case "Items":
+                    formPopup = new Add_Items();
+                    break;
                 //case "CraftingMaterials":
                 //    formPopup = new Add_CraftingMaterial();
                 //    break;
@@ -471,6 +474,12 @@ namespace Project_BD
                     break;
                 case "Locations":
                     formPopup.FormClosed += new FormClosedEventHandler(LocationsButton_Click);
+                    break;
+                case "Dungeons":
+                    formPopup.FormClosed += new FormClosedEventHandler(DungeonsButton_Click);
+                    break;
+                case "Items":
+                    formPopup.FormClosed += new FormClosedEventHandler(ItemsButton_Click);
                     break;
             }
         }
@@ -504,9 +513,9 @@ namespace Project_BD
                 //case "Bosses":
                 //    formPopup = new Edit_Boss();
                 //    break;
-                //case "Dungeons":
-                //    formPopup = new Edit_Dungeon();
-                //    break;
+                case "Dungeons":
+                    formPopup = new Edit_Dungeons(cell_value);
+                    break;
                 //case "Enemies":
                 //    formPopup = new Edit_Enemy();
                 //    break;
@@ -529,6 +538,9 @@ namespace Project_BD
                     break;
                 case "Locations":
                     formPopup.FormClosed += new FormClosedEventHandler(LocationsButton_Click);
+                    break;
+                case "Dungeons":
+                    formPopup.FormClosed += new FormClosedEventHandler(DungeonsButton_Click);
                     break;
 
             }

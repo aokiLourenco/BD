@@ -24,6 +24,18 @@ AS
 		RETURN @counter
 	END
 
+GO
+
+CREATE FUNCTION check_ItemID (@ID_Item INT) RETURNS INT
+AS
+	BEGIN
+		DECLARE @counter INT
+		SELECT @counter=COUNT(1) FROM Items WHERE ItemID=@ID_Item
+		RETURN @counter
+	END
+GO
+
+
 
 -- CREATE FUNCTION dbo.checkID_Festival (@ID_Festival INT) RETURNS INT
 -- AS

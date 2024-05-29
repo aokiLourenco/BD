@@ -1,6 +1,6 @@
 ﻿namespace Project_BD
 {
-    partial class Add_Dungeons
+    partial class Edit_Dungeons
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 249F));
             tableLayoutPanel1.Size = new Size(800, 450);
-            tableLayoutPanel1.TabIndex = 4;
+            tableLayoutPanel1.TabIndex = 5;
             // 
             // button1
             // 
@@ -173,14 +173,14 @@
             label3.TabIndex = 7;
             label3.Text = "MainBoss";
             // 
-            // Add_Dungeons
+            // Edit_Dungeons
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
-            Name = "Add_Dungeons";
-            Text = "Add_Dungeons";
+            Name = "Edit_Dungeons";
+            Text = "Edit_Dungeons";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
