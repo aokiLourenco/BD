@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Project_BD.Login;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using SortOrder = System.Windows.Forms.SortOrder;
 
 namespace Project_BD
@@ -18,10 +19,10 @@ namespace Project_BD
     {
 
         //AOKI
-        //public static string SQLConnectionString = "data source = (localdb)\\localeldenvault;initial catalog=master;integrated security=true;encrypt=false";
+        public static string SQLConnectionString = "data source = (localdb)\\localeldenvault;initial catalog=master;integrated security=true;encrypt=false";
 
         //TÓ
-        public static string SQLConnectionString = "Data Source = localhost;Initial Catalog=master;Integrated Security=True;Encrypt=False";
+        //public static string SQLConnectionString = "Data Source = localhost;Initial Catalog=master;Integrated Security=True;Encrypt=False";
 
         public string data_type = "";
         private string last_type = "";
@@ -579,7 +580,7 @@ namespace Project_BD
             {
                 if (CN.State == ConnectionState.Open)
                     CN.Close();
-               
+
                 switch (data_type)
                 {
                     case "Characters":
@@ -597,7 +598,7 @@ namespace Project_BD
                     case "Bosses":
                         BossesButton_Click(sender, e);
                         break;
-                }   
+                }
             }
         }
 
@@ -690,5 +691,278 @@ namespace Project_BD
             }
         }
 
+        private void SearchDataBox_TextChanged(object sender, EventArgs e)
+        {
+            string criteria = DropBox.Text;
+            string filter = SearchDataBox.Text;
+            string data = "";
+            SqlCommand cmd;
+
+            try
+            {
+                if (CN.State == ConnectionState.Closed)
+                    CN.Open();
+
+                switch (data_type)
+                {
+                    case "Locations":
+                        switch (criteria)
+                        {
+                            case "ID":
+                                data = "LocationID";
+                                break;
+                            case "Area":
+                                data = "Area";
+                                break;
+                            case "Name":
+                                data = "Name";
+                                break;
+                            case "Points of Interest":
+                                data = "PointsOfInterest";
+                                break;
+                        }
+                        cmd = new SqlCommand("SELECT * FROM Locations WHERE " + data + " LIKE '%' + @filter + '%'", CN);
+                        break;
+                    
+                    case "Crafts":
+                        switch (criteria)
+                        {
+                            case "ID":
+                                data = "Items.ItemID";
+                                break;
+                            case "Name":
+                                data = "Items.Name";
+                                break;
+                            case "Description":
+                                data = "Items.DESCRIPTION";
+                                break;
+                            case "Source":
+                                data = "CraftingMaterials.Source";
+                                break;
+                        }
+                        cmd = new SqlCommand("SELECT * FROM Crafts WHERE " + data + " LIKE '%' + @filter + '%'", CN);
+                        break;
+                   
+                    case "Characters":
+                        switch (criteria)
+                        {
+                            case "ID":
+                                data = "EmenyID";
+                                break;
+                            case "Name":
+                                data = "Name";
+                                break;
+                            case "Desctiption":
+                                data = "DESCRIPTION";
+                                break;
+                            case "Class":
+                                data = "Class";
+                                break;
+                            case "Attacks":
+                                data = "Attcacks";
+                                break;
+                            case "Attributes":
+                                data = "Attributes";
+                                break;
+                            case "Weakness":
+                                data = "Weakness";
+                                break;
+                            case "Level":
+                                data = "LEVEL";
+                                break;
+                            case "Location Area":
+                                data = "Locations.Area";
+                                break;
+                            case "Location Name":
+                                data = "Locations.Name";
+                                break;
+                        }
+                        cmd = new SqlCommand("SELECT * FROM Characters WHERE " + data + " LIKE '%' + @filter + '%'", CN);
+                        break;
+                    
+                    case "Bosses":
+                        switch (criteria)
+                        {
+                            case "ID":
+                                data = "BossID";
+                                break;
+                            case "Name":
+                                data = "Name";
+                                break;
+                            case "Cutscene":
+                                data = "Cutscene";
+                                break;
+                            case "Desctiption":
+                                data = "DESCRIPTION";
+                                break;
+                            case "Class":
+                                data = "Class";
+                                break;
+                            case "Attacks":
+                                data = "Attcacks";
+                                break;
+                            case "Attributes":
+                                data = "Attributes";
+                                break;
+                            case "Weakness":
+                                data = "Weakness";
+                                break;
+                            case "Level":
+                                data = "LEVEL";
+                                break;
+                            case "Location Area":
+                                data = "Locations.Area";
+                                break;
+                            case "Location Name":
+                                data = "Locations.Name";
+                                break;
+                        }
+                        cmd = new SqlCommand("SELECT * FROM Bosses WHERE " + data + " LIKE '%' + @filter + '%'", CN);
+                        break;
+                    
+                    case "Dungeons":
+                        switch (criteria)
+                        {
+                            case "ID":
+                                data = "DungeonID";
+                                break;
+                            case "Name":
+                                data = "Name";
+                                break;
+                            case "Main Boss":
+                                data = "MainBoss";
+                                break;
+                            case "Area":
+                                data = "Area";
+                                break;
+                            case "Location Area":
+                                data = "Locations.Area";
+                                break;
+                        }
+                        cmd = new SqlCommand("SELECT * FROM Dungeons WHERE " + data + " LIKE '%' + @filter + '%'", CN);
+                        break;
+                   
+                    case "Enemies":
+                        switch (criteria)
+                        {
+                            case "ID":
+                                data = "EmenyID";
+                                break;
+                            case "Name":
+                                data = "Name";
+                                break;
+                            case "Desctiption":
+                                data = "DESCRIPTION";
+                                break;
+                            case "Class":
+                                data = "Class";
+                                break;
+                            case "Attacks":
+                                data = "Attcacks";
+                                break;
+                            case "Attributes":
+                                data = "Attributes";
+                                break;
+                            case "Weakness":
+                                data = "Weakness";
+                                break;
+                            case "Level":
+                                data = "LEVEL";
+                                break;
+                            case "Location Area":
+                                data = "Locations.Area";
+                                break;
+                            case "Location Name":
+                                data = "Locations.Name";
+                                break;
+                        }
+                        cmd = new SqlCommand("SELECT * FROM Enemies WHERE " + data + " LIKE '%' + @filter + '%'", CN);
+                        break;
+                    
+                    case "Items":
+                        switch (criteria)
+                        {
+                            case "ID":
+                                data = "ItemID";
+                                break;
+                            case "Name":
+                                data = "Name";
+                                break;
+                            case "Description":
+                                data = "DESCRIPTION";
+                                break;
+                            case "Use Requisites":
+                                data = "UserRequisites";
+                                break;
+                            case "Owner":
+                                data = "Characters.Name";
+                                break;
+                            case "Dungeons":
+                                data = "Dungeons.Name";
+                                break;
+                            case "Area":
+                                data = "Dungeons.Area";
+                                break;
+                        }
+                        cmd = new SqlCommand("SELECT * FROM Items WHERE " + data + " LIKE '%' + @filter + '%'", CN);
+                        break;
+                    
+                    case "CraftingMaterials":
+                        switch (criteria)
+                        {
+                            case "ID":
+                                data = "CraftingMaterialID";
+                                break;
+                            case "Name":
+                                data = "Items.Name";
+                                break;
+                            case "Crafting Use":
+                                data = "CraftingUse";
+                                break;
+                            case "Source":
+                                data = "Source";
+                                break;
+                            case "Quantity":
+                                data = "Quantity";
+                                break;
+                            case "Description":
+                                data = "DESCRIPTION";
+                                break;
+                        }
+                        cmd = new SqlCommand("SELECT * FROM CraftingMaterials WHERE " + data + " LIKE '%' + @filter + '%'", CN);
+                        break;
+                    
+                    default:
+                        MessageBox.Show("Please, select a table to edit data");
+                        return;
+                }
+
+                using (cmd)
+                {
+                    cmd.Parameters.AddWithValue("@filter", filter);
+
+                    DataTable detailsTable = new DataTable();
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+
+                    sqlDataAdapter.Fill(detailsTable);
+                    ShowTableInfo.DataSource = detailsTable;
+                    ShowTableInfo.Visible = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (CN.State == ConnectionState.Open)
+                    CN.Close();
+            }
+        }
+
+        private void DropBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

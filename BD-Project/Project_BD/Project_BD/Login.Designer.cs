@@ -37,6 +37,7 @@ namespace Project_BD
             label2 = new Label();
             ClearButton = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
+            bypass = new Button();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -125,6 +126,7 @@ namespace Project_BD
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.6695442F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.3903217F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.3903217F));
+            tableLayoutPanel1.Controls.Add(bypass, 0, 3);
             tableLayoutPanel1.Controls.Add(textBox1, 2, 1);
             tableLayoutPanel1.Controls.Add(label1, 1, 1);
             tableLayoutPanel1.Controls.Add(label2, 1, 2);
@@ -142,6 +144,21 @@ namespace Project_BD
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(1264, 681);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // bypass
+            // 
+            bypass.Anchor = AnchorStyles.Left;
+            tableLayoutPanel1.SetColumnSpan(bypass, 2);
+            bypass.Cursor = Cursors.Hand;
+            bypass.FlatAppearance.BorderSize = 6;
+            bypass.Font = new Font("Segoe UI", 14F);
+            bypass.Location = new Point(3, 543);
+            bypass.Name = "bypass";
+            bypass.Size = new Size(102, 60);
+            bypass.TabIndex = 6;
+            bypass.Text = "Bypass";
+            bypass.UseVisualStyleBackColor = true;
+            bypass.Click += bypass_Click;
             // 
             // Login
             // 
@@ -168,5 +185,6 @@ namespace Project_BD
         private Label label2;
         private Button ClearButton;
         private TableLayoutPanel tableLayoutPanel1;
+        private Button bypass;
     }
 }
