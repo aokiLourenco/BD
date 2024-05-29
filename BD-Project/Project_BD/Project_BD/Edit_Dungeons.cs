@@ -32,8 +32,8 @@ namespace Project_BD
         private void Edit_Characters_Load(Dictionary<string, Object> cell_values)
         {
             textBox_Name.Text = cell_values["Name"].ToString();
-            textBox_Area.Text = cell_values["Area"].ToString();
-            textBox_Location.Text = cell_values["Location"].ToString();
+            textBox_Area.Text = cell_values["LocationArea"].ToString();
+            textBox_Location.Text = cell_values["Area"].ToString();
             textBox_MainBoss.Text = cell_values["MainBoss"].ToString();
         }
         private void LoadLocations()
@@ -43,7 +43,8 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Closed)
                     CN.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Locations", CN);
+
+                SqlCommand cmd = new SqlCommand("SELECT LocationID, Name FROM Locations", CN);
                 SqlDataReader reader = cmd.ExecuteReader();
 
 

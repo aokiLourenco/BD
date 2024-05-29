@@ -32,7 +32,8 @@ namespace Project_BD
             textBox_Area.Text = cell_value["Area"].ToString();
             textBox_Description.Text = cell_value["DESCRIPTION"].ToString();
             textBox_POI.Text = cell_value["PointsOfInterest"].ToString();
-            id = Int32.Parse(cell_value["LocationID"].ToString());
+            id = Int32.Parse(cell_value["ID"].ToString());
+
         }
 
         private void Edit_Locations_DB(string Name, string Area, string Description, string POI)
