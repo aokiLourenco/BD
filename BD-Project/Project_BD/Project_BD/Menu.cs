@@ -747,7 +747,7 @@ namespace Project_BD
                         switch (criteria)
                         {
                             case "ID":
-                                data = "EmenyID";
+                                data = "CharacterID";
                                 break;
                             case "Name":
                                 data = "Name";
