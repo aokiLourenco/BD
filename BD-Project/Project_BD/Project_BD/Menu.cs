@@ -53,7 +53,9 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Locations ORDER BY Locations.LocationID", CN);
+                //SqlCommand cmd = new SqlCommand("SELECT * FROM Locations ORDER BY Locations.LocationID", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM LocationView_Table", CN);
+
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -80,9 +82,10 @@ namespace Project_BD
                 data_type = "Locations";
                 CN.Close();
             }
-            catch (Exception)
+            catch (Exception exp)
             {
                 data_type = last_type;
+                MessageBox.Show(exp.Message);
                 MessageBox.Show("Please, try again");
             }
         }
@@ -97,7 +100,7 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Crafts ORDER BY Crafts.ItemID", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM CraftsView_table", CN);
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -148,7 +151,10 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Characters.CharacterID, Characters.Name, Characters.Attacks, Characters.Attributes, Characters.DESCRIPTION,  Characters.Class, Characters.Weakness, Locations.Name, Characters.LEVEL FROM Characters JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Characters.Name", CN);
+                //SqlCommand cmd = new SqlCommand("SELECT Characters.CharacterID, Characters.Name, Characters.Attacks, Characters.Attributes, Characters.DESCRIPTION,  Characters.Class, Characters.Weakness, Locations.Name, Characters.LEVEL FROM Characters JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Characters.Name", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * From CharactersView_Table", CN);
+
+
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -167,8 +173,8 @@ namespace Project_BD
                 //        detailsTable.Columns.Remove(column);
                 //    }
                 //}
-                detailsTable.Columns["CharacterID"].ColumnName = "ID";
-                detailsTable.Columns["Name1"].ColumnName = "Area";
+                //detailsTable.Columns["CharacterID"].ColumnName = "ID";
+                //detailsTable.Columns["Name1"].ColumnName = "Area";
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -197,9 +203,10 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Bosses JOIN Characters ON Bosses.CharacterID = Characters.CharacterID JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Bosses.CharacterID", CN);
+                //SqlCommand cmd = new SqlCommand("SELECT * FROM Bosses JOIN Characters ON Bosses.CharacterID = Characters.CharacterID JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Bosses.CharacterID", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM BossView_Table", CN);
                 Debug.WriteLine(cmd);
-
+                
                 DataTable detailsTable = new DataTable();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
                 Debug.WriteLine(sqlDataAdapter);
@@ -217,9 +224,6 @@ namespace Project_BD
                 //    }
                 //}
 
-                detailsTable.Columns["CharacterID"].ColumnName = "ID";
-                detailsTable.Columns["Area"].ColumnName = "Location";
-                detailsTable.Columns["Name1"].ColumnName = "Area";
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -247,7 +251,9 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Dungeons JOIN Locations ON Dungeons.LocationID = Locations.LocationID ORDER BY Dungeons.Name", CN);
+                //SqlCommand cmd = new SqlCommand("SELECT * FROM Dungeons JOIN Locations ON Dungeons.LocationID = Locations.LocationID ORDER BY Dungeons.Name", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM DungeonView_Table", CN);
+
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -266,10 +272,7 @@ namespace Project_BD
                 //        detailsTable.Columns.Remove(column);
                 //    }
                 //}
-                detailsTable.Columns["DungeonID"].ColumnName = "ID";
-                detailsTable.Columns["Name1"].ColumnName = "Location";
-
-
+                
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
                 ShowTableInfo.AutoResizeColumns();
@@ -297,7 +300,9 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Enemies ORDER BY Enemies.CharacterID", CN);
+                //SqlCommand cmd = new SqlCommand("SELECT * FROM Enemies ORDER BY Enemies.CharacterID", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM EnemyView_Table", CN);
+
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -344,7 +349,8 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT *\r\nFROM Items \r\nJOIN Dungeons ON Items.Award = Dungeons.DungeonID \r\nJOIN Characters ON Items.Owner = Characters.CharacterID\r\nORDER BY Items.ItemID\r\n", CN);
+                //SqlCommand cmd = new SqlCommand("SELECT *\r\nFROM Items \r\nJOIN Dungeons ON Items.Award = Dungeons.DungeonID \r\nJOIN Characters ON Items.Owner = Characters.CharacterID\r\nORDER BY Items.ItemID\r\n", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Items_Table", CN);
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -363,10 +369,10 @@ namespace Project_BD
                 //        detailsTable.Columns.Remove(column);
                 //    }
                 //}
-                detailsTable.Columns["ItemID"].ColumnName = "ID";
-                detailsTable.Columns["Name1"].ColumnName = "Location";
-                detailsTable.Columns["Owner"].ColumnName = "Owner_ID";
-                detailsTable.Columns["Name2"].ColumnName = "Owner";
+                //detailsTable.Columns["ItemID"].ColumnName = "ID";
+                //detailsTable.Columns["Name1"].ColumnName = "Location";
+                //detailsTable.Columns["Owner"].ColumnName = "Owner_ID";
+                //detailsTable.Columns["Name2"].ColumnName = "Owner";
 
 
                 ShowTableInfo.DataSource = detailsTable;
@@ -397,7 +403,8 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM CraftingMaterials ORDER BY CraftingMaterials.CraftingMaterialID", CN);
+                //SqlCommand cmd = new SqlCommand("SELECT * FROM CraftingMaterials ORDER BY CraftingMaterials.CraftingMaterialID", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM CraftingMaterials_Table", CN);
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -527,7 +534,7 @@ namespace Project_BD
                         cmd = new SqlCommand("DeleteLocation", CN);
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@ID_Location", cell_value["LocationID"]);
+                        cmd.Parameters.AddWithValue("@ID_Location", cell_value["ID"]);
                         break;
                     //case "Crafts":
                     //    formPopup = new Edit_Craft();
