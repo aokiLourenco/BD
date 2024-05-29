@@ -143,7 +143,7 @@ namespace Project_BD
             //    this.Hide();
             //    Characters character = new Characters();
             //    character.Show();
-
+            cell_value.Clear();
             last_type = data_type;
             try
             {
@@ -191,12 +191,13 @@ namespace Project_BD
             //this.Hide();
             //Bosses boss = new Bosses();
             //boss.Show();
+            cell_value.Clear();
 
             last_type = data_type;
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Bosses JOIN Characters ON Bosses.CharacterID = Characters.CharacterID ORDER BY Bosses.CharacterID", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Bosses JOIN Characters ON Bosses.CharacterID = Characters.CharacterID JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Bosses.CharacterID", CN);
                 Debug.WriteLine(cmd);
 
                 DataTable detailsTable = new DataTable();
@@ -215,6 +216,10 @@ namespace Project_BD
                 //        detailsTable.Columns.Remove(column);
                 //    }
                 //}
+
+                detailsTable.Columns["CharacterID"].ColumnName = "ID";
+                detailsTable.Columns["Area"].ColumnName = "Location";
+                detailsTable.Columns["Name1"].ColumnName = "Area";
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -236,6 +241,8 @@ namespace Project_BD
             //this.Hide();
             //Dungeons dungeon = new Dungeons();
             //dungeon.Show();
+            cell_value.Clear();
+
             last_type = data_type;
             try
             {
@@ -284,6 +291,7 @@ namespace Project_BD
             //this.Hide();
             //Enemies enemy = new Enemies();
             //enemy.Show();
+            cell_value.Clear();
 
             last_type = data_type;
             try
@@ -330,6 +338,7 @@ namespace Project_BD
             //this.Hide();
             //Items item = new Items();
             //item.Show();
+            cell_value.Clear();
 
             last_type = data_type;
             try
@@ -382,6 +391,8 @@ namespace Project_BD
             //this.Hide();
             //CraftingMaterials craftingMaterials = new CraftingMaterials();
             //craftingMaterials.Show();
+            cell_value.Clear();
+
             last_type = data_type;
             try
             {
@@ -472,6 +483,7 @@ namespace Project_BD
                     break;
             }
             formPopup.Show();
+
             switch (data_type)
             {
                 case "Characters":
@@ -497,6 +509,97 @@ namespace Project_BD
         }
 
 
+        //DELETE INFORMATION FROM A DB
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (cell_value == null || cell_value.Count == 0)
+            {
+                MessageBox.Show("Please, select a row to delete");
+                return;
+            }
+            try
+            {
+                CN.Open();
+                SqlCommand cmd;
+                switch (data_type)
+                {
+                    case "Locations":
+                        cmd = new SqlCommand("DeleteLocation", CN);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@ID_Location", cell_value["LocationID"]);
+                        break;
+                    //case "Crafts":
+                    //    formPopup = new Edit_Craft();
+                    //    break;
+                    case "Characters":
+                        cmd = new SqlCommand("DeleteCharacter", CN);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@ID_Character", cell_value["ID"]);
+                        break;
+                    case "Bosses":
+                        cmd = new SqlCommand("DeleteBoss", CN);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@ID_Boss", cell_value["ID"]);
+                        break;
+                    case "Dungeons":
+                        cmd = new SqlCommand("DeleteDungeon", CN);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@ID_Dungeon", cell_value["ID"]);
+                        break;
+                    //case "Enemies":
+                    //    formPopup = new Edit_Enemy();
+                    //    break;
+                    case "Items":
+                        cmd = new SqlCommand("DeleteItem", CN);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@ID_Item", cell_value["ID"]);
+                        break;
+                    //case "CraftingMaterials":
+                    //    formPopup = new Edit_CraftingMaterial();
+                    //    break;
+                    default:
+                        MessageBox.Show("Please, select a table to edit data");
+                        return;
+                }
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successefully");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (CN.State == ConnectionState.Open)
+                    CN.Close();
+               
+                switch (data_type)
+                {
+                    case "Characters":
+                        CharactersButton_Click(sender, e);
+                        break;
+                    case "Locations":
+                        LocationsButton_Click(sender, e);
+                        break;
+                    case "Dungeons":
+                        DungeonsButton_Click(sender, e);
+                        break;
+                    case "Items":
+                        ItemsButton_Click(sender, e);
+                        break;
+                    case "Bosses":
+                        BossesButton_Click(sender, e);
+                        break;
+                }   
+            }
+        }
 
         // EDIT INFORMATION ON A DB
 
@@ -504,6 +607,11 @@ namespace Project_BD
         private void EditButton_Click(object sender, EventArgs e)
         {
             var formPopup = new Form();
+            if (cell_value == null || cell_value.Count == 0)
+            {
+                MessageBox.Show("Please, select a row to edit");
+                return;
+            }
             switch (data_type)
             {
                 case "Locations":
@@ -515,9 +623,9 @@ namespace Project_BD
                 case "Characters":
                     formPopup = new Edit_Characters(cell_value);
                     break;
-                //case "Bosses":
-                //    formPopup = new Edit_Boss();
-                //    break;
+                case "Bosses":
+                    formPopup = new Edit_Bosses(cell_value);
+                    break;
                 case "Dungeons":
                     formPopup = new Edit_Dungeons(cell_value);
                     break;
@@ -550,6 +658,9 @@ namespace Project_BD
                 case "Items":
                     formPopup.FormClosed += new FormClosedEventHandler(ItemsButton_Click);
                     break;
+                case "Bosses":
+                    formPopup.FormClosed += new FormClosedEventHandler(BossesButton_Click);
+                    break;
 
             }
         }
@@ -557,6 +668,11 @@ namespace Project_BD
 
         private void ShowTableInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.RowIndex >= ShowTableInfo.Rows.Count ||
+                e.ColumnIndex < 0 || e.ColumnIndex >= ShowTableInfo.Columns.Count)
+            {
+                return;
+            }
             var formPopup = new Form();
             if (ShowTableInfo.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
@@ -573,5 +689,6 @@ namespace Project_BD
 
             }
         }
+
     }
 }

@@ -12,20 +12,34 @@ using static Project_BD.Menu;
 
 namespace Project_BD
 {
-    public partial class Add_Bosses : Form
+    public partial class Edit_Bosses : Form
     {
+        private int id;
         private SqlConnection CN;
         private Dictionary<string, int> locations = new Dictionary<string, int>();
 
-        public Add_Bosses()
+        public Edit_Bosses(Dictionary<string, Object> cell_values)
         {
             InitializeComponent();
             CN = ConnectionManager.getSGBDConnection();
+            Edit_Bosses_Load(cell_values);
             LoadLocations();
-
+            id = Int32.Parse(cell_values["ID"].ToString());
         }
 
+        private void Edit_Bosses_Load(Dictionary<string, Object> cell_values)
+        {
+            textBox_Name.Text = cell_values["Name"].ToString();
+            textBox_Attacks.Text = cell_values["Attacks"].ToString();
+            textBox_Attributes.Text = cell_values["Attributes"].ToString();
+            textBox_Class.Text = cell_values["Class"].ToString();
+            textBox_Description.Text = cell_values["DESCRIPTION"].ToString();
+            textBox_Level.Text = cell_values["LEVEL"].ToString();
+            textBox_Location.Text = cell_values["Area"].ToString().ToLower();
+            textBox_Weakness.Text = cell_values["Weakness"].ToString();
+            textBox_cutscene.Text = cell_values["Cutscene"].ToString();
 
+        }
 
         private void LoadLocations()
         {
@@ -59,27 +73,23 @@ namespace Project_BD
             }
         }
 
-
         private void Back()
         {
             this.Close();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Back();
-        }
-
-
-        private void Add_Boss_DB(string name, string attacks, string Attributes, string description, string class_str, string weakness, string location, string level, string cutscene)
+        private void Edit_Bosses_DB(string name, string attacks, string Attributes, string description, string class_str, string weakness, string location, string level, string cutscene)
         {
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("AddCharacter", CN);
+
+                SqlCommand cmd = new SqlCommand("EditBoss", CN);
+
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@ID_Boss", id);
+                cmd.Parameters.AddWithValue("@Cutscene", cutscene);
                 cmd.Parameters.AddWithValue("@Name", name);
                 cmd.Parameters.AddWithValue("@Attacks", attacks);
                 cmd.Parameters.AddWithValue("@Attributes", Attributes);
@@ -88,38 +98,17 @@ namespace Project_BD
                 cmd.Parameters.AddWithValue("@Weakness", weakness);
                 cmd.Parameters.AddWithValue("@LEVEL", Int32.Parse(level));
 
-                // Get the ID_Location from the dictionary
-                int idLocation = locations[location.ToLower()];
-                cmd.Parameters.AddWithValue("@LocationID", idLocation);
-
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Character added successfully");
+                MessageBox.Show("Boss Edited successfully");
 
-                cmd = new SqlCommand("AddBoss", CN);
-                cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@CharacterID", new SqlCommand("SELECT MAX(CharacterID) FROM Characters",CN).ExecuteScalar());
-                cmd.Parameters.AddWithValue("@Cutscene", cutscene);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Boss added successfully");
 
                 Back();
+
             }
             catch (Exception e)
             {
-                try
-                {
-                    SqlCommand cmd = new SqlCommand("DeleteCharacter", CN);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ID_Character", new SqlCommand("SELECT MAX(CharacterID) FROM Characters", CN).ExecuteScalar());
-                    cmd.ExecuteNonQuery();
-                }
-                catch
-                {
-                    
-                }
-
                 MessageBox.Show(e.Message);
             }
             finally
@@ -142,16 +131,19 @@ namespace Project_BD
             string level = textBox_Level.Text;
             string cutscene = textBox_cutscene.Text;
 
-            if (name == "" || attacks == "" || Attributes == "" || description == "" || class_str == "" || weakness == "" || location == "" || level == "" || cutscene == "")
+            if (name == "" || attacks == "" || Attributes == "" || description == "" || class_str == "" || weakness == "" || location == "" || level == "")
             {
                 MessageBox.Show("Please fill all the fields");
                 return;
             }
 
 
-            Add_Boss_DB(name, attacks, Attributes, description, class_str, weakness, location, level,cutscene);
+            Edit_Bosses_DB(name, attacks, Attributes, description, class_str, weakness, location, level, cutscene);
+        }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Back();
         }
     }
 }

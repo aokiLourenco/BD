@@ -1,6 +1,6 @@
 ﻿namespace Project_BD
 {
-    partial class Add_Bosses
+    partial class Edit_Bosses
     {
         /// <summary>
         /// Required designer variable.
@@ -92,7 +92,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 249F));
             tableLayoutPanel1.Size = new Size(800, 450);
-            tableLayoutPanel1.TabIndex = 4;
+            tableLayoutPanel1.TabIndex = 5;
             // 
             // button1
             // 
@@ -105,6 +105,7 @@
             button1.TabIndex = 0;
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox_Name
             // 
@@ -282,14 +283,14 @@
             label9.TabIndex = 20;
             label9.Text = "Cutscene Name";
             // 
-            // Add_Bosses
+            // Edit_Bosses
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
-            Name = "Add_Bosses";
-            Text = "Add_Bosses";
+            Name = "Edit_Bosses";
+            Text = "Edit_Bosses";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);

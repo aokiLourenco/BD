@@ -64,11 +64,11 @@ BEGIN
 		BEGIN
         SET @error = 'CharacterID does not exist, please check the ID and try again';
         RAISERROR (@error, 16, 1);
-        END
+    END
 	ELSE
 		SET NOCOUNT ON;
-        BEGIN
-            BEGIN TRY
+    BEGIN
+        BEGIN TRY
                 BEGIN TRAN
 
                     UPDATE Characters 
@@ -95,37 +95,38 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE DeleteCharacter (@ID_Character INT)
+CREATE PROCEDURE DeleteCharacter
+    (@ID_Character INT)
 AS
-	BEGIN
-		DECLARE @verification INT;
-		DECLARE @error VARCHAR(100);
-    
-		SET @verification = (SELECT dbo.checkID_Character(@ID_Character));
-    
-		IF (@verification = 0)
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_CharacterID(@ID_Character));
+
+    IF (@verification = 0)
 		BEGIN
-			SET @error = 'CharacterID does not exist, please check the ID and try again!';
-			RAISERROR (@error, 16, 1);
-		END
+        SET @error = 'CharacterID does not exist, please check the ID and try again!';
+        RAISERROR (@error, 16, 1);
+    END
 		ELSE
 		BEGIN
-			BEGIN TRY
+        BEGIN TRY
 				BEGIN TRAN
-                    DELETE FROM Characters WHERE CharacterID = @ID_Character;
-                    DELETE FROM IsAt WHERE CharacterID = @ID_Character;
-                    DELETE FROM Enemies WHERE CharacterID = @ID_Character;
                     DELETE FROM Bosses WHERE CharacterID = @ID_Character;
+                    DELETE FROM Enemies WHERE CharacterID = @ID_Character;
+                    DELETE FROM IsAt WHERE CharacterID = @ID_Character;
+                    DELETE FROM Characters WHERE CharacterID = @ID_Character;
         		COMMIT TRAN
 			END TRY
 			BEGIN CATCH
 				ROLLBACK TRAN
 				SELECT @error = ERROR_MESSAGE();
-				SET @error = 'Error, could not delete character from database. Value deleted incorrectly.';
+				--SET @error = 'Error, could not delete character from database. Value deleted incorrectly.';
 				RAISERROR (@error, 16, 1);
 			END CATCH
-		END
-	END
+    END
+END
 GO
 
 
@@ -141,7 +142,7 @@ CREATE PROCEDURE AddLocation
     @DESCRIPTION VARCHAR(1024),
     @Name VARCHAR(512),
     @PointsOfInterest VARCHAR(1024)
-    )
+)
 AS
 BEGIN
     DECLARE @LocationID INT;
@@ -174,7 +175,7 @@ CREATE PROCEDURE EditLocation
     @DESCRIPTION VARCHAR(1024),
     @Name VARCHAR(512),
     @PointsOfInterest VARCHAR(1024)
-    )
+)
 
 AS
 
@@ -188,11 +189,11 @@ BEGIN
         BEGIN
         SET @error = 'LocationID does not exist, please check the ID and try again';
         RAISERROR (@error, 16, 1);
-        END
+    END
     ELSE
         SET NOCOUNT ON;
-        BEGIN
-            BEGIN TRY
+    BEGIN
+        BEGIN TRY
                 BEGIN TRAN
 
                     UPDATE Locations 
@@ -219,27 +220,28 @@ GO
 DROP PROCEDURE DeleteLocation;
 GO
 
-CREATE PROCEDURE DeleteLocation (@ID_Location INT)
+CREATE PROCEDURE DeleteLocation
+    (@ID_Location INT)
 AS
-    BEGIN
-        DECLARE @verification INT;
-        DECLARE @error VARCHAR(100);
-    
-        SET @verification = (SELECT dbo.check_LocationID(@ID_Location));
-    
-        IF (@verification = 0)
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_LocationID(@ID_Location));
+
+    IF (@verification = 0)
         BEGIN
-            SET @error = 'LocationID does not exist, please check the ID and try again!';
-            RAISERROR (@error, 16, 1);
-        END
+        SET @error = 'LocationID does not exist, please check the ID and try again!';
+        RAISERROR (@error, 16, 1);
+    END
         ELSE
         BEGIN
-            BEGIN TRY
+        BEGIN TRY
                 BEGIN TRAN
-                    DELETE FROM Locations WHERE LocationID = @ID_Location;
-                    DELETE FROM Characters WHERE LocationID = @ID_Location;
-                    DELETE FROM Dungeons WHERE LocationID = @ID_Location;
                     DELETE FROM IsAt WHERE LocationID = @ID_Location;
+                    DELETE FROM Dungeons WHERE LocationID = @ID_Location;
+                    DELETE FROM Characters WHERE LocationID = @ID_Location;
+                    DELETE FROM Locations WHERE LocationID = @ID_Location;
                 COMMIT TRAN
             END TRY
             BEGIN CATCH
@@ -248,8 +250,8 @@ AS
                 SET @error = 'Error, could not delete location from database. Value deleted incorrectly.';
                 RAISERROR (@error, 16, 1);
             END CATCH
-        END
     END
+END
 GO
 
 --Dungeons
@@ -263,7 +265,7 @@ CREATE PROCEDURE AddDungeon
     @Area VARCHAR(512),
     @Name VARCHAR(512),
     @MainBoss VARCHAR(512)
-    )
+)
 AS
 BEGIN
     DECLARE @DungeonID INT;
@@ -296,7 +298,7 @@ CREATE PROCEDURE EditDungeon
     @Area VARCHAR(512),
     @Name VARCHAR(512),
     @MainBoss VARCHAR(512)
-    )
+)
 
 AS
 
@@ -310,11 +312,11 @@ BEGIN
         BEGIN
         SET @error = 'DungeonID does not exist, please check the ID and try again';
         RAISERROR (@error, 16, 1);
-        END
+    END
     ELSE
         SET NOCOUNT ON;
-        BEGIN
-            BEGIN TRY
+    BEGIN
+        BEGIN TRY
                 BEGIN TRAN
 
                     UPDATE Dungeons 
@@ -343,22 +345,23 @@ DROP PROCEDURE DeleteDungeon;
 
 GO
 
-CREATE PROCEDURE DeleteDungeon (@ID_Dungeon INT)
+CREATE PROCEDURE DeleteDungeon
+    (@ID_Dungeon INT)
 AS
-    BEGIN
-        DECLARE @verification INT;
-        DECLARE @error VARCHAR(100);
-    
-        SET @verification = (SELECT dbo.check_DungeonID(@ID_Dungeon));
-    
-        IF (@verification = 0)
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_DungeonID(@ID_Dungeon));
+
+    IF (@verification = 0)
         BEGIN
-            SET @error = 'DungeonID does not exist, please check the ID and try again!';
-            RAISERROR (@error, 16, 1);
-        END
+        SET @error = 'DungeonID does not exist, please check the ID and try again!';
+        RAISERROR (@error, 16, 1);
+    END
         ELSE
         BEGIN
-            BEGIN TRY
+        BEGIN TRY
                 BEGIN TRAN
                     DELETE FROM Items WHERE Award = @ID_Dungeon;
                     DELETE FROM Dungeons WHERE DungeonID = @ID_Dungeon;
@@ -370,11 +373,11 @@ AS
                 SET @error = 'Error, could not delete dungeon from database. Value deleted incorrectly.';
                 RAISERROR (@error, 16, 1);
             END CATCH
-        END
     END
+END
 
 
-Go 
+Go
 
 DROP PROCEDURE AddItem;
 GO
@@ -385,7 +388,7 @@ CREATE PROCEDURE AddItem
     @Name VARCHAR(512),
     @Owner INT,
     @Award INT
-    )
+)
 AS
 BEGIN
     DECLARE @ItemID INT;
@@ -420,7 +423,7 @@ CREATE PROCEDURE EditItem
     @Name VARCHAR(512),
     @Owner INT,
     @Award INT
-    )
+)
 AS
 BEGIN
     DECLARE @verification INT;
@@ -432,11 +435,11 @@ BEGIN
         BEGIN
         SET @error = 'ItemID does not exist, please check the ID and try again';
         RAISERROR (@error, 16, 1);
-        END
+    END
     ELSE
         SET NOCOUNT ON;
-        BEGIN
-            BEGIN TRY
+    BEGIN
+        BEGIN TRY
                 BEGIN TRAN
 
                     UPDATE Items 
@@ -463,22 +466,23 @@ GO
 DROP PROCEDURE DeleteItem;
 GO
 
-CREATE PROCEDURE DeleteItem (@ID_Item INT)
+CREATE PROCEDURE DeleteItem
+    (@ID_Item INT)
 AS
-    BEGIN
-        DECLARE @verification INT;
-        DECLARE @error VARCHAR(100);
-    
-        SET @verification = (SELECT dbo.check_ItemID(@ID_Item));
-    
-        IF (@verification = 0)
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_ItemID(@ID_Item));
+
+    IF (@verification = 0)
         BEGIN
-            SET @error = 'ItemID does not exist, please check the ID and try again!';
-            RAISERROR (@error, 16, 1);
-        END
+        SET @error = 'ItemID does not exist, please check the ID and try again!';
+        RAISERROR (@error, 16, 1);
+    END
         ELSE
         BEGIN
-            BEGIN TRY
+        BEGIN TRY
                 BEGIN TRAN
                     DELETE FROM Items WHERE ItemID = @ID_Item;
                 COMMIT TRAN
@@ -489,27 +493,19 @@ AS
                 SET @error = 'Error, could not delete item from database. Value deleted incorrectly.';
                 RAISERROR (@error, 16, 1);
             END CATCH
-        END
     END
+END
 
-GO
-
-CREATE TABLE Bosses
-(
-    -- Needs Characters
-    CharacterID INT NOT NULL FOREIGN KEY REFERENCES Characters(CharacterID),
-    Cutscene VARCHAR(512) NOT NULL,
-)
 GO
 
 DROP PROCEDURE AddBoss;
 GO
 
-CREATE PROCEDURE AddBoss 
+CREATE PROCEDURE AddBoss
     (
     @CharacterID INT,
     @Cutscene VARCHAR(512)
-    )
+)
 AS
 BEGIN
     DECLARE @error VARCHAR(512);
@@ -535,33 +531,51 @@ GO
 CREATE PROCEDURE EditBoss
     (
     @ID_Boss INT,
-    @CharacterID INT,
-    @Cutscene VARCHAR(512)
+    @Cutscene VARCHAR(512),
+    @Name VARCHAR(512),
+    @Attacks VARCHAR(512),
+    @Attributes VARCHAR(512),
+    @DESCRIPTION VARCHAR(512),
+    @Class VARCHAR(512),
+    @Weakness VARCHAR(512),
+    @LEVEL INT
+
     )
 AS
 BEGIN
     DECLARE @verification INT;
     DECLARE @error VARCHAR(100);
 
-    SET @verification = (SELECT dbo.check_BossID(@CharacterID));
+    SET @verification = (SELECT dbo.check_CharacterID(@ID_Boss));
 
     IF (@verification = 0)
         BEGIN
         SET @error = 'CharacterID does not exist, please check the ID and try again';
         RAISERROR (@error, 16, 1);
-        END
+    END
     ELSE
         SET NOCOUNT ON;
-        BEGIN
-            BEGIN TRY
+    BEGIN
+        BEGIN TRY
                 BEGIN TRAN
 
                     UPDATE Bosses 
                     SET
-                        CharacterID = @CharacterID,
                         Cutscene = @Cutscene
                     WHERE
                         CharacterID = @ID_Boss;
+                    UPDATE Characters
+                    SET
+                        Name = @Name,
+                        Attacks = @Attacks,
+                        Attributes = @Attributes,
+                        DESCRIPTION = @DESCRIPTION,
+                        Class = @Class,
+                        Weakness = @Weakness,
+                        LEVEL = @LEVEL
+                    WHERE
+                        CharacterID = @ID_Boss;
+                
                 COMMIT TRAN
             END TRY
             BEGIN CATCH
@@ -578,31 +592,33 @@ GO
 DROP PROCEDURE DeleteBoss;
 GO
 
-CREATE PROCEDURE DeleteBoss (@ID_Boss INT)
+CREATE PROCEDURE DeleteBoss
+    (@ID_Boss INT)
 AS
-    BEGIN
-        DECLARE @verification INT;
-        DECLARE @error VARCHAR(100);
-    
-        SET @verification = (SELECT dbo.check_BossID(@ID_Boss));
-    
-        IF (@verification = 0)
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_CharacterID(@ID_Boss));
+
+    IF (@verification = 0)
         BEGIN
-            SET @error = 'BossID does not exist, please check the ID and try again!';
-            RAISERROR (@error, 16, 1);
-        END
+        SET @error = 'BossID does not exist, please check the ID and try again!';
+        RAISERROR (@error, 16, 1);
+    END
         ELSE
         BEGIN
-            BEGIN TRY
+        BEGIN TRY
                 BEGIN TRAN
                     DELETE FROM Bosses WHERE CharacterID = @ID_Boss;
+                    DELETE FROM Characters WHERE CharacterID = @ID_Boss;
                 COMMIT TRAN
             END TRY
             BEGIN CATCH
                 ROLLBACK TRAN
                 SELECT @error = ERROR_MESSAGE();
-                SET @error = 'Error, could not delete boss from database. Value deleted incorrectly.';
+                --.SET @error = 'Error, could not delete boss from database. Value deleted incorrectly.';
                 RAISERROR (@error, 16, 1);
             END CATCH
-        END
     END
+END

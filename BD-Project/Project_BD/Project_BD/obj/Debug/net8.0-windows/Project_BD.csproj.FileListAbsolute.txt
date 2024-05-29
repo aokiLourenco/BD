@@ -232,3 +232,4 @@ C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-w
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_Items.resources
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Items.resources
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_Bosses.resources
+C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Bosses.resources

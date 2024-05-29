@@ -35,14 +35,6 @@ AS
 	END
 GO
 
-CREATE FUNCTION check_BossID (@ID_Boss INT) RETURNS INT
-AS
-	BEGIN
-		DECLARE @counter INT
-		SELECT @counter=COUNT(1) FROM Bosses WHERE BossID=@ID_Boss
-		RETURN @counter
-	END
-GO
 
 
 -- CREATE FUNCTION dbo.checkID_Festival (@ID_Festival INT) RETURNS INT
