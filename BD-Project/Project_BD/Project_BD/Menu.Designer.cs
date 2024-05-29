@@ -207,28 +207,31 @@
             // 
             DropBox.Anchor = AnchorStyles.None;
             DropBox.FormattingEnabled = true;
-            DropBox.Location = new Point(795, 122);
+            DropBox.Items.AddRange(new object[] { "----------Bosses----------", "ID", "Name", "Description", "----------Characters-----", "Attacks", "Attributes", "Points of Interest" });
+            DropBox.Location = new Point(792, 122);
             DropBox.Name = "DropBox";
-            DropBox.Size = new Size(121, 23);
+            DropBox.Size = new Size(127, 23);
             DropBox.TabIndex = 9;
             DropBox.Text = "Search";
+            DropBox.SelectedIndexChanged += DropBox_SelectedIndexChanged;
             // 
             // SearchDataBox
             // 
             SearchDataBox.Anchor = AnchorStyles.None;
             SearchDataBox.ForeColor = SystemColors.WindowFrame;
-            SearchDataBox.Location = new Point(944, 122);
+            SearchDataBox.Location = new Point(932, 122);
             SearchDataBox.Name = "SearchDataBox";
-            SearchDataBox.Size = new Size(100, 23);
+            SearchDataBox.PlaceholderText = "Search data";
+            SearchDataBox.Size = new Size(124, 23);
             SearchDataBox.TabIndex = 11;
-            SearchDataBox.Text = "Search data";
+            SearchDataBox.TextChanged += SearchDataBox_TextChanged;
             // 
             // ClearFilter
             // 
             ClearFilter.Anchor = AnchorStyles.None;
-            ClearFilter.Location = new Point(1094, 122);
+            ClearFilter.Location = new Point(1073, 122);
             ClearFilter.Name = "ClearFilter";
-            ClearFilter.Size = new Size(75, 23);
+            ClearFilter.Size = new Size(118, 23);
             ClearFilter.TabIndex = 12;
             ClearFilter.Text = "Clear";
             ClearFilter.UseVisualStyleBackColor = true;

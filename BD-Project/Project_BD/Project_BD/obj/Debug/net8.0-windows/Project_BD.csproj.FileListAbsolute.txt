@@ -233,3 +233,13 @@ C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-w
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Items.resources
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_Bosses.resources
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Bosses.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_Bosses.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_Crafts.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_Dungeons.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_General.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_Items.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_Locations.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Bosses.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Dungeons.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Items.resources
+C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Locations.resources

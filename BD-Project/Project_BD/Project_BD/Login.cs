@@ -143,5 +143,12 @@ namespace Project_BD
             textBox1.Clear();
             textBox2.Clear();
         }
+
+        private void bypass_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu menu = new Menu();
+            menu.Show();
+        }
     }
 }
