@@ -159,11 +159,3 @@ CREATE TABLE Magics
     DamageType VARCHAR(512) NOT NULL,
 )
 GO
-
-
-SELECT *
-FROM Items 
-JOIN Dungeons ON Items.Award = Dungeons.DungeonID 
-JOIN Characters ON Items.Owner = Characters.CharacterID
-ORDER BY Items.ItemID
-
