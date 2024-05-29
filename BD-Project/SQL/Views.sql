@@ -74,7 +74,7 @@ AS
         Locations.Area,
         Locations.Name,
         Locations.PointsOfInterest,
-        Locations.DESCRIPTION
+        Locations.DESCRIPTION as Description
     FROM Locations
 GO
 
@@ -86,7 +86,7 @@ AS
     SELECT
         Characters.CharacterID AS ID,
         Characters.Name,
-        Characters.DESCRIPTION,
+        Characters.DESCRIPTION as Description,
         Characters.Class,
         Characters.Attacks,
         Characters.Attributes,
@@ -110,7 +110,7 @@ AS
     SELECT
         Items.ItemID AS ID,
         Items.Name,
-        Items.DESCRIPTION,
+        Items.DESCRIPTION as Description,
         Items.UseRequisites,
         Characters.Name AS Owner,
         Dungeons.Name AS FoundIn,
@@ -132,7 +132,7 @@ AS
         CraftingMaterials.CraftingUse AS UsedIn,
         CraftingMaterials.quantity,
         CraftingMaterials.Source,
-        Items.DESCRIPTION
+        Items.DESCRIPTION as Description
     FROM Crafts
         JOIN Items ON Crafts.ItemID = Items.ItemID
         JOIN CraftingMaterials ON Crafts.CraftingMaterialID = CraftingMaterials.CraftingMaterialID

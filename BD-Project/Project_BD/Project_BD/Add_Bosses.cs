@@ -34,7 +34,8 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Closed)
                     CN.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Locations", CN);
+
+                SqlCommand cmd = new SqlCommand("SELECT LocationID, Name FROM Locations", CN);
                 SqlDataReader reader = cmd.ExecuteReader();
 
 

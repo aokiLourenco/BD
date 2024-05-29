@@ -33,7 +33,7 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Closed)
                     CN.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Characters", CN);
+                SqlCommand cmd = new SqlCommand("SELECT CharacterID, Name FROM Characters", CN);
                 SqlDataReader reader = cmd.ExecuteReader();
 
 
@@ -43,13 +43,13 @@ namespace Project_BD
                     // Store both ID_Localition and Name as a KeyValuePair in the dictionary
                     int idCharacter = (int)reader["CharacterID"];
                     string name = reader["Name"].ToString().ToLower();
-
-                    characters.Add(name, idCharacter);
+                    if (!characters.ContainsKey(name))
+                        characters.Add(name, idCharacter);
                 }
             }
             catch (Exception ex)
             {
-               
+               MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -62,7 +62,7 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Closed)
                     CN.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Dungeons", CN);
+                SqlCommand cmd = new SqlCommand("SELECT DungeonID, Name FROM Dungeons", CN);
                 SqlDataReader reader = cmd.ExecuteReader();
 
 
@@ -72,13 +72,15 @@ namespace Project_BD
                     // Store both ID_Localition and Name as a KeyValuePair in the dictionary
                     int idDungeon = (int)reader["DungeonID"];
                     string name = reader["Name"].ToString().ToLower();
-
-                    awards.Add(name, idDungeon);
+                    //MessageBox.Show(name);
+                    if (!awards.ContainsKey(name))
+                        awards.Add(name, idDungeon);
                 }
             }
             catch (Exception ex)
             {
-                
+               MessageBox.Show(ex.Message);
+
             }
             finally
             {
@@ -104,7 +106,7 @@ namespace Project_BD
 
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Character added successfully");
+                MessageBox.Show("Item added successfully");
                 Back();
             }
             catch (Exception e)

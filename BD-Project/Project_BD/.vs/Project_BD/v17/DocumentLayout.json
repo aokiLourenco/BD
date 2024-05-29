@@ -1,50 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\",
+  "WorkspaceRootPath": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\ua\\3_ano\\2_semestre\\bd\\bd\\bd-project\\project_bd\\project_bd\\edit_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\edit_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\edit_dungeons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\edit_dungeons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\ua\\3_ano\\2_semestre\\bd\\bd\\bd-project\\project_bd\\project_bd\\add_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\add_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\ua\\3_ano\\2_semestre\\bd\\bd\\bd-project\\project_bd\\project_bd\\add_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\add_items.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\edit_bosses.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\edit_bosses.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\edit_characters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\edit_characters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\edit_characters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\edit_bosses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\edit_bosses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\project_bd\\edit_bosses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\edit_bosses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\add_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\add_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\add_character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|c:\\users\\ander\\desktop\\ua\\ano3\\sem2\\bd\\bd-project\\project_bd\\project_bd\\add_bosses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\add_bosses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{583DD049-4C45-47E8-B5EF-D064546D0FBD}|Project_BD\\Project_BD.csproj|solutionrelative:project_bd\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,17 +46,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Menu.cs",
-              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
+              "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
               "RelativeDocumentMoniker": "Project_BD\\Menu.cs",
-              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
+              "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
               "RelativeToolTip": "Project_BD\\Menu.cs",
-              "ViewState": "AQIAAFMDAAAAAAAAAAAqwKADAAA1AAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAIwBgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "OverriddenGroupName": "Project_BD",
               "WhenOpened": "2024-05-24T10:16:53.438Z",
@@ -73,26 +65,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Menu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
+              "DocumentIndex": 7,
+              "Title": "Menu.cs [Projeto]",
+              "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs",
               "RelativeDocumentMoniker": "Project_BD\\Menu.cs",
-              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs [Design]",
-              "RelativeToolTip": "Project_BD\\Menu.cs [Design]",
+              "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.cs [Projeto]",
+              "RelativeToolTip": "Project_BD\\Menu.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T15:42:31.53Z",
               "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Menu.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.Designer.cs",
+              "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.Designer.cs",
               "RelativeDocumentMoniker": "Project_BD\\Menu.Designer.cs",
-              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.Designer.cs",
+              "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Menu.Designer.cs",
               "RelativeToolTip": "Project_BD\\Menu.Designer.cs",
-              "ViewState": "AQIAAL0AAAAAAAAAAAAnwNEAAAC7AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T15:29:46.467Z",
               "IsPinned": true,
@@ -100,13 +92,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "Add_Character.cs",
-              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Character.cs",
+              "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Character.cs",
               "RelativeDocumentMoniker": "Project_BD\\Add_Character.cs",
-              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Character.cs",
+              "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Character.cs",
               "RelativeToolTip": "Project_BD\\Add_Character.cs",
-              "ViewState": "AQIAAFgAAAAAAAAAAAAcwFQAAAA7AAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAADIAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T23:10:11.576Z",
               "IsPinned": true,
@@ -114,13 +106,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Edit_Characters.cs",
-              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Characters.cs",
+              "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Characters.cs",
               "RelativeDocumentMoniker": "Project_BD\\Edit_Characters.cs",
-              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Characters.cs",
+              "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Characters.cs",
               "RelativeToolTip": "Project_BD\\Edit_Characters.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAwwGYAAAAmAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwCYAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-29T09:26:43.592Z",
               "IsPinned": true,
@@ -128,78 +120,53 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Add_Items.cs",
+              "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Items.cs",
+              "RelativeDocumentMoniker": "Project_BD\\Add_Items.cs",
+              "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Items.cs",
+              "RelativeToolTip": "Project_BD\\Add_Items.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAmwGwAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T18:43:15.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Login.cs",
-              "RelativeDocumentMoniker": "Project_BD\\Login.cs",
-              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Login.cs",
-              "RelativeToolTip": "Project_BD\\Login.cs",
-              "ViewState": "AQIAAHQAAAAAAAAAAAAewJYAAAAYAAAA",
+              "Title": "Add_Items.cs [Projeto]",
+              "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Items.cs",
+              "RelativeDocumentMoniker": "Project_BD\\Add_Items.cs",
+              "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Items.cs [Projeto]",
+              "RelativeToolTip": "Project_BD\\Add_Items.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T15:48:37.822Z",
+              "WhenOpened": "2024-05-29T18:43:13.679Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Edit_Items.cs",
+              "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Items.cs",
+              "RelativeDocumentMoniker": "Project_BD\\Edit_Items.cs",
+              "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Items.cs",
+              "RelativeToolTip": "Project_BD\\Edit_Items.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAewFgAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-29T18:26:00.386Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Login.cs",
-              "RelativeDocumentMoniker": "Project_BD\\Login.cs",
-              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Login.cs [Design]",
-              "RelativeToolTip": "Project_BD\\Login.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "Edit_Dungeons.cs",
+              "DocumentMoniker": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Dungeons.cs",
+              "RelativeDocumentMoniker": "Project_BD\\Edit_Dungeons.cs",
+              "ToolTip": "C:\\UA\\3_Ano\\2_semestre\\BD\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Dungeons.cs",
+              "RelativeToolTip": "Project_BD\\Edit_Dungeons.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAqwCMAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T15:48:12.761Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Edit_Bosses.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Bosses.Designer.cs",
-              "RelativeDocumentMoniker": "Project_BD\\Edit_Bosses.Designer.cs",
-              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Bosses.Designer.cs",
-              "RelativeToolTip": "Project_BD\\Edit_Bosses.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T14:08:40.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Edit_Bosses.cs",
-              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Bosses.cs",
-              "RelativeDocumentMoniker": "Project_BD\\Edit_Bosses.cs",
-              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Bosses.cs",
-              "RelativeToolTip": "Project_BD\\Edit_Bosses.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAwwGIAAABKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T13:56:32.455Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Edit_Bosses.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Bosses.cs",
-              "RelativeDocumentMoniker": "Project_BD\\Edit_Bosses.cs",
-              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Edit_Bosses.cs [Design]",
-              "RelativeToolTip": "Project_BD\\Edit_Bosses.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T13:55:33.365Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Add_Bosses.cs",
-              "DocumentMoniker": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Bosses.cs",
-              "RelativeDocumentMoniker": "Project_BD\\Add_Bosses.cs",
-              "ToolTip": "C:\\Users\\ander\\Desktop\\UA\\ano3\\sem2\\BD\\BD-Project\\Project_BD\\Project_BD\\Add_Bosses.cs",
-              "RelativeToolTip": "Project_BD\\Add_Bosses.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAwwJAAAACrAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-29T10:55:46.087Z",
+              "WhenOpened": "2024-05-29T18:22:11.131Z",
               "EditorCaption": ""
             }
           ]
