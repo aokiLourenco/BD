@@ -805,6 +805,7 @@ namespace Project_BD
             string criteria = DropBox.Text;
             string filter = SearchDataBox.Text;
             string data = "";
+            string data2 = "";
             SqlCommand cmd;
 
             try
@@ -886,9 +887,6 @@ namespace Project_BD
                                 break;
                             case "Location Name":
                                 data = "LocationsName";
-                                break;
-                            case "Cutscene":
-                                data = "Cutscene";
                                 break;
                         }
                         cmd = new SqlCommand("SELECT * FROM CharactersView_Table WHERE " + data + " LIKE '%' + @filter + '%'", CN);
@@ -1005,8 +1003,28 @@ namespace Project_BD
                             case "Found In":
                                 data = "FoundIn";
                                 break;
+                            case "Armour":
+                                data2 = "Armours";
+                                break;
+                            case "Weapon":
+                                data2 = "Weapons";
+                                break;
+                            case "Talismans":
+                                data2 = "Talismans";
+                                break;
+                            case "Magics":
+                                data2 = "Magics";
+                                break;
+
                         }
-                        cmd = new SqlCommand("SELECT * FROM Items_Table WHERE " + data + " LIKE '%' + @filter + '%'", CN);
+                        if (data != "" && data2 == "")
+                        {
+                            cmd = new SqlCommand("SELECT * FROM Items_Table WHERE " + data + " LIKE '%' + @filter + '%'", CN);
+                        }
+                        else
+                        {
+                            cmd = new SqlCommand("SELECT * FROM " + data2, CN);
+                        }
                         break;
 
                     case "Crafts":

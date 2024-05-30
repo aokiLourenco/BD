@@ -214,7 +214,7 @@
             DropBox.Anchor = AnchorStyles.None;
             tableLayoutPanel1.SetColumnSpan(DropBox, 2);
             DropBox.FormattingEnabled = true;
-            DropBox.Items.AddRange(new object[] { "----------Bosses----------", "ID", "Name", "Description", "----------Characters-----", "Attacks", "Attributes", "Points of Interest" });
+            DropBox.Items.AddRange(new object[] { "---------------Common--------------", "ID", "Name", "Description", "----------------Bosses----------------", "Class", "Attacks", "Attributes", "Weakness", "Level", "Location Area", "Location Name", "Cutscene", "--------Characters & Enemies--------", "Class", "Attacks", "Attributes", "Weakness", "Level", "Location Area", "Location Name", "----------Crafting Materials----------", "Crafting Use", "Source", "Quantity", "UsedID", "--------------Locations--------------", "Area", "Points of Interest", "----------------Items----------------", "Area", "Use Requisites", "Owner", "Found In", "Armour", "Weapon", "Talismans", "Magics", "----------------Crafts---------------", "Crafting Materials ID", "Used Item", "Used In", "Quantity", "Source", "-------------Dungeons-------------", "Main Boss", "Area", "Location Area" });
             DropBox.Location = new Point(652, 122);
             DropBox.Name = "DropBox";
             DropBox.Size = new Size(270, 23);
