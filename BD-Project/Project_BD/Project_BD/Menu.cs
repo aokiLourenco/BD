@@ -763,8 +763,7 @@ namespace Project_BD
                 attackTotalParam.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(attackTotalParam);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show(attackTotalParam.Value + " Attacks named : " + textBox_Attacks.Text);
-                MessageBox.Show(attackTotalParam.Value + " Attacks named : " + textBox_Attacks.Text);
+                MessageBox.Show(attackTotalParam.Value + " Enemy with an Attack named : " + textBox_Attacks.Text);
             }
             catch (Exception ex)
             {
