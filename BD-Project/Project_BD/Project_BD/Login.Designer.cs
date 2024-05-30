@@ -44,25 +44,27 @@ namespace Project_BD
             // LoginButton
             // 
             LoginButton.Anchor = AnchorStyles.Left;
-            tableLayoutPanel1.SetColumnSpan(LoginButton, 2);
+            LoginButton.BackColor = Color.FromArgb(255, 192, 128);
             LoginButton.Cursor = Cursors.Hand;
             LoginButton.FlatAppearance.BorderSize = 6;
             LoginButton.Font = new Font("Segoe UI", 14F);
             LoginButton.Location = new Point(451, 543);
             LoginButton.Name = "LoginButton";
-            LoginButton.Size = new Size(353, 60);
+            LoginButton.Size = new Size(166, 60);
             LoginButton.TabIndex = 0;
             LoginButton.Text = "Login";
-            LoginButton.UseVisualStyleBackColor = true;
+            LoginButton.UseVisualStyleBackColor = false;
             LoginButton.Click += button1_Click;
             // 
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.SetColumnSpan(textBox1, 2);
+            textBox1.Cursor = Cursors.IBeam;
             textBox1.Location = new Point(451, 303);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Username";
             textBox1.Size = new Size(486, 25);
             textBox1.TabIndex = 1;
             // 
@@ -82,9 +84,11 @@ namespace Project_BD
             // 
             textBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.SetColumnSpan(textBox2, 2);
+            textBox2.Cursor = Cursors.IBeam;
             textBox2.Location = new Point(451, 403);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "Password";
             textBox2.Size = new Size(486, 25);
             textBox2.TabIndex = 3;
             textBox2.TextChanged += textBox2_TextChanged_1;
@@ -126,13 +130,13 @@ namespace Project_BD
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.6695442F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.3903217F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.3903217F));
-            tableLayoutPanel1.Controls.Add(bypass, 0, 3);
             tableLayoutPanel1.Controls.Add(textBox1, 2, 1);
             tableLayoutPanel1.Controls.Add(label1, 1, 1);
             tableLayoutPanel1.Controls.Add(label2, 1, 2);
             tableLayoutPanel1.Controls.Add(textBox2, 2, 2);
             tableLayoutPanel1.Controls.Add(LoginButton, 2, 3);
             tableLayoutPanel1.Controls.Add(ClearButton, 4, 1);
+            tableLayoutPanel1.Controls.Add(bypass, 3, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -148,16 +152,16 @@ namespace Project_BD
             // bypass
             // 
             bypass.Anchor = AnchorStyles.Left;
-            tableLayoutPanel1.SetColumnSpan(bypass, 2);
+            bypass.BackColor = Color.FromArgb(255, 224, 192);
             bypass.Cursor = Cursors.Hand;
             bypass.FlatAppearance.BorderSize = 6;
-            bypass.Font = new Font("Segoe UI", 14F);
-            bypass.Location = new Point(3, 543);
+            bypass.Font = new Font("Segoe UI", 10F);
+            bypass.Location = new Point(623, 543);
             bypass.Name = "bypass";
-            bypass.Size = new Size(102, 60);
+            bypass.Size = new Size(166, 60);
             bypass.TabIndex = 6;
             bypass.Text = "Use as a Guest";
-            bypass.UseVisualStyleBackColor = true;
+            bypass.UseVisualStyleBackColor = false;
             bypass.Click += bypass_Click;
             // 
             // Login

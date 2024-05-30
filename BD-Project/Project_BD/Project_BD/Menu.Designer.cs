@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             CharactersButton = new Button();
             LocationsButton = new Button();
             BossesButton = new Button();
@@ -48,6 +49,7 @@
             textBox_Attacks = new TextBox();
             button_attack_Search = new Button();
             ChangeToTable = new Button();
+            LogOut = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ShowTableInfo).BeginInit();
             SuspendLayout();
@@ -55,8 +57,9 @@
             // CharactersButton
             // 
             CharactersButton.Anchor = AnchorStyles.None;
+            CharactersButton.Cursor = Cursors.Hand;
             CharactersButton.Font = new Font("Segoe UI", 14F);
-            CharactersButton.Location = new Point(238, 23);
+            CharactersButton.Location = new Point(207, 23);
             CharactersButton.Name = "CharactersButton";
             CharactersButton.Size = new Size(132, 30);
             CharactersButton.TabIndex = 2;
@@ -67,8 +70,9 @@
             // LocationsButton
             // 
             LocationsButton.Anchor = AnchorStyles.None;
+            LocationsButton.Cursor = Cursors.Hand;
             LocationsButton.Font = new Font("Segoe UI", 14F);
-            LocationsButton.Location = new Point(514, 23);
+            LocationsButton.Location = new Point(493, 23);
             LocationsButton.Name = "LocationsButton";
             LocationsButton.Size = new Size(132, 30);
             LocationsButton.TabIndex = 0;
@@ -79,8 +83,9 @@
             // BossesButton
             // 
             BossesButton.Anchor = AnchorStyles.None;
+            BossesButton.Cursor = Cursors.Hand;
             BossesButton.Font = new Font("Segoe UI", 14F);
-            BossesButton.Location = new Point(100, 23);
+            BossesButton.Location = new Point(64, 23);
             BossesButton.Name = "BossesButton";
             BossesButton.Size = new Size(132, 30);
             BossesButton.TabIndex = 3;
@@ -91,8 +96,9 @@
             // DugeonsButton
             // 
             DugeonsButton.Anchor = AnchorStyles.None;
+            DugeonsButton.Cursor = Cursors.Hand;
             DugeonsButton.Font = new Font("Segoe UI", 14F);
-            DugeonsButton.Location = new Point(1066, 23);
+            DugeonsButton.Location = new Point(1065, 23);
             DugeonsButton.Name = "DugeonsButton";
             DugeonsButton.Size = new Size(132, 30);
             DugeonsButton.TabIndex = 1;
@@ -103,8 +109,9 @@
             // CraftingButton
             // 
             CraftingButton.Anchor = AnchorStyles.None;
+            CraftingButton.Cursor = Cursors.Hand;
             CraftingButton.Font = new Font("Segoe UI", 10F);
-            CraftingButton.Location = new Point(376, 23);
+            CraftingButton.Location = new Point(350, 23);
             CraftingButton.Name = "CraftingButton";
             CraftingButton.Size = new Size(132, 30);
             CraftingButton.TabIndex = 6;
@@ -115,8 +122,9 @@
             // EnemiesButton
             // 
             EnemiesButton.Anchor = AnchorStyles.None;
+            EnemiesButton.Cursor = Cursors.Hand;
             EnemiesButton.Font = new Font("Segoe UI", 14F);
-            EnemiesButton.Location = new Point(652, 23);
+            EnemiesButton.Location = new Point(636, 23);
             EnemiesButton.Name = "EnemiesButton";
             EnemiesButton.Size = new Size(132, 30);
             EnemiesButton.TabIndex = 4;
@@ -127,8 +135,9 @@
             // CraftsButton
             // 
             CraftsButton.Anchor = AnchorStyles.None;
+            CraftsButton.Cursor = Cursors.Hand;
             CraftsButton.Font = new Font("Segoe UI", 14F);
-            CraftsButton.Location = new Point(928, 23);
+            CraftsButton.Location = new Point(922, 23);
             CraftsButton.Name = "CraftsButton";
             CraftsButton.Size = new Size(132, 30);
             CraftsButton.TabIndex = 7;
@@ -139,8 +148,9 @@
             // ItemsButton
             // 
             ItemsButton.Anchor = AnchorStyles.None;
+            ItemsButton.Cursor = Cursors.Hand;
             ItemsButton.Font = new Font("Segoe UI", 14F);
-            ItemsButton.Location = new Point(790, 23);
+            ItemsButton.Location = new Point(779, 23);
             ItemsButton.Name = "ItemsButton";
             ItemsButton.Size = new Size(132, 30);
             ItemsButton.TabIndex = 5;
@@ -150,17 +160,19 @@
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackgroundImage = (Image)resources.GetObject("tableLayoutPanel1.BackgroundImage");
+            tableLayoutPanel1.BackgroundImageLayout = ImageLayout.Stretch;
             tableLayoutPanel1.ColumnCount = 10;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7.742109F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.9650631F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.9650631F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.9650631F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.9650631F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.9692736F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.9692736F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.9692736F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.9692736F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.520535F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.67048836F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3301325F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3301325F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3301325F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3301325F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3344831F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3344831F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3344831F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3344831F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.671041F));
             tableLayoutPanel1.Controls.Add(BossesButton, 1, 1);
             tableLayoutPanel1.Controls.Add(CharactersButton, 2, 1);
             tableLayoutPanel1.Controls.Add(CraftingButton, 3, 1);
@@ -179,20 +191,22 @@
             tableLayoutPanel1.Controls.Add(ClearSelectionButton, 8, 7);
             tableLayoutPanel1.Controls.Add(textBox_Attacks, 5, 7);
             tableLayoutPanel1.Controls.Add(button_attack_Search, 6, 7);
-            tableLayoutPanel1.Controls.Add(ChangeToTable, 0, 4);
+            tableLayoutPanel1.Controls.Add(ChangeToTable, 1, 3);
+            tableLayoutPanel1.Controls.Add(LogOut, 0, 1);
+            tableLayoutPanel1.Cursor = Cursors.Default;
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 9;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 1.641563F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 1.64156318F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.037351F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 6.77709341F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 6.845548F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.03833F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.03833F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.9299164F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.76288F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.928979F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 6.777094F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 6.84554863F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.038332F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 18.038332F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20.9299183F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10.7628813F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.92898F));
             tableLayoutPanel1.Size = new Size(1264, 681);
             tableLayoutPanel1.TabIndex = 14;
             // 
@@ -201,10 +215,10 @@
             ShowTableInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tableLayoutPanel1.SetColumnSpan(ShowTableInfo, 8);
             ShowTableInfo.Dock = DockStyle.Fill;
-            ShowTableInfo.Location = new Point(100, 160);
+            ShowTableInfo.Location = new Point(62, 160);
             ShowTableInfo.Name = "ShowTableInfo";
             tableLayoutPanel1.SetRowSpan(ShowTableInfo, 3);
-            ShowTableInfo.Size = new Size(1098, 380);
+            ShowTableInfo.Size = new Size(1138, 380);
             ShowTableInfo.TabIndex = 8;
             ShowTableInfo.CellClick += ShowTableInfo_CellClick;
             ShowTableInfo.CellContentClick += ShowTableInfo_CellContentClick;
@@ -213,9 +227,10 @@
             // 
             DropBox.Anchor = AnchorStyles.None;
             tableLayoutPanel1.SetColumnSpan(DropBox, 2);
+            DropBox.Cursor = Cursors.Hand;
             DropBox.FormattingEnabled = true;
             DropBox.Items.AddRange(new object[] { "---------------Common--------------", "ID", "Name", "Description", "----------------Bosses----------------", "Class", "Attacks", "Attributes", "Weakness", "Level", "Location Area", "Location Name", "Cutscene", "--------Characters & Enemies--------", "Class", "Attacks", "Attributes", "Weakness", "Level", "Location Area", "Location Name", "----------Crafting Materials----------", "Crafting Use", "Source", "Quantity", "UsedID", "--------------Locations--------------", "Area", "Points of Interest", "----------------Items----------------", "Area", "Use Requisites", "Owner", "Found In", "Armour", "Weapon", "Talismans", "Magics", "----------------Crafts---------------", "Crafting Materials ID", "Used Item", "Used In", "Quantity", "Source", "-------------Dungeons-------------", "Main Boss", "Area", "Location Area" });
-            DropBox.Location = new Point(652, 122);
+            DropBox.Location = new Point(639, 122);
             DropBox.Name = "DropBox";
             DropBox.Size = new Size(270, 23);
             DropBox.TabIndex = 9;
@@ -225,8 +240,9 @@
             // SearchDataBox
             // 
             SearchDataBox.Anchor = AnchorStyles.None;
+            SearchDataBox.Cursor = Cursors.IBeam;
             SearchDataBox.ForeColor = SystemColors.WindowFrame;
-            SearchDataBox.Location = new Point(932, 122);
+            SearchDataBox.Location = new Point(926, 122);
             SearchDataBox.Name = "SearchDataBox";
             SearchDataBox.PlaceholderText = "Search data";
             SearchDataBox.Size = new Size(124, 23);
@@ -236,7 +252,8 @@
             // ClearFilter
             // 
             ClearFilter.Anchor = AnchorStyles.None;
-            ClearFilter.Location = new Point(1073, 122);
+            ClearFilter.Cursor = Cursors.Hand;
+            ClearFilter.Location = new Point(1072, 122);
             ClearFilter.Name = "ClearFilter";
             ClearFilter.Size = new Size(118, 23);
             ClearFilter.TabIndex = 12;
@@ -247,8 +264,9 @@
             // AddButton
             // 
             AddButton.Anchor = AnchorStyles.None;
+            AddButton.Cursor = Cursors.Hand;
             AddButton.Font = new Font("Segoe UI", 14F);
-            AddButton.Location = new Point(102, 550);
+            AddButton.Location = new Point(67, 550);
             AddButton.Name = "AddButton";
             AddButton.Size = new Size(127, 58);
             AddButton.TabIndex = 13;
@@ -259,8 +277,9 @@
             // EditButton
             // 
             EditButton.Anchor = AnchorStyles.None;
+            EditButton.Cursor = Cursors.Hand;
             EditButton.Font = new Font("Segoe UI", 14F);
-            EditButton.Location = new Point(240, 550);
+            EditButton.Location = new Point(210, 550);
             EditButton.Name = "EditButton";
             EditButton.Size = new Size(127, 58);
             EditButton.TabIndex = 15;
@@ -271,8 +290,9 @@
             // DeleteButton
             // 
             DeleteButton.Anchor = AnchorStyles.None;
+            DeleteButton.Cursor = Cursors.Hand;
             DeleteButton.Font = new Font("Segoe UI", 14F);
-            DeleteButton.Location = new Point(378, 550);
+            DeleteButton.Location = new Point(353, 550);
             DeleteButton.Name = "DeleteButton";
             DeleteButton.Size = new Size(127, 58);
             DeleteButton.TabIndex = 14;
@@ -283,6 +303,7 @@
             // ClearSelectionButton
             // 
             ClearSelectionButton.Anchor = AnchorStyles.None;
+            ClearSelectionButton.Cursor = Cursors.Hand;
             ClearSelectionButton.Font = new Font("Segoe UI", 14F);
             ClearSelectionButton.Location = new Point(1068, 550);
             ClearSelectionButton.Name = "ClearSelectionButton";
@@ -295,8 +316,9 @@
             // textBox_Attacks
             // 
             textBox_Attacks.Anchor = AnchorStyles.None;
+            textBox_Attacks.Cursor = Cursors.IBeam;
             textBox_Attacks.ForeColor = SystemColors.WindowFrame;
-            textBox_Attacks.Location = new Point(656, 568);
+            textBox_Attacks.Location = new Point(640, 568);
             textBox_Attacks.Name = "textBox_Attacks";
             textBox_Attacks.PlaceholderText = "Search n. Attack";
             textBox_Attacks.Size = new Size(124, 23);
@@ -305,7 +327,8 @@
             // button_attack_Search
             // 
             button_attack_Search.Anchor = AnchorStyles.None;
-            button_attack_Search.Location = new Point(797, 568);
+            button_attack_Search.Cursor = Cursors.Hand;
+            button_attack_Search.Location = new Point(786, 568);
             button_attack_Search.Name = "button_attack_Search";
             button_attack_Search.Size = new Size(118, 23);
             button_attack_Search.TabIndex = 18;
@@ -315,14 +338,29 @@
             // 
             // ChangeToTable
             // 
-            ChangeToTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            ChangeToTable.Location = new Point(52, 160);
+            ChangeToTable.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            ChangeToTable.Cursor = Cursors.Hand;
+            ChangeToTable.Location = new Point(62, 122);
             ChangeToTable.Name = "ChangeToTable";
-            ChangeToTable.Size = new Size(42, 116);
+            ChangeToTable.Size = new Size(77, 32);
             ChangeToTable.TabIndex = 19;
-            ChangeToTable.Text = "See Table only";
+            ChangeToTable.Text = "Table only";
             ChangeToTable.UseVisualStyleBackColor = true;
             ChangeToTable.Click += ChangeToTable_Click;
+            // 
+            // LogOut
+            // 
+            LogOut.Anchor = AnchorStyles.None;
+            LogOut.BackColor = Color.FromArgb(255, 192, 128);
+            LogOut.BackgroundImage = (Image)resources.GetObject("LogOut.BackgroundImage");
+            LogOut.BackgroundImageLayout = ImageLayout.Stretch;
+            LogOut.Cursor = Cursors.Hand;
+            LogOut.Location = new Point(12, 18);
+            LogOut.Name = "LogOut";
+            LogOut.Size = new Size(34, 39);
+            LogOut.TabIndex = 20;
+            LogOut.UseVisualStyleBackColor = false;
+            LogOut.Click += LogOut_Click;
             // 
             // Menu
             // 
@@ -330,6 +368,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
             Controls.Add(tableLayoutPanel1);
+            Cursor = Cursors.Hand;
             Name = "Menu";
             Text = "Form1";
             Load += Menu_Load;
@@ -360,5 +399,6 @@
         private TextBox textBox_Attacks;
         private Button button_attack_Search;
         private Button ChangeToTable;
+        private Button LogOut;
     }
 }

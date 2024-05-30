@@ -21,10 +21,10 @@ namespace Project_BD
     {
 
         //AOKI
-        //public static string SQLConnectionString = "data source = (localdb)\\localeldenvault;initial catalog=master;integrated security=true;encrypt=false";
+        public static string SQLConnectionString = "data source = (localdb)\\localeldenvault;initial catalog=master;integrated security=true;encrypt=false";
 
         //TÓ
-        public static string SQLConnectionString = "Data Source = localhost;Initial Catalog=master;Integrated Security=True;Encrypt=False";
+        //public static string SQLConnectionString = "Data Source = localhost;Initial Catalog=master;Integrated Security=True;Encrypt=False";
 
         public string data_type = "";
         private string last_type = "";
@@ -32,7 +32,7 @@ namespace Project_BD
 
         private SqlConnection CN;
 
-        public Menu(bool x=true)
+        public Menu(bool x = true)
         {
             InitializeComponent();
             CN = ConnectionManager.getSGBDConnection();
@@ -40,7 +40,7 @@ namespace Project_BD
             button_attack_Search.Visible = false;
             is_admin = x;
             Hide_Change_Buttons();
-            Show_Change_Buttons();  
+            Show_Change_Buttons();
         }
 
         public static class ConnectionManager
@@ -1209,7 +1209,7 @@ namespace Project_BD
                         cmd = new SqlCommand("SELECT * FROM CraftingMaterials", CN);
                         break;
                     case "Crafts":
-                        cmd  = new SqlCommand("SELECT * FROM Crafts", CN);
+                        cmd = new SqlCommand("SELECT * FROM Crafts", CN);
                         break;
                     case "Dungeons":
                         cmd = new SqlCommand("SELECT * FROM Dungeons", CN);
@@ -1254,12 +1254,19 @@ namespace Project_BD
             AddButton.Visible = false;
             EditButton.Visible = false;
             DeleteButton.Visible = false;
-            
+
             DropBox.Visible = false;
             SearchDataBox.Visible = false;
             ClearFilter.Visible = false;
 
             isView = false;
+        }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
         }
     }
 }
