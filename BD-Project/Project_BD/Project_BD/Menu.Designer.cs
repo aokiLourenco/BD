@@ -377,6 +377,7 @@
             Controls.Add(tableLayoutPanel1);
             Cursor = Cursors.Hand;
             Name = "Menu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Menu_Load;
             ((System.ComponentModel.ISupportInitialize)ShowTableInfo).EndInit();

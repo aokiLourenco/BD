@@ -21,7 +21,7 @@ namespace Project_BD
     {
 
         //AOKI
-        public static string SQLConnectionString = "data source = (localdb)\\localeldenvault;initial catalog=master;integrated security=true;encrypt=false";
+        public static string SQLConnectionString = "data source = (localdb)\\localEldenVault;initial catalog=master;integrated security=true;encrypt=false";
 
         //TÓ
         //public static string SQLConnectionString = "Data Source = localhost;Initial Catalog=master;Integrated Security=True;Encrypt=False";

@@ -173,6 +173,7 @@ namespace Project_BD
             Controls.Add(tableLayoutPanel1);
             DoubleBuffered = true;
             Name = "Login";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Welcome";
             Load += Login_Load;
             tableLayoutPanel1.ResumeLayout(false);

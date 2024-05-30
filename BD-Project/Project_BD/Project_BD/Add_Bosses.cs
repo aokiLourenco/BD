@@ -97,7 +97,7 @@ namespace Project_BD
 
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Character added successfully");
+                //MessageBox.Show("Character added successfully");
 
                 cmd = new SqlCommand("AddBoss", CN);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -159,10 +159,7 @@ namespace Project_BD
                 return;
             }
 
-
             Add_Boss_DB(name, attacks, Attributes, description, class_str, weakness, location, level, cutscene);
-
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
