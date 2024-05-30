@@ -188,7 +188,7 @@
             // DropBox
             // 
             DropBox.Anchor = AnchorStyles.None;
-            DropBox.BackColor = SystemColors.ScrollBar;
+            DropBox.BackColor = SystemColors.Window;
             tableLayoutPanel1.SetColumnSpan(DropBox, 2);
             DropBox.Cursor = Cursors.Hand;
             DropBox.Font = new Font("Segoe UI", 10F);
@@ -203,11 +203,14 @@
             // 
             // ShowTableInfo
             // 
+            ShowTableInfo.AllowUserToOrderColumns = true;
             ShowTableInfo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tableLayoutPanel1.SetColumnSpan(ShowTableInfo, 8);
             ShowTableInfo.Dock = DockStyle.Fill;
             ShowTableInfo.Location = new Point(62, 160);
             ShowTableInfo.Name = "ShowTableInfo";
+            ShowTableInfo.ReadOnly = true;
+            ShowTableInfo.RowHeadersVisible = false;
             tableLayoutPanel1.SetRowSpan(ShowTableInfo, 3);
             ShowTableInfo.Size = new Size(1138, 380);
             ShowTableInfo.TabIndex = 8;
