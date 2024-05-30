@@ -322,6 +322,7 @@
             ChangeToTable.TabIndex = 19;
             ChangeToTable.Text = "See Table only";
             ChangeToTable.UseVisualStyleBackColor = true;
+            ChangeToTable.Click += ChangeToTable_Click;
             // 
             // Menu
             // 

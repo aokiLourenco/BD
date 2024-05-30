@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,6 +56,7 @@ namespace Project_BD
             //location.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
+            Show_Change_Buttons();
 
             last_type = data_type;
             try
@@ -105,6 +107,7 @@ namespace Project_BD
             //craft.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
+            Show_Change_Buttons();
 
             last_type = data_type;
             try
@@ -158,6 +161,7 @@ namespace Project_BD
             //    character.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
+            Show_Change_Buttons();
 
             cell_value.Clear();
             last_type = data_type;
@@ -212,6 +216,7 @@ namespace Project_BD
             //boss.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
+            Show_Change_Buttons();
 
             cell_value.Clear();
             last_type = data_type;
@@ -262,6 +267,7 @@ namespace Project_BD
             //dungeon.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
+            Show_Change_Buttons();
 
             cell_value.Clear();
 
@@ -315,6 +321,7 @@ namespace Project_BD
             cell_value.Clear();
             textBox_Attacks.Visible = true;
             button_attack_Search.Visible = true;
+            Show_Change_Buttons();
 
             last_type = data_type;
             try
@@ -365,6 +372,7 @@ namespace Project_BD
             //item.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
+            Show_Change_Buttons();
 
             cell_value.Clear();
 
@@ -422,6 +430,7 @@ namespace Project_BD
             //craftingMaterials.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
+            Show_Change_Buttons();
 
             cell_value.Clear();
 
@@ -551,7 +560,7 @@ namespace Project_BD
         {
             // Clear the ShowTableInfo contents
             ShowTableInfo.DataSource = false;
-
+            Show_Change_Buttons();
         }
 
 
@@ -1117,6 +1126,116 @@ namespace Project_BD
                     DungeonsButton_Click(sender, e);
                     break;
             }
+        }
+        private bool isView = true;
+        private void ChangeToTable_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd;
+
+            if (!isView)
+            {
+                switch (data_type)
+                {
+                    case "Characters":
+                        CharactersButton_Click(sender, e);
+                        break;
+                    case "Locations":
+                        LocationsButton_Click(sender, e);
+                        break;
+                    case "Items":
+                        ItemsButton_Click(sender, e);
+                        break;
+                    case "Bosses":
+                        BossesButton_Click(sender, e);
+                        break;
+                    case "Enemies":
+                        EnemiesButton_Click(sender, e);
+                        break;
+                    case "CraftingMaterials":
+                        CraftingButton_Click(sender, e);
+                        break;
+                    case "Crafts":
+                        CraftsButton_Click(sender, e);
+                        break;
+                    case "Dungeons":
+                        DungeonsButton_Click(sender, e);
+                        break;
+                    default:
+                        return;
+                }
+                Show_Change_Buttons();
+            }
+            else
+            {
+                CN.Open();
+                switch (data_type)
+                {
+                    case "Characters":
+                        cmd = new SqlCommand("SELECT * FROM Characters", CN);
+                        break;
+                    case "Locations":
+                        cmd = new SqlCommand("SELECT * FROM Locations", CN);
+                        break;
+                    case "Items":
+                        cmd = new SqlCommand("SELECT * FROM Items", CN);
+                        break;
+                    case "Bosses":
+                        cmd = new SqlCommand("SELECT * FROM Bosses", CN);
+                        break;
+                    case "Enemies":
+                        cmd = new SqlCommand("SELECT * FROM Enemies", CN);
+                        break;
+                    case "CraftingMaterials":
+                        cmd = new SqlCommand("SELECT * FROM CraftingMaterials", CN);
+                        break;
+                    case "Crafts":
+                        cmd  = new SqlCommand("SELECT * FROM Crafts", CN);
+                        break;
+                    case "Dungeons":
+                        cmd = new SqlCommand("SELECT * FROM Dungeons", CN);
+                        break;
+                    default:
+                        return;
+                }
+
+                DataTable detailsTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                Debug.WriteLine(sqlDataAdapter);
+                sqlDataAdapter.Fill(detailsTable);
+
+                ShowTableInfo.DataSource = detailsTable;
+                ShowTableInfo.AutoResizeRows();
+                ShowTableInfo.AutoResizeColumns();
+                ShowTableInfo.Visible = true;
+
+                Hide_Change_Buttons();
+                CN.Close();
+            }
+
+        }
+        private void Show_Change_Buttons()
+        {
+            AddButton.Visible = true;
+            EditButton.Visible = true;
+            DeleteButton.Visible = true;
+
+            DropBox.Visible = true;
+            SearchDataBox.Visible = true;
+            ClearFilter.Visible = true;
+
+            isView = true;
+        }
+        private void Hide_Change_Buttons()
+        {
+            AddButton.Visible = false;
+            EditButton.Visible = false;
+            DeleteButton.Visible = false;
+            
+            DropBox.Visible = false;
+            SearchDataBox.Visible = false;
+            ClearFilter.Visible = false;
+
+            isView = false;
         }
     }
 }
