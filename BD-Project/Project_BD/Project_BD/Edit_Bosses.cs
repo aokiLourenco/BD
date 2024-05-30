@@ -140,6 +140,12 @@ namespace Project_BD
                 return;
             }
 
+            if (!int.TryParse(level, out int levelInt) || levelInt < 1 || levelInt < 100)
+            {
+                MessageBox.Show("Level must be a number higher than 99");
+                return;
+            }
+
 
             Edit_Bosses_DB(name, attacks, Attributes, description, class_str, weakness, location, level, cutscene);
         }

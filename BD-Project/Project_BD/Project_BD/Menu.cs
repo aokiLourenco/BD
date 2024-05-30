@@ -696,6 +696,7 @@ namespace Project_BD
                     formPopup = new Edit_Locations(cell_value);
                     break;
                 case "Crafts":
+                    MessageBox.Show("Crafts can't be edited");
                     return;
                 case "Characters":
                     formPopup = new Edit_Characters(cell_value);
@@ -707,6 +708,7 @@ namespace Project_BD
                     formPopup = new Edit_Dungeons(cell_value);
                     break;
                 case "Enemies":
+                    MessageBox.Show("Enemies can't be edited try editing the Character");
                     return;
                 case "Items":
                     formPopup = new Edit_Items(cell_value);

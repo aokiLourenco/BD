@@ -85,7 +85,7 @@
             tableLayoutPanel1.Controls.Add(textBox_Level, 5, 4);
             tableLayoutPanel1.Controls.Add(label7, 4, 3);
             tableLayoutPanel1.Controls.Add(DropBox, 4, 4);
-            tableLayoutPanel1.Location = new Point(8, 8);
+            tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
