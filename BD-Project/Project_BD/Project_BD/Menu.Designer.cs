@@ -47,6 +47,7 @@
             ClearSelectionButton = new Button();
             textBox_Attacks = new TextBox();
             button_attack_Search = new Button();
+            ChangeToTable = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ShowTableInfo).BeginInit();
             SuspendLayout();
@@ -169,7 +170,7 @@
             tableLayoutPanel1.Controls.Add(ItemsButton, 6, 1);
             tableLayoutPanel1.Controls.Add(EnemiesButton, 5, 1);
             tableLayoutPanel1.Controls.Add(ShowTableInfo, 1, 4);
-            tableLayoutPanel1.Controls.Add(DropBox, 6, 3);
+            tableLayoutPanel1.Controls.Add(DropBox, 5, 3);
             tableLayoutPanel1.Controls.Add(SearchDataBox, 7, 3);
             tableLayoutPanel1.Controls.Add(ClearFilter, 8, 3);
             tableLayoutPanel1.Controls.Add(AddButton, 1, 7);
@@ -178,6 +179,7 @@
             tableLayoutPanel1.Controls.Add(ClearSelectionButton, 8, 7);
             tableLayoutPanel1.Controls.Add(textBox_Attacks, 5, 7);
             tableLayoutPanel1.Controls.Add(button_attack_Search, 6, 7);
+            tableLayoutPanel1.Controls.Add(ChangeToTable, 0, 4);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -210,11 +212,12 @@
             // DropBox
             // 
             DropBox.Anchor = AnchorStyles.None;
+            tableLayoutPanel1.SetColumnSpan(DropBox, 2);
             DropBox.FormattingEnabled = true;
             DropBox.Items.AddRange(new object[] { "----------Bosses----------", "ID", "Name", "Description", "----------Characters-----", "Attacks", "Attributes", "Points of Interest" });
-            DropBox.Location = new Point(792, 122);
+            DropBox.Location = new Point(652, 122);
             DropBox.Name = "DropBox";
-            DropBox.Size = new Size(127, 23);
+            DropBox.Size = new Size(270, 23);
             DropBox.TabIndex = 9;
             DropBox.Text = "Filter";
             DropBox.SelectedIndexChanged += DropBox_SelectedIndexChanged;
@@ -239,7 +242,7 @@
             ClearFilter.TabIndex = 12;
             ClearFilter.Text = "Clear";
             ClearFilter.UseVisualStyleBackColor = true;
-            ClearFilter.Click += ClearFilter_Click;
+            ClearFilter.Click += ClearFilter_Click_1;
             // 
             // AddButton
             // 
@@ -295,7 +298,7 @@
             textBox_Attacks.ForeColor = SystemColors.WindowFrame;
             textBox_Attacks.Location = new Point(656, 568);
             textBox_Attacks.Name = "textBox_Attacks";
-            textBox_Attacks.PlaceholderText = "Search Attack";
+            textBox_Attacks.PlaceholderText = "Search n. Attack";
             textBox_Attacks.Size = new Size(124, 23);
             textBox_Attacks.TabIndex = 17;
             // 
@@ -309,6 +312,16 @@
             button_attack_Search.Text = "Search";
             button_attack_Search.UseVisualStyleBackColor = true;
             button_attack_Search.Click += button_attack_Search_Click;
+            // 
+            // ChangeToTable
+            // 
+            ChangeToTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            ChangeToTable.Location = new Point(52, 160);
+            ChangeToTable.Name = "ChangeToTable";
+            ChangeToTable.Size = new Size(42, 116);
+            ChangeToTable.TabIndex = 19;
+            ChangeToTable.Text = "See Table only";
+            ChangeToTable.UseVisualStyleBackColor = true;
             // 
             // Menu
             // 
@@ -345,5 +358,6 @@
         private Button ClearSelectionButton;
         private TextBox textBox_Attacks;
         private Button button_attack_Search;
+        private Button ChangeToTable;
     }
 }
