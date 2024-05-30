@@ -43,10 +43,10 @@
             label6 = new Label();
             textBox_Weakness = new TextBox();
             label7 = new Label();
-            textBox_Location = new TextBox();
             textBox_Level = new TextBox();
             label8 = new Label();
             Confirm = new Button();
+            DropBox = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -74,10 +74,10 @@
             tableLayoutPanel1.Controls.Add(label6, 2, 3);
             tableLayoutPanel1.Controls.Add(textBox_Weakness, 2, 4);
             tableLayoutPanel1.Controls.Add(label7, 3, 3);
-            tableLayoutPanel1.Controls.Add(textBox_Location, 3, 4);
             tableLayoutPanel1.Controls.Add(textBox_Level, 4, 4);
             tableLayoutPanel1.Controls.Add(label8, 4, 3);
             tableLayoutPanel1.Controls.Add(Confirm, 6, 0);
+            tableLayoutPanel1.Controls.Add(DropBox, 3, 4);
             tableLayoutPanel1.Location = new Point(0, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -221,14 +221,6 @@
             label7.TabIndex = 15;
             label7.Text = "Location";
             // 
-            // textBox_Location
-            // 
-            textBox_Location.Anchor = AnchorStyles.Top;
-            textBox_Location.Location = new Point(395, 161);
-            textBox_Location.Name = "textBox_Location";
-            textBox_Location.Size = new Size(122, 23);
-            textBox_Location.TabIndex = 16;
-            // 
             // textBox_Level
             // 
             textBox_Level.Anchor = AnchorStyles.Top;
@@ -261,6 +253,16 @@
             Confirm.UseVisualStyleBackColor = true;
             Confirm.Click += Confirm_Click;
             // 
+            // DropBox
+            // 
+            DropBox.Anchor = AnchorStyles.Top;
+            DropBox.FormattingEnabled = true;
+            DropBox.Location = new Point(394, 161);
+            DropBox.Name = "DropBox";
+            DropBox.Size = new Size(124, 23);
+            DropBox.TabIndex = 22;
+            DropBox.Text = "Location";
+            // 
             // Edit_Characters
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -291,9 +293,9 @@
         private Label label6;
         private TextBox textBox_Weakness;
         private Label label7;
-        private TextBox textBox_Location;
         private TextBox textBox_Level;
         private Label label8;
         private Button Confirm;
+        private ComboBox DropBox;
     }
 }

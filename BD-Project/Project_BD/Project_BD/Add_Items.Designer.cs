@@ -33,14 +33,14 @@
             textBox_Name = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            textBox_Award = new TextBox();
             label3 = new Label();
-            textBox_Owner = new TextBox();
             label4 = new Label();
             textBox_Description = new TextBox();
             button2 = new Button();
             label5 = new Label();
             textBox_UR = new TextBox();
+            DropBox = new ComboBox();
+            comboBox1 = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,14 +58,14 @@
             tableLayoutPanel1.Controls.Add(textBox_Name, 1, 2);
             tableLayoutPanel1.Controls.Add(label1, 1, 1);
             tableLayoutPanel1.Controls.Add(label2, 2, 1);
-            tableLayoutPanel1.Controls.Add(textBox_Award, 2, 2);
             tableLayoutPanel1.Controls.Add(label3, 3, 1);
-            tableLayoutPanel1.Controls.Add(textBox_Owner, 3, 2);
             tableLayoutPanel1.Controls.Add(label4, 4, 1);
             tableLayoutPanel1.Controls.Add(textBox_Description, 4, 2);
             tableLayoutPanel1.Controls.Add(button2, 6, 0);
             tableLayoutPanel1.Controls.Add(label5, 1, 3);
             tableLayoutPanel1.Controls.Add(textBox_UR, 1, 4);
+            tableLayoutPanel1.Controls.Add(DropBox, 2, 2);
+            tableLayoutPanel1.Controls.Add(comboBox1, 3, 2);
             tableLayoutPanel1.Location = new Point(8, 8);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -119,14 +119,6 @@
             label2.TabIndex = 5;
             label2.Text = "Award";
             // 
-            // textBox_Award
-            // 
-            textBox_Award.Anchor = AnchorStyles.Top;
-            textBox_Award.Location = new Point(255, 89);
-            textBox_Award.Name = "textBox_Award";
-            textBox_Award.Size = new Size(127, 23);
-            textBox_Award.TabIndex = 6;
-            // 
             // label3
             // 
             label3.Anchor = AnchorStyles.Top;
@@ -136,14 +128,6 @@
             label3.Size = new Size(42, 15);
             label3.TabIndex = 7;
             label3.Text = "Owner";
-            // 
-            // textBox_Owner
-            // 
-            textBox_Owner.Anchor = AnchorStyles.Top;
-            textBox_Owner.Location = new Point(395, 89);
-            textBox_Owner.Name = "textBox_Owner";
-            textBox_Owner.Size = new Size(122, 23);
-            textBox_Owner.TabIndex = 8;
             // 
             // label4
             // 
@@ -195,6 +179,26 @@
             textBox_UR.Size = new Size(129, 23);
             textBox_UR.TabIndex = 12;
             // 
+            // DropBox
+            // 
+            DropBox.Anchor = AnchorStyles.Top;
+            DropBox.FormattingEnabled = true;
+            DropBox.Location = new Point(257, 89);
+            DropBox.Name = "DropBox";
+            DropBox.Size = new Size(124, 23);
+            DropBox.TabIndex = 23;
+            DropBox.Text = "Dungeon";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(394, 89);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(124, 23);
+            comboBox1.TabIndex = 24;
+            comboBox1.Text = "Character";
+            // 
             // Add_Items
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -215,13 +219,13 @@
         private TextBox textBox_Name;
         private Label label1;
         private Label label2;
-        private TextBox textBox_Award;
         private Label label3;
-        private TextBox textBox_Owner;
         private Label label4;
         private TextBox textBox_Description;
         private Button button2;
         private Label label5;
         private TextBox textBox_UR;
+        private ComboBox DropBox;
+        private ComboBox comboBox1;
     }
 }

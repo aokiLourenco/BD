@@ -87,6 +87,9 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Open)
                     CN.Close();
             }
+
+            DropBox.Items.AddRange(awards.Keys.ToArray());
+            comboBox1.Items.AddRange(characters.Keys.ToArray());
         }
 
 
@@ -131,8 +134,8 @@ namespace Project_BD
         {
             string name = textBox_Name.Text;
             string description = textBox_Description.Text;
-            string Owner = textBox_Owner.Text;
-            string Award = textBox_Award.Text;
+            string Owner = comboBox1.Text;
+            string Award = DropBox.Text;
             string UR = textBox_UR.Text;
 
             Add_Items_DB(name, Owner, Award, description, UR);

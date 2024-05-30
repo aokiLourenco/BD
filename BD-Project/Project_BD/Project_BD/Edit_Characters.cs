@@ -36,7 +36,7 @@ namespace Project_BD
             textBox_Class.Text = cell_values["Class"].ToString();
             textBox_Description.Text = cell_values["Description"].ToString();
             textBox_Level.Text = cell_values["Level"].ToString();
-            textBox_Location.Text = cell_values["LocationName"].ToString().ToLower();
+            DropBox.Text = cell_values["LocationName"].ToString().ToLower();
             textBox_Weakness.Text = cell_values["Weakness"].ToString();
 
         }
@@ -71,6 +71,8 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Open)
                     CN.Close();
             }
+
+            DropBox.Items.AddRange(locations.Keys.ToArray());
         }
 
         private void Back()
@@ -126,7 +128,7 @@ namespace Project_BD
             string description = textBox_Description.Text;
             string class_str = textBox_Class.Text;
             string weakness = textBox_Weakness.Text;
-            string location = textBox_Location.Text;
+            string location = DropBox.Text;
             string level = textBox_Level.Text;
 
             if (name == "" || attacks == "" || Attributes == "" || description == "" || class_str == "" || weakness == "" || location == "" || level == "")

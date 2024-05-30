@@ -54,6 +54,8 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Open)
                     CN.Close();
             }
+            comboBox1.Items.AddRange(characters.Keys.ToArray());
+
         }
         private void Back()
         {
@@ -84,12 +86,13 @@ namespace Project_BD
                     CN.Close();
             }
 
+
         }
 
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            string Name = textBox_Name.Text;
+            string Name = comboBox1.Text;
 
             Add_Enemy_DB(Name);
         }

@@ -36,9 +36,9 @@
             Confirm = new Button();
             label5 = new Label();
             textBox_CraftingUse = new TextBox();
-            textBox_UsedItems = new TextBox();
             label8 = new Label();
             textBox_Quantity = new TextBox();
+            DropBox = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,9 +59,9 @@
             tableLayoutPanel1.Controls.Add(Confirm, 6, 0);
             tableLayoutPanel1.Controls.Add(label5, 1, 3);
             tableLayoutPanel1.Controls.Add(textBox_CraftingUse, 1, 4);
-            tableLayoutPanel1.Controls.Add(textBox_UsedItems, 4, 4);
             tableLayoutPanel1.Controls.Add(label8, 4, 3);
             tableLayoutPanel1.Controls.Add(textBox_Quantity, 1, 2);
+            tableLayoutPanel1.Controls.Add(DropBox, 4, 4);
             tableLayoutPanel1.Location = new Point(8, 8);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -147,14 +147,6 @@
             textBox_CraftingUse.Size = new Size(129, 23);
             textBox_CraftingUse.TabIndex = 12;
             // 
-            // textBox_UsedItems
-            // 
-            textBox_UsedItems.Anchor = AnchorStyles.Top;
-            textBox_UsedItems.Location = new Point(530, 161);
-            textBox_UsedItems.Name = "textBox_UsedItems";
-            textBox_UsedItems.Size = new Size(122, 23);
-            textBox_UsedItems.TabIndex = 17;
-            // 
             // label8
             // 
             label8.Anchor = AnchorStyles.Top;
@@ -172,6 +164,16 @@
             textBox_Quantity.Name = "textBox_Quantity";
             textBox_Quantity.Size = new Size(129, 23);
             textBox_Quantity.TabIndex = 19;
+            // 
+            // DropBox
+            // 
+            DropBox.Anchor = AnchorStyles.Top;
+            DropBox.FormattingEnabled = true;
+            DropBox.Location = new Point(529, 161);
+            DropBox.Name = "DropBox";
+            DropBox.Size = new Size(124, 23);
+            DropBox.TabIndex = 23;
+            DropBox.Text = "Item";
             // 
             // Add_CraftingMaterials
             // 
@@ -196,8 +198,8 @@
         private Button Confirm;
         private Label label5;
         private TextBox textBox_CraftingUse;
-        private TextBox textBox_UsedItems;
         private Label label8;
         private TextBox textBox_Quantity;
+        private ComboBox DropBox;
     }
 }

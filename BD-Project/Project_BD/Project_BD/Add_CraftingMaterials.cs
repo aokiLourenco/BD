@@ -52,6 +52,8 @@ namespace Project_BD
                     CN.Close();
             }
 
+            DropBox.Items.AddRange(items.Keys.ToArray());
+
         }
 
         private void Add_Crafting_DB(string Quantity, string Source, string CraftingUse, string UsedItems)
@@ -90,7 +92,7 @@ namespace Project_BD
             string Quantity = textBox_Quantity.Text;
             string Source = textBox_Source.Text;
             string CraftingUse = textBox_CraftingUse.Text;
-            string UsedItems = textBox_UsedItems.Text;
+            string UsedItems = DropBox.Text;
 
             Add_Crafting_DB(Quantity, Source, CraftingUse, UsedItems);
         }

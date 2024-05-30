@@ -31,10 +31,10 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             Cancel = new Button();
             label4 = new Label();
-            textBox_Name = new TextBox();
             Confirm = new Button();
-            textBox_UsedItems = new TextBox();
             label8 = new Label();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,10 +50,10 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 92F));
             tableLayoutPanel1.Controls.Add(Cancel, 0, 0);
             tableLayoutPanel1.Controls.Add(label4, 4, 1);
-            tableLayoutPanel1.Controls.Add(textBox_Name, 4, 2);
             tableLayoutPanel1.Controls.Add(Confirm, 6, 0);
-            tableLayoutPanel1.Controls.Add(textBox_UsedItems, 1, 2);
             tableLayoutPanel1.Controls.Add(label8, 1, 1);
+            tableLayoutPanel1.Controls.Add(comboBox1, 4, 2);
+            tableLayoutPanel1.Controls.Add(comboBox2, 1, 2);
             tableLayoutPanel1.Location = new Point(8, 8);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -89,14 +89,6 @@
             label4.TabIndex = 9;
             label4.Text = "Name";
             // 
-            // textBox_Name
-            // 
-            textBox_Name.Anchor = AnchorStyles.Top;
-            textBox_Name.Location = new Point(530, 89);
-            textBox_Name.Name = "textBox_Name";
-            textBox_Name.Size = new Size(122, 23);
-            textBox_Name.TabIndex = 10;
-            // 
             // Confirm
             // 
             Confirm.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -111,14 +103,6 @@
             Confirm.UseVisualStyleBackColor = true;
             Confirm.Click += Confirm_Click;
             // 
-            // textBox_UsedItems
-            // 
-            textBox_UsedItems.Anchor = AnchorStyles.Top;
-            textBox_UsedItems.Location = new Point(118, 89);
-            textBox_UsedItems.Name = "textBox_UsedItems";
-            textBox_UsedItems.Size = new Size(122, 23);
-            textBox_UsedItems.TabIndex = 17;
-            // 
             // label8
             // 
             label8.Anchor = AnchorStyles.Top;
@@ -128,6 +112,26 @@
             label8.Size = new Size(62, 15);
             label8.TabIndex = 18;
             label8.Text = "UsedItems";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(529, 89);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(124, 23);
+            comboBox1.TabIndex = 26;
+            comboBox1.Text = "Material";
+            // 
+            // comboBox2
+            // 
+            comboBox2.Anchor = AnchorStyles.Top;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(117, 89);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(124, 23);
+            comboBox2.TabIndex = 27;
+            comboBox2.Text = "Items";
             // 
             // Add_Crafts
             // 
@@ -147,9 +151,9 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Button Cancel;
         private Label label4;
-        private TextBox textBox_Name;
         private Button Confirm;
-        private TextBox textBox_UsedItems;
         private Label label8;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }

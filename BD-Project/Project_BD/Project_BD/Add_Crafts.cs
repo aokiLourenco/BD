@@ -84,6 +84,9 @@ namespace Project_BD
                     CN.Close();
             }
 
+            comboBox1.Items.AddRange(materials.Keys.ToArray());
+            comboBox2.Items.AddRange(items.Keys.ToArray());
+
         }
 
         private void Add_Crafts_DB(string Source, string UsedItems)
@@ -117,8 +120,8 @@ namespace Project_BD
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            string Source = textBox_Name.Text;
-            string UsedItems = textBox_UsedItems.Text;
+            string Source = comboBox1.Text;
+            string UsedItems = comboBox2.Text;
 
             Add_Crafts_DB(Source, UsedItems);
         }

@@ -59,6 +59,8 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Open)
                     CN.Close();
             }
+            DropBox.Items.AddRange(locations.Keys.ToArray());
+
         }
 
 
@@ -119,7 +121,7 @@ namespace Project_BD
             string description = textBox_Description.Text;
             string class_str = textBox_Class.Text;
             string weakness = textBox_Weakness.Text;
-            string location = textBox_Location.Text;
+            string location = DropBox.Text;
             string level = textBox_Level.Text;
 
             if (name == "" || attacks == "" || Attributes == "" || description == "" || class_str == "" || weakness == "" || location == "" || level == "")

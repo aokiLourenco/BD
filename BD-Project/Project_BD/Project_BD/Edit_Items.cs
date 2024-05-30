@@ -32,9 +32,9 @@ namespace Project_BD
         private void Edit_Items_Load(Dictionary<string, Object> cell_values)
         {
             textBox_Name.Text = cell_values["Name"].ToString();
-            textBox_Award.Text = cell_values["FoundIn"].ToString();
+            DropBox.Text = cell_values["FoundIn"].ToString();
             textBox_Description.Text = cell_values["Description"].ToString();
-            textBox_Owner.Text = cell_values["Owner"].ToString();
+            comboBox1.Text = cell_values["Owner"].ToString();
             textBox_UR.Text = cell_values["UseRequisites"].ToString();
 
         }
@@ -72,6 +72,7 @@ namespace Project_BD
                     CN.Close();
             }
 
+
             try
             {
                 if (CN.State == ConnectionState.Closed)
@@ -101,6 +102,9 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Open)
                     CN.Close();
             }
+
+            comboBox1.Items.AddRange(characters.Keys.ToArray());
+            DropBox.Items.AddRange(characters.Keys.ToArray());
         }
 
 
@@ -141,8 +145,8 @@ namespace Project_BD
         private void button2_Click(object sender, EventArgs e)
         {
             string name = textBox_Name.Text;
-            string Owner = textBox_Owner.Text;
-            string Award = textBox_Award.Text;
+            string Owner = comboBox1.Text;
+            string Award = DropBox.Text;
             string description = textBox_Description.Text;
             string UR = textBox_UR.Text;
 

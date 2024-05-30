@@ -55,6 +55,8 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Open)
                     CN.Close();
             }
+            DropBox.Items.AddRange(locations.Keys.ToArray());
+
         }
 
         private void Add_Dungeons_DB(string name, string Area, string MainBoss,string location)
@@ -99,7 +101,7 @@ namespace Project_BD
             string area = textBox_Area.Text;
             string name = textBox_Name.Text;
             string mainBoss = textBox_MainBoss.Text;
-            string location = textBox_Location.Text;
+            string location = DropBox.Text;
 
             Add_Dungeons_DB(name, area, mainBoss, location);
 

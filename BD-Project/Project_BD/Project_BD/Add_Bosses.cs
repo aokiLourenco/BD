@@ -58,6 +58,8 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Open)
                     CN.Close();
             }
+
+            DropBox.Items.AddRange(locations.Keys.ToArray());
         }
 
 
@@ -147,7 +149,7 @@ namespace Project_BD
             string description = textBox_Description.Text;
             string class_str = textBox_Class.Text;
             string weakness = textBox_Weakness.Text;
-            string location = textBox_Location.Text;
+            string location = DropBox.Text;
             string level = textBox_Level.Text;
             string cutscene = textBox_cutscene.Text;
 
@@ -166,6 +168,11 @@ namespace Project_BD
         private void button1_Click_1(object sender, EventArgs e)
         {
             Back();
+        }
+
+        private void DropBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

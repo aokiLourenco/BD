@@ -34,11 +34,11 @@
             label1 = new Label();
             button2 = new Button();
             label7 = new Label();
-            textBox_Location = new TextBox();
             textBox_Area = new TextBox();
             label2 = new Label();
             textBox_MainBoss = new TextBox();
             label3 = new Label();
+            DropBox = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -57,11 +57,11 @@
             tableLayoutPanel1.Controls.Add(label1, 1, 1);
             tableLayoutPanel1.Controls.Add(button2, 6, 0);
             tableLayoutPanel1.Controls.Add(label7, 4, 1);
-            tableLayoutPanel1.Controls.Add(textBox_Location, 4, 2);
             tableLayoutPanel1.Controls.Add(textBox_Area, 1, 4);
             tableLayoutPanel1.Controls.Add(label2, 1, 3);
             tableLayoutPanel1.Controls.Add(textBox_MainBoss, 4, 4);
             tableLayoutPanel1.Controls.Add(label3, 4, 3);
+            tableLayoutPanel1.Controls.Add(DropBox, 4, 2);
             tableLayoutPanel1.Location = new Point(8, 8);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -129,14 +129,6 @@
             label7.TabIndex = 15;
             label7.Text = "Location";
             // 
-            // textBox_Location
-            // 
-            textBox_Location.Anchor = AnchorStyles.Top;
-            textBox_Location.Location = new Point(530, 89);
-            textBox_Location.Name = "textBox_Location";
-            textBox_Location.Size = new Size(122, 23);
-            textBox_Location.TabIndex = 16;
-            // 
             // textBox_Area
             // 
             textBox_Area.Anchor = AnchorStyles.Top;
@@ -173,6 +165,16 @@
             label3.TabIndex = 7;
             label3.Text = "MainBoss";
             // 
+            // DropBox
+            // 
+            DropBox.Anchor = AnchorStyles.Top;
+            DropBox.FormattingEnabled = true;
+            DropBox.Location = new Point(529, 89);
+            DropBox.Name = "DropBox";
+            DropBox.Size = new Size(124, 23);
+            DropBox.TabIndex = 22;
+            DropBox.Text = "Location";
+            // 
             // Add_Dungeons
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -194,10 +196,10 @@
         private Label label1;
         private Button button2;
         private Label label7;
-        private TextBox textBox_Location;
         private TextBox textBox_Area;
         private Label label2;
         private TextBox textBox_MainBoss;
         private Label label3;
+        private ComboBox DropBox;
     }
 }

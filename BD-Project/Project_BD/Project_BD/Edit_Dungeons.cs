@@ -33,7 +33,7 @@ namespace Project_BD
         {
             textBox_Name.Text = cell_values["Name"].ToString();
             textBox_Area.Text = cell_values["LocationArea"].ToString();
-            textBox_Location.Text = cell_values["Area"].ToString();
+            DropBox.Text = cell_values["Area"].ToString();
             textBox_MainBoss.Text = cell_values["MainBoss"].ToString();
         }
         private void LoadLocations()
@@ -67,6 +67,8 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Open)
                     CN.Close();
             }
+
+            DropBox.Items.AddRange(locations.Keys.ToArray());
         }
 
 
@@ -115,7 +117,7 @@ namespace Project_BD
         {
             string area = textBox_Area.Text;
             string name = textBox_Name.Text;
-            string location = textBox_Location.Text;
+            string location = DropBox.Text;
             string mainboss = textBox_MainBoss.Text;
 
             Edit_Dungeons_DB(name, location, area, mainboss);

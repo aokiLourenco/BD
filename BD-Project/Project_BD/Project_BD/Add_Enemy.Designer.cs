@@ -31,8 +31,8 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             Cancel = new Button();
             Confirm = new Button();
-            textBox_Name = new TextBox();
             label4 = new Label();
+            comboBox1 = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,8 +48,8 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 92F));
             tableLayoutPanel1.Controls.Add(Cancel, 0, 0);
             tableLayoutPanel1.Controls.Add(Confirm, 6, 0);
-            tableLayoutPanel1.Controls.Add(textBox_Name, 3, 2);
             tableLayoutPanel1.Controls.Add(label4, 3, 1);
+            tableLayoutPanel1.Controls.Add(comboBox1, 3, 2);
             tableLayoutPanel1.Location = new Point(8, 8);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -89,14 +89,6 @@
             Confirm.UseVisualStyleBackColor = true;
             Confirm.Click += Confirm_Click;
             // 
-            // textBox_Name
-            // 
-            textBox_Name.Anchor = AnchorStyles.Top;
-            textBox_Name.Location = new Point(395, 89);
-            textBox_Name.Name = "textBox_Name";
-            textBox_Name.Size = new Size(122, 23);
-            textBox_Name.TabIndex = 10;
-            // 
             // label4
             // 
             label4.Anchor = AnchorStyles.Top;
@@ -106,6 +98,16 @@
             label4.Size = new Size(39, 15);
             label4.TabIndex = 9;
             label4.Text = "Name";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(394, 89);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(124, 23);
+            comboBox1.TabIndex = 25;
+            comboBox1.Text = "Character";
             // 
             // Add_Enemy
             // 
@@ -125,7 +127,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Button Cancel;
         private Button Confirm;
-        private TextBox textBox_Name;
         private Label label4;
+        private ComboBox comboBox1;
     }
 }
