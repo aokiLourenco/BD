@@ -61,7 +61,6 @@ AS
         Items.DESCRIPTION as Description
     FROM Items
         JOIN CraftingMaterials ON Items.ItemID = CraftingMaterials.UsedItems
-
 GO
 
 DROP VIEW IF EXISTS LocationView_Table
