@@ -18,7 +18,7 @@ namespace Project_BD
         private SqlConnection CN;
         private Dictionary<string, int> items = new Dictionary<string, int>();
 
-        public Edit_CraftingMaterials(Dictionary<string,object> cell_values)
+        public Edit_CraftingMaterials(Dictionary<string, object> cell_values)
         {
             InitializeComponent();
             CN = ConnectionManager.getSGBDConnection();
@@ -113,6 +113,11 @@ namespace Project_BD
             this.Close();
         }
         private void Cancel_Click(object sender, EventArgs e)
+        {
+            Back();
+        }
+
+        private void Cancel_Click_1(object sender, EventArgs e)
         {
             Back();
         }

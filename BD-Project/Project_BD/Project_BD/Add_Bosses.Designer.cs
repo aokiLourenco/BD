@@ -105,6 +105,7 @@
             button1.TabIndex = 0;
             button1.Text = "Cancel";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // textBox_Name
             // 

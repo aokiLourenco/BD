@@ -89,11 +89,11 @@ namespace Project_BD
                 cmd.Parameters.AddWithValue("@Class", class_str);
                 cmd.Parameters.AddWithValue("@Weakness", weakness);
                 cmd.Parameters.AddWithValue("@LEVEL", Int32.Parse(level));
-                
+
                 // Get the ID_Location from the dictionary
                 int idLocation = locations[location.ToLower()];
                 cmd.Parameters.AddWithValue("@LocationID", idLocation);
-                
+
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Character added successfully");
@@ -122,7 +122,7 @@ namespace Project_BD
             string location = textBox_Location.Text;
             string level = textBox_Level.Text;
 
-            if (name == "" || attacks == "" || Attributes == "" || description == "" || class_str == "" || weakness == "" || location == "" || level=="")
+            if (name == "" || attacks == "" || Attributes == "" || description == "" || class_str == "" || weakness == "" || location == "" || level == "")
             {
                 MessageBox.Show("Please fill all the fields");
                 return;
@@ -130,10 +130,13 @@ namespace Project_BD
 
 
             Add_Character_DB(name, attacks, Attributes, description, class_str, weakness, location, level);
-            
+
 
         }
 
-    
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Back();
+        }
     }
 }

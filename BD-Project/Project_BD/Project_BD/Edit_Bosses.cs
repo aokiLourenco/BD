@@ -33,8 +33,8 @@ namespace Project_BD
             textBox_Attacks.Text = cell_values["Attacks"].ToString();
             textBox_Attributes.Text = cell_values["Attributes"].ToString();
             textBox_Class.Text = cell_values["Class"].ToString();
-            textBox_Description.Text = cell_values["DESCRIPTION"].ToString();
-            textBox_Level.Text = cell_values["LEVEL"].ToString();
+            textBox_Description.Text = cell_values["Description"].ToString();
+            textBox_Level.Text = cell_values["Level"].ToString();
             textBox_Location.Text = cell_values["Area"].ToString().ToLower();
             textBox_Weakness.Text = cell_values["Weakness"].ToString();
             textBox_cutscene.Text = cell_values["Cutscene"].ToString();

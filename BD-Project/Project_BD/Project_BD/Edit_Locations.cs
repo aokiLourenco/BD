@@ -30,7 +30,7 @@ namespace Project_BD
         {
             textBox_Name.Text = cell_value["Name"].ToString();
             textBox_Area.Text = cell_value["Area"].ToString();
-            textBox_Description.Text = cell_value["DESCRIPTION"].ToString();
+            textBox_Description.Text = cell_value["Description"].ToString();
             textBox_POI.Text = cell_value["PointsOfInterest"].ToString();
             id = Int32.Parse(cell_value["ID"].ToString());
 

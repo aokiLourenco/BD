@@ -102,7 +102,7 @@ namespace Project_BD
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Character Edited successfully");
-                Back(); 
+                Back();
 
             }
             catch (Exception e)
@@ -138,6 +138,11 @@ namespace Project_BD
 
             Edit_Character_DB(name, attacks, Attributes, description, class_str, weakness, location, level);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Back(); 
         }
     }
 }
