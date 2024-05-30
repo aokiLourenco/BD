@@ -85,6 +85,7 @@
             Cancel.TabIndex = 0;
             Cancel.Text = "Cancel";
             Cancel.UseVisualStyleBackColor = true;
+            Cancel.Click += Cancel_Click_1;
             // 
             // label1
             // 

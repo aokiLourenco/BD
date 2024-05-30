@@ -239,6 +239,7 @@
             ClearFilter.TabIndex = 12;
             ClearFilter.Text = "Clear";
             ClearFilter.UseVisualStyleBackColor = true;
+            ClearFilter.Click += ClearFilter_Click;
             // 
             // AddButton
             // 

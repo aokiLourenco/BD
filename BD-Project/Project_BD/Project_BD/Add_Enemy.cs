@@ -42,7 +42,7 @@ namespace Project_BD
                     string name = reader["Name"].ToString().ToLower();
                     if (!characters.ContainsKey(name))
                         characters.Add(name, idItem);
-                
+
                 }
             }
             catch (Exception ex)
@@ -92,6 +92,11 @@ namespace Project_BD
             string Name = textBox_Name.Text;
 
             Add_Enemy_DB(Name);
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            Back();
         }
     }
 }

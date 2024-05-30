@@ -16,7 +16,7 @@ namespace Project_BD
     {
         private SqlConnection CN;
         private Dictionary<string, int> items = new Dictionary<string, int>();
-        private Dictionary<int,string> items_reverse = new Dictionary<int, string>();
+        private Dictionary<int, string> items_reverse = new Dictionary<int, string>();
         private Dictionary<string, int> materials = new Dictionary<string, int>();
         public Add_Crafts()
         {
@@ -70,7 +70,7 @@ namespace Project_BD
                     string name = items_reverse[(int)reader["UsedItems"]].ToString().ToLower();
                     if (!materials.ContainsKey(name))
                         materials.Add(name, idItem);
-                    
+
                 }
 
             }
@@ -116,7 +116,7 @@ namespace Project_BD
 
 
         private void Confirm_Click(object sender, EventArgs e)
-        { 
+        {
             string Source = textBox_Name.Text;
             string UsedItems = textBox_UsedItems.Text;
 
@@ -128,6 +128,11 @@ namespace Project_BD
             this.Close();
         }
         private void Cancel_Click(object sender, EventArgs e)
+        {
+            Back();
+        }
+
+        private void Cancel_Click_1(object sender, EventArgs e)
         {
             Back();
         }

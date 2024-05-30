@@ -19,10 +19,10 @@ namespace Project_BD
     {
 
         //AOKI
-        public static string SQLConnectionString = "data source = (localdb)\\localeldenvault;initial catalog=master;integrated security=true;encrypt=false";
+        //public static string SQLConnectionString = "data source = (localdb)\\localeldenvault;initial catalog=master;integrated security=true;encrypt=false";
 
         //TÓ
-        //public static string SQLConnectionString = "Data Source = localhost;Initial Catalog=master;Integrated Security=True;Encrypt=False";
+        public static string SQLConnectionString = "Data Source = localhost;Initial Catalog=master;Integrated Security=True;Encrypt=False";
 
         public string data_type = "";
         private string last_type = "";
@@ -683,9 +683,8 @@ namespace Project_BD
                 case "Locations":
                     formPopup = new Edit_Locations(cell_value);
                     break;
-                //case "Crafts":
-                //    formPopup = new Edit_Craft();
-                //    break;
+                case "Crafts":
+                    return;
                 case "Characters":
                     formPopup = new Edit_Characters(cell_value);
                     break;
@@ -695,9 +694,8 @@ namespace Project_BD
                 case "Dungeons":
                     formPopup = new Edit_Dungeons(cell_value);
                     break;
-                //case "Enemies":
-                //    formPopup = new Edit_Enemy();
-                //    break;
+                case "Enemies":
+                    return;
                 case "Items":
                     formPopup = new Edit_Items(cell_value);
                     break;
@@ -744,7 +742,7 @@ namespace Project_BD
                 if (CN.State == ConnectionState.Closed)
                     CN.Open();
                 SqlCommand cmd = new SqlCommand("GetEnemiesWithAttack", CN);
-                
+
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Attack", textBox_Attacks.Text);
 
@@ -752,7 +750,7 @@ namespace Project_BD
                 attackTotalParam.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(attackTotalParam);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show( attackTotalParam.Value + " Attacks named : " + textBox_Attacks.Text);
+                MessageBox.Show(attackTotalParam.Value + " Attacks named : " + textBox_Attacks.Text);
             }
             catch (Exception ex)
             {
@@ -1063,5 +1061,37 @@ namespace Project_BD
         {
         }
 
+        private void ClearFilter_Click(object sender, EventArgs e)
+        {
+            SearchDataBox.Text = "";
+
+            switch (data_type)
+            {
+                case "Characters":
+                    CharactersButton_Click(sender, e);
+                    break;
+                case "Locations":
+                    LocationsButton_Click(sender, e);
+                    break;
+                case "Items":
+                    ItemsButton_Click(sender, e);
+                    break;
+                case "Bosses":
+                    BossesButton_Click(sender, e);
+                    break;
+                case "Enemies":
+                    EnemiesButton_Click(sender, e);
+                    break;
+                case "CraftingMaterials":
+                    CraftingButton_Click(sender, e);
+                    break;
+                case "Crafts":
+                    CraftsButton_Click(sender, e);
+                    break;
+                case "Dungeons":
+                    DungeonsButton_Click(sender, e);
+                    break;
+            }
+        }
     }
 }

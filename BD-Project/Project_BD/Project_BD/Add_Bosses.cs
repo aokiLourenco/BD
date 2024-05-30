@@ -100,7 +100,7 @@ namespace Project_BD
                 cmd = new SqlCommand("AddBoss", CN);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@CharacterID", new SqlCommand("SELECT MAX(CharacterID) FROM Characters",CN).ExecuteScalar());
+                cmd.Parameters.AddWithValue("@CharacterID", new SqlCommand("SELECT MAX(CharacterID) FROM Characters", CN).ExecuteScalar());
                 cmd.Parameters.AddWithValue("@Cutscene", cutscene);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Boss added successfully");
@@ -109,6 +109,14 @@ namespace Project_BD
             }
             catch (Exception e)
             {
+                if (e.Message == "The Boss LVL(level) cannot be lower than 100.")
+                {
+                    MessageBox.Show("The Boss LVL(level) cannot be lower than 100.");
+                    if (CN.State == ConnectionState.Open)
+                        CN.Close();
+                    return;
+                }
+
                 try
                 {
                     SqlCommand cmd = new SqlCommand("DeleteCharacter", CN);
@@ -118,7 +126,7 @@ namespace Project_BD
                 }
                 catch
                 {
-                    
+
                 }
 
                 MessageBox.Show(e.Message);
@@ -150,9 +158,14 @@ namespace Project_BD
             }
 
 
-            Add_Boss_DB(name, attacks, Attributes, description, class_str, weakness, location, level,cutscene);
+            Add_Boss_DB(name, attacks, Attributes, description, class_str, weakness, location, level, cutscene);
 
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Back();
         }
     }
 }
