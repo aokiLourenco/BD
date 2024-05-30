@@ -105,9 +105,15 @@ namespace Project_BD
                 cmd.Parameters.AddWithValue("@CharacterID", new SqlCommand("SELECT MAX(CharacterID) FROM Characters", CN).ExecuteScalar());
                 cmd.Parameters.AddWithValue("@Cutscene", cutscene);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Boss added successfully");
+                if (Int32.Parse(level) < 100)
+                {
+                    MessageBox.Show("The Boss LVL(level) cannot be lower than 100. But a Character was created");
+                } else
+                {
+                    MessageBox.Show("Boss added successfully");
+                    Back();
+                }
 
-                Back();
             }
             catch (Exception e)
             {

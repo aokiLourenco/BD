@@ -11,7 +11,6 @@ BEGIN
     FROM Bosses b
     JOIN Characters c ON b.CharacterID = c.CharacterID
     WHERE c.Level < 100;
-    RAISERROR ('The Boss LVL(level) cannot be lower than 100.', 16, 1);
     RETURN;
 END;
 GO
