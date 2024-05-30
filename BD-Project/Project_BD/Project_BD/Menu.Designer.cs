@@ -216,7 +216,7 @@
             DropBox.Name = "DropBox";
             DropBox.Size = new Size(127, 23);
             DropBox.TabIndex = 9;
-            DropBox.Text = "Search";
+            DropBox.Text = "Filter";
             DropBox.SelectedIndexChanged += DropBox_SelectedIndexChanged;
             // 
             // SearchDataBox
