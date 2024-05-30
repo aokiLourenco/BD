@@ -52,11 +52,12 @@ GO
 CREATE VIEW CraftingMaterials_Table
 AS
     SELECT
-        CraftingMaterials.UsedItems as ID,
+        CraftingMaterials.CraftingMaterialID as ID,
         Items.Name,
         CraftingMaterials.CraftingUse,
         CraftingMaterials.Source,
         CraftingMaterials.Quantity,
+        CraftingMaterials.UsedItems as UsedID,
         Items.DESCRIPTION as Description
     FROM Items
         JOIN CraftingMaterials ON Items.ItemID = CraftingMaterials.UsedItems
@@ -86,7 +87,7 @@ AS
     SELECT
         Characters.CharacterID AS ID,
         Characters.Name,
-        Characters.DESCRIPTION as Description,
+        Characters.DESCRIPTION AS Description,
         Characters.Class,
         Characters.Attacks,
         Characters.Attributes,
@@ -128,7 +129,9 @@ CREATE VIEW CraftsView_Table
 AS
     SELECT
         Items.ItemID AS ID,
+        CraftingMaterials.CraftingMaterialID AS CraftingMaterialID,
         Items.Name,
+        UsedItems.Name AS UsedItem,
         CraftingMaterials.CraftingUse AS UsedIn,
         CraftingMaterials.quantity,
         CraftingMaterials.Source,
@@ -136,6 +139,7 @@ AS
     FROM Crafts
         JOIN Items ON Crafts.ItemID = Items.ItemID
         JOIN CraftingMaterials ON Crafts.CraftingMaterialID = CraftingMaterials.CraftingMaterialID
+        JOIN Items AS UsedItems ON CraftingMaterials.UsedItems = UsedItems.ItemID
         
 
 
@@ -157,6 +161,4 @@ AS
         JOIN Locations ON Dungeons.LocationID = Locations.LocationID
 
 GO
-
-
 

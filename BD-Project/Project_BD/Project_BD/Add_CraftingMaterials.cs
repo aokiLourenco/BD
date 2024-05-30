@@ -12,13 +12,11 @@ using static Project_BD.Menu;
 
 namespace Project_BD
 {
-    public partial class Add_Crafts : Form
+    public partial class Add_CraftingMaterials : Form
     {
         private SqlConnection CN;
         private Dictionary<string, int> items = new Dictionary<string, int>();
-        private Dictionary<int,string> items_reverse = new Dictionary<int, string>();
-        private Dictionary<string, int> materials = new Dictionary<string, int>();
-        public Add_Crafts()
+        public Add_CraftingMaterials()
         {
             InitializeComponent();
             CN = ConnectionManager.getSGBDConnection();
@@ -41,8 +39,6 @@ namespace Project_BD
                     string name = reader["Name"].ToString().ToLower();
                     if (!items.ContainsKey(name))
                         items.Add(name, idItem);
-                    if (!items_reverse.ContainsKey(idItem))
-                        items_reverse.Add(idItem, name);
                 }
 
             }
@@ -56,50 +52,24 @@ namespace Project_BD
                     CN.Close();
             }
 
-            try
-            {
-                if (CN.State == ConnectionState.Closed)
-                    CN.Open();
-
-                SqlCommand cmd = new SqlCommand("SELECT CraftingMaterialID, UsedItems FROM CraftingMaterials", CN);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    // Store both ID_Localition and Name as a KeyValuePair in the dictionary
-                    int idItem = (int)reader["CraftingMaterialID"];
-                    string name = items_reverse[(int)reader["UsedItems"]].ToString().ToLower();
-                    if (!materials.ContainsKey(name))
-                        materials.Add(name, idItem);
-                    
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(" AI AI " + ex.Message);
-            }
-            finally
-            {
-                if (CN.State == ConnectionState.Open)
-                    CN.Close();
-            }
-
         }
 
-        private void Add_Crafts_DB(string Source, string UsedItems)
+        private void Add_Crafting_DB(string Quantity, string Source, string CraftingUse, string UsedItems)
         {
             try
             {
                 CN.Open();
-                SqlCommand cmd = new SqlCommand("AddCraft", CN);
+                SqlCommand cmd = new SqlCommand("AddCraftingMaterial", CN);
                 cmd.CommandType = CommandType.StoredProcedure;
 
 
-                cmd.Parameters.AddWithValue("@ItemID", items[UsedItems.ToLower()]);
-                cmd.Parameters.AddWithValue("@CraftingMaterialID", materials[Source.ToLower()]);
+                cmd.Parameters.AddWithValue("@Quantity", Quantity);
+                cmd.Parameters.AddWithValue("@Source", Source);
+                cmd.Parameters.AddWithValue("@CraftingUse", CraftingUse);
+                cmd.Parameters.AddWithValue("@UsedItems", items[UsedItems]);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Crafts added successfully");
+                MessageBox.Show("Crafting Material added successfully");
                 Back();
             }
             catch (Exception e)
@@ -116,11 +86,13 @@ namespace Project_BD
 
 
         private void Confirm_Click(object sender, EventArgs e)
-        { 
-            string Source = textBox_Name.Text;
+        {
+            string Quantity = textBox_Quantity.Text;
+            string Source = textBox_Source.Text;
+            string CraftingUse = textBox_CraftingUse.Text;
             string UsedItems = textBox_UsedItems.Text;
 
-            Add_Crafts_DB(Source, UsedItems);
+            Add_Crafting_DB(Quantity, Source, CraftingUse, UsedItems);
         }
 
         private void Back()

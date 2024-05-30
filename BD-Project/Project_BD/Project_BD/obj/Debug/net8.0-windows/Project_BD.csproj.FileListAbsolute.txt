@@ -243,3 +243,6 @@ C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debu
 C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Dungeons.resources
 C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Items.resources
 C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Locations.resources
+C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_CraftingMaterials.resources
+C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_CraftingMaterials.resources
+C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_Enemy.resources

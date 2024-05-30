@@ -1,6 +1,6 @@
 ﻿namespace Project_BD
 {
-    partial class Add_Crafts
+    partial class Add_Enemy
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,9 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             Cancel = new Button();
-            label4 = new Label();
-            textBox_Name = new TextBox();
             Confirm = new Button();
-            textBox_UsedItems = new TextBox();
-            label8 = new Label();
+            textBox_Name = new TextBox();
+            label4 = new Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,11 +47,9 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 46F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 92F));
             tableLayoutPanel1.Controls.Add(Cancel, 0, 0);
-            tableLayoutPanel1.Controls.Add(label4, 4, 1);
-            tableLayoutPanel1.Controls.Add(textBox_Name, 4, 2);
             tableLayoutPanel1.Controls.Add(Confirm, 6, 0);
-            tableLayoutPanel1.Controls.Add(textBox_UsedItems, 1, 2);
-            tableLayoutPanel1.Controls.Add(label8, 1, 1);
+            tableLayoutPanel1.Controls.Add(textBox_Name, 3, 2);
+            tableLayoutPanel1.Controls.Add(label4, 3, 1);
             tableLayoutPanel1.Location = new Point(8, 8);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -64,7 +60,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 249F));
             tableLayoutPanel1.Size = new Size(800, 450);
-            tableLayoutPanel1.TabIndex = 7;
+            tableLayoutPanel1.TabIndex = 8;
             // 
             // Cancel
             // 
@@ -77,24 +73,6 @@
             Cancel.TabIndex = 0;
             Cancel.Text = "Cancel";
             Cancel.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Top;
-            label4.AutoSize = true;
-            label4.Location = new Point(571, 68);
-            label4.Name = "label4";
-            label4.Size = new Size(39, 15);
-            label4.TabIndex = 9;
-            label4.Text = "Name";
-            // 
-            // textBox_Name
-            // 
-            textBox_Name.Anchor = AnchorStyles.Top;
-            textBox_Name.Location = new Point(530, 89);
-            textBox_Name.Name = "textBox_Name";
-            textBox_Name.Size = new Size(122, 23);
-            textBox_Name.TabIndex = 10;
             // 
             // Confirm
             // 
@@ -110,32 +88,32 @@
             Confirm.UseVisualStyleBackColor = true;
             Confirm.Click += Confirm_Click;
             // 
-            // textBox_UsedItems
+            // textBox_Name
             // 
-            textBox_UsedItems.Anchor = AnchorStyles.Top;
-            textBox_UsedItems.Location = new Point(118, 89);
-            textBox_UsedItems.Name = "textBox_UsedItems";
-            textBox_UsedItems.Size = new Size(122, 23);
-            textBox_UsedItems.TabIndex = 17;
+            textBox_Name.Anchor = AnchorStyles.Top;
+            textBox_Name.Location = new Point(395, 89);
+            textBox_Name.Name = "textBox_Name";
+            textBox_Name.Size = new Size(122, 23);
+            textBox_Name.TabIndex = 10;
             // 
-            // label8
+            // label4
             // 
-            label8.Anchor = AnchorStyles.Top;
-            label8.AutoSize = true;
-            label8.Location = new Point(148, 68);
-            label8.Name = "label8";
-            label8.Size = new Size(62, 15);
-            label8.TabIndex = 18;
-            label8.Text = "UsedItems";
+            label4.Anchor = AnchorStyles.Top;
+            label4.AutoSize = true;
+            label4.Location = new Point(436, 68);
+            label4.Name = "label4";
+            label4.Size = new Size(39, 15);
+            label4.TabIndex = 9;
+            label4.Text = "Name";
             // 
-            // Add_Crafts
+            // Add_Enemy
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tableLayoutPanel1);
-            Name = "Add_Crafts";
-            Text = "Add_Crafts";
+            Name = "Add_Enemy";
+            Text = "Add_Enemy";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -145,10 +123,8 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Button Cancel;
-        private Label label4;
-        private TextBox textBox_Name;
         private Button Confirm;
-        private TextBox textBox_UsedItems;
-        private Label label8;
+        private TextBox textBox_Name;
+        private Label label4;
     }
 }

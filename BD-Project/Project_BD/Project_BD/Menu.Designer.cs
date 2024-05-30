@@ -45,6 +45,8 @@
             EditButton = new Button();
             DeleteButton = new Button();
             ClearSelectionButton = new Button();
+            textBox_Attacks = new TextBox();
+            button_attack_Search = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ShowTableInfo).BeginInit();
             SuspendLayout();
@@ -174,6 +176,8 @@
             tableLayoutPanel1.Controls.Add(EditButton, 2, 7);
             tableLayoutPanel1.Controls.Add(DeleteButton, 3, 7);
             tableLayoutPanel1.Controls.Add(ClearSelectionButton, 8, 7);
+            tableLayoutPanel1.Controls.Add(textBox_Attacks, 5, 7);
+            tableLayoutPanel1.Controls.Add(button_attack_Search, 6, 7);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -284,6 +288,27 @@
             ClearSelectionButton.UseVisualStyleBackColor = true;
             ClearSelectionButton.Click += ClearSelectionButton_Click;
             // 
+            // textBox_Attacks
+            // 
+            textBox_Attacks.Anchor = AnchorStyles.None;
+            textBox_Attacks.ForeColor = SystemColors.WindowFrame;
+            textBox_Attacks.Location = new Point(656, 568);
+            textBox_Attacks.Name = "textBox_Attacks";
+            textBox_Attacks.PlaceholderText = "Search Attack";
+            textBox_Attacks.Size = new Size(124, 23);
+            textBox_Attacks.TabIndex = 17;
+            // 
+            // button_attack_Search
+            // 
+            button_attack_Search.Anchor = AnchorStyles.None;
+            button_attack_Search.Location = new Point(797, 568);
+            button_attack_Search.Name = "button_attack_Search";
+            button_attack_Search.Size = new Size(118, 23);
+            button_attack_Search.TabIndex = 18;
+            button_attack_Search.Text = "Search";
+            button_attack_Search.UseVisualStyleBackColor = true;
+            button_attack_Search.Click += button_attack_Search_Click;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -317,5 +342,7 @@
         private Button DeleteButton;
         private Button EditButton;
         private Button ClearSelectionButton;
+        private TextBox textBox_Attacks;
+        private Button button_attack_Search;
     }
 }

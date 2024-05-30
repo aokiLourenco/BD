@@ -34,6 +34,9 @@ namespace Project_BD
         {
             InitializeComponent();
             CN = ConnectionManager.getSGBDConnection();
+            textBox_Attacks.Visible = false;
+            button_attack_Search.Visible = false;
+
         }
 
         public static class ConnectionManager
@@ -50,6 +53,9 @@ namespace Project_BD
             //this.Hide();
             //Locations location = new Locations();
             //location.Show();
+            textBox_Attacks.Visible = false;
+            button_attack_Search.Visible = false;
+
             last_type = data_type;
             try
             {
@@ -97,6 +103,9 @@ namespace Project_BD
             //this.Hide();
             //Crafts craft = new Crafts();
             //craft.Show();
+            textBox_Attacks.Visible = false;
+            button_attack_Search.Visible = false;
+
             last_type = data_type;
             try
             {
@@ -147,6 +156,9 @@ namespace Project_BD
             //    this.Hide();
             //    Characters character = new Characters();
             //    character.Show();
+            textBox_Attacks.Visible = false;
+            button_attack_Search.Visible = false;
+
             cell_value.Clear();
             last_type = data_type;
             try
@@ -198,8 +210,10 @@ namespace Project_BD
             //this.Hide();
             //Bosses boss = new Bosses();
             //boss.Show();
-            cell_value.Clear();
+            textBox_Attacks.Visible = false;
+            button_attack_Search.Visible = false;
 
+            cell_value.Clear();
             last_type = data_type;
             try
             {
@@ -207,7 +221,7 @@ namespace Project_BD
                 //SqlCommand cmd = new SqlCommand("SELECT * FROM Bosses JOIN Characters ON Bosses.CharacterID = Characters.CharacterID JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Bosses.CharacterID", CN);
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BossView_Table", CN);
                 Debug.WriteLine(cmd);
-                
+
                 DataTable detailsTable = new DataTable();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
                 Debug.WriteLine(sqlDataAdapter);
@@ -246,6 +260,9 @@ namespace Project_BD
             //this.Hide();
             //Dungeons dungeon = new Dungeons();
             //dungeon.Show();
+            textBox_Attacks.Visible = false;
+            button_attack_Search.Visible = false;
+
             cell_value.Clear();
 
             last_type = data_type;
@@ -273,7 +290,7 @@ namespace Project_BD
                 //        detailsTable.Columns.Remove(column);
                 //    }
                 //}
-                
+
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
                 ShowTableInfo.AutoResizeColumns();
@@ -296,6 +313,8 @@ namespace Project_BD
             //Enemies enemy = new Enemies();
             //enemy.Show();
             cell_value.Clear();
+            textBox_Attacks.Visible = true;
+            button_attack_Search.Visible = true;
 
             last_type = data_type;
             try
@@ -344,6 +363,9 @@ namespace Project_BD
             //this.Hide();
             //Items item = new Items();
             //item.Show();
+            textBox_Attacks.Visible = false;
+            button_attack_Search.Visible = false;
+
             cell_value.Clear();
 
             last_type = data_type;
@@ -398,6 +420,9 @@ namespace Project_BD
             //this.Hide();
             //CraftingMaterials craftingMaterials = new CraftingMaterials();
             //craftingMaterials.Show();
+            textBox_Attacks.Visible = false;
+            button_attack_Search.Visible = false;
+
             cell_value.Clear();
 
             last_type = data_type;
@@ -477,15 +502,15 @@ namespace Project_BD
                 case "Dungeons":
                     formPopup = new Add_Dungeons();
                     break;
-                //case "Enemies":
-                //    formPopup = new Add_Enemy();
-                //    break;
+                case "Enemies":
+                    formPopup = new Add_Enemy();
+                    break;
                 case "Items":
                     formPopup = new Add_Items();
                     break;
-                //case "CraftingMaterials":
-                //    formPopup = new Add_CraftingMaterial();
-                //    break;
+                case "CraftingMaterials":
+                    formPopup = new Add_CraftingMaterials();
+                    break;
                 default:
                     MessageBox.Show("Please, select a table to add data");
                     break;
@@ -506,6 +531,19 @@ namespace Project_BD
                 case "Items":
                     formPopup.FormClosed += new FormClosedEventHandler(ItemsButton_Click);
                     break;
+                case "Bosses":
+                    formPopup.FormClosed += new FormClosedEventHandler(BossesButton_Click);
+                    break;
+                case "Enemies":
+                    formPopup.FormClosed += new FormClosedEventHandler(EnemiesButton_Click);
+                    break;
+                case "CraftingMaterials":
+                    formPopup.FormClosed += new FormClosedEventHandler(CraftingButton_Click);
+                    break;
+                case "Crafts":
+                    formPopup.FormClosed += new FormClosedEventHandler(CraftsButton_Click);
+                    break;
+
             }
         }
 
@@ -537,9 +575,13 @@ namespace Project_BD
 
                         cmd.Parameters.AddWithValue("@ID_Location", cell_value["ID"]);
                         break;
-                    //case "Crafts":
-                    //    formPopup = new Edit_Craft();
-                    //    break;
+                    case "Crafts":
+                        cmd = new SqlCommand("DeleteCraft", CN);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@ItemID", cell_value["ID"]);
+                        cmd.Parameters.AddWithValue("@CraftingMaterialID", cell_value["CraftingMaterialID"]);
+                        break;
                     case "Characters":
                         cmd = new SqlCommand("DeleteCharacter", CN);
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -558,18 +600,25 @@ namespace Project_BD
 
                         cmd.Parameters.AddWithValue("@ID_Dungeon", cell_value["ID"]);
                         break;
-                    //case "Enemies":
-                    //    formPopup = new Edit_Enemy();
-                    //    break;
+                    case "Enemies":
+                        cmd = new SqlCommand("DeleteEnemy", CN);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@ID_Enemy", cell_value["ID"]);
+
+                        break;
                     case "Items":
                         cmd = new SqlCommand("DeleteItem", CN);
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.Parameters.AddWithValue("@ID_Item", cell_value["ID"]);
                         break;
-                    //case "CraftingMaterials":
-                    //    formPopup = new Edit_CraftingMaterial();
-                    //    break;
+                    case "CraftingMaterials":
+                        cmd = new SqlCommand("DeleteCraftingMaterial", CN);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@ID_CraftingMaterial", cell_value["ID"]);
+                        break;
                     default:
                         MessageBox.Show("Please, select a table to edit data");
                         return;
@@ -604,6 +653,15 @@ namespace Project_BD
                         break;
                     case "Bosses":
                         BossesButton_Click(sender, e);
+                        break;
+                    case "Enemies":
+                        EnemiesButton_Click(sender, e);
+                        break;
+                    case "CraftingMaterials":
+                        CraftingButton_Click(sender, e);
+                        break;
+                    case "Crafts":
+                        CraftsButton_Click(sender, e);
                         break;
                 }
             }
@@ -643,9 +701,9 @@ namespace Project_BD
                 case "Items":
                     formPopup = new Edit_Items(cell_value);
                     break;
-                //case "CraftingMaterials":
-                //    formPopup = new Edit_CraftingMaterial();
-                //    break;
+                case "CraftingMaterials":
+                    formPopup = new Edit_CraftingMaterials(cell_value);
+                    break;
                 default:
                     MessageBox.Show("Please, select a table to edit data");
                     break;
@@ -669,10 +727,43 @@ namespace Project_BD
                 case "Bosses":
                     formPopup.FormClosed += new FormClosedEventHandler(BossesButton_Click);
                     break;
+                case "Enemies":
+                    formPopup.FormClosed += new FormClosedEventHandler(EnemiesButton_Click);
+                    break;
+                case "CraftingMaterials":
+                    formPopup.FormClosed += new FormClosedEventHandler(CraftingButton_Click);
+                    break;
 
             }
         }
 
+        private void button_attack_Search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CN.State == ConnectionState.Closed)
+                    CN.Open();
+                SqlCommand cmd = new SqlCommand("GetEnemiesWithAttack", CN);
+                
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Attack", textBox_Attacks.Text);
+
+                SqlParameter attackTotalParam = new SqlParameter("@AttackTotal", SqlDbType.Int);
+                attackTotalParam.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(attackTotalParam);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show( attackTotalParam.Value + " Attacks named : " + textBox_Attacks.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (CN.State == ConnectionState.Open)
+                    CN.Close();
+            }
+        }
 
         private void ShowTableInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -730,7 +821,7 @@ namespace Project_BD
                         }
                         cmd = new SqlCommand("SELECT * FROM Locations WHERE " + data + " LIKE '%' + @filter + '%'", CN);
                         break;
-                    
+
                     case "Crafts":
                         switch (criteria)
                         {
@@ -749,7 +840,7 @@ namespace Project_BD
                         }
                         cmd = new SqlCommand("SELECT * FROM Crafts WHERE " + data + " LIKE '%' + @filter + '%'", CN);
                         break;
-                   
+
                     case "Characters":
                         switch (criteria)
                         {
@@ -766,7 +857,7 @@ namespace Project_BD
                                 data = "Class";
                                 break;
                             case "Attacks":
-                                data = "Attcacks";
+                                data = "Attacks";
                                 break;
                             case "Attributes":
                                 data = "Attributes";
@@ -786,7 +877,7 @@ namespace Project_BD
                         }
                         cmd = new SqlCommand("SELECT * FROM Characters WHERE " + data + " LIKE '%' + @filter + '%'", CN);
                         break;
-                    
+
                     case "Bosses":
                         switch (criteria)
                         {
@@ -806,7 +897,7 @@ namespace Project_BD
                                 data = "Class";
                                 break;
                             case "Attacks":
-                                data = "Attcacks";
+                                data = "Attacks";
                                 break;
                             case "Attributes":
                                 data = "Attributes";
@@ -826,7 +917,7 @@ namespace Project_BD
                         }
                         cmd = new SqlCommand("SELECT * FROM Bosses WHERE " + data + " LIKE '%' + @filter + '%'", CN);
                         break;
-                    
+
                     case "Dungeons":
                         switch (criteria)
                         {
@@ -848,7 +939,7 @@ namespace Project_BD
                         }
                         cmd = new SqlCommand("SELECT * FROM Dungeons WHERE " + data + " LIKE '%' + @filter + '%'", CN);
                         break;
-                   
+
                     case "Enemies":
                         switch (criteria)
                         {
@@ -865,7 +956,7 @@ namespace Project_BD
                                 data = "Class";
                                 break;
                             case "Attacks":
-                                data = "Attcacks";
+                                data = "Attacks";
                                 break;
                             case "Attributes":
                                 data = "Attributes";
@@ -885,7 +976,7 @@ namespace Project_BD
                         }
                         cmd = new SqlCommand("SELECT * FROM Enemies WHERE " + data + " LIKE '%' + @filter + '%'", CN);
                         break;
-                    
+
                     case "Items":
                         switch (criteria)
                         {
@@ -913,7 +1004,7 @@ namespace Project_BD
                         }
                         cmd = new SqlCommand("SELECT * FROM Items WHERE " + data + " LIKE '%' + @filter + '%'", CN);
                         break;
-                    
+
                     case "CraftingMaterials":
                         switch (criteria)
                         {
@@ -938,7 +1029,7 @@ namespace Project_BD
                         }
                         cmd = new SqlCommand("SELECT * FROM CraftingMaterials WHERE " + data + " LIKE '%' + @filter + '%'", CN);
                         break;
-                    
+
                     default:
                         MessageBox.Show("Please, select a table to edit data");
                         return;
@@ -971,5 +1062,6 @@ namespace Project_BD
         private void DropBox_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+
     }
 }

@@ -35,6 +35,23 @@ AS
 	END
 GO
 
+CREATE FUNCTION check_CraftingMaterialID (@ID_CraftingMaterial INT) RETURNS INT
+AS
+	BEGIN
+		DECLARE @counter INT
+		SELECT @counter=COUNT(1) FROM CraftingMaterials WHERE CraftingMaterialID=@ID_CraftingMaterial
+		RETURN @counter
+	END
+
+GO
+
+CREATE FUNCTION check_CraftID (@ID_Craft INT) RETURNS INT
+AS
+	BEGIN
+		DECLARE @counter INT
+		SELECT @counter=COUNT(1) FROM Crafts WHERE CraftID=@ID_Craft
+		RETURN @counter
+	END
 
 
 -- CREATE FUNCTION dbo.checkID_Festival (@ID_Festival INT) RETURNS INT

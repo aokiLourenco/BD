@@ -622,3 +622,281 @@ BEGIN
             END CATCH
     END
 END
+
+GO
+
+DROP PROCEDURE AddCraftingMaterial;
+GO
+
+CREATE PROCEDURE AddCraftingMaterial(@Quantity INT, @Source VARCHAR(512), @CraftingUse VARCHAR(512), @UsedItems INT)
+AS
+BEGIN
+    DECLARE @CraftingMaterialID INT;
+    DECLARE @error VARCHAR(512);
+    SET @CraftingMaterialID = (SELECT MAX(CraftingMaterialID)
+    FROM CraftingMaterials) + 1;
+    BEGIN TRY
+        SET IDENTITY_INSERT CraftingMaterials ON;
+        INSERT INTO CraftingMaterials
+        (CraftingMaterialID, Quantity, Source, CraftingUse, UsedItems)
+    VALUES
+        (@CraftingMaterialID, @Quantity, @Source, @CraftingUse, @UsedItems);
+    END TRY
+    BEGIN CATCH
+        SELECT @error = ERROR_MESSAGE();
+        --SET @error = 'Error, could not add crafting material to database. Value added incorrectly.'
+        RAISERROR(@error, 16, 1);
+    END CATCH
+END
+
+GO
+
+DROP PROCEDURE EditCraftingMaterial;
+
+GO
+CREATE PROCEDURE EditCraftingMaterial(@ID_CraftingMaterial INT, @Quantity INT, @Source VARCHAR(512), @CraftingUse VARCHAR(512), @UsedItems INT)
+
+AS
+
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_CraftingMaterialID(@ID_CraftingMaterial));
+
+    IF (@verification = 0)
+        BEGIN
+        SET @error = 'CraftingMaterialID does not exist, please check the ID and try again';
+        RAISERROR (@error, 16, 1);
+    END
+    ELSE
+        SET NOCOUNT ON;
+    BEGIN
+        BEGIN TRY
+                BEGIN TRAN
+
+                    UPDATE CraftingMaterials 
+                    SET
+                        Quantity = @Quantity,
+                        Source = @Source,
+                        CraftingUse = @CraftingUse,
+                        UsedItems = @UsedItems
+                    WHERE
+                        CraftingMaterialID = @ID_CraftingMaterial;
+                COMMIT TRAN
+            END TRY
+            BEGIN CATCH
+                    Rollback TRAN
+                    SELECT @error = ERROR_MESSAGE(); 
+                    SET @error =  'Error, could not edit crafting material in database. Value edited incorrectly.'
+                    RAISERROR (@error, 16,1);
+            END CATCH
+    END
+END
+
+GO
+
+DROP PROCEDURE DeleteCraftingMaterial;
+
+GO
+
+CREATE PROCEDURE DeleteCraftingMaterial(@ID_CraftingMaterial INT)
+
+AS
+
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_CraftingMaterialID(@ID_CraftingMaterial));
+
+    IF (@verification = 0)
+        BEGIN
+        SET @error = 'CraftingMaterialID does not exist, please check the ID and try again!';
+        RAISERROR (@error, 16, 1);
+    END
+        ELSE
+        BEGIN
+        BEGIN TRY
+                BEGIN TRAN
+                    DELETE FROM Crafts WHERE CraftingMaterialID = @ID_CraftingMaterial;
+                    DELETE FROM CraftingMaterials WHERE CraftingMaterialID = @ID_CraftingMaterial;
+                COMMIT TRAN
+            END TRY
+            BEGIN CATCH
+                ROLLBACK TRAN
+                SELECT @error = ERROR_MESSAGE();
+                SET @error = 'Error, could not delete crafting material from database. Value deleted incorrectly.';
+                RAISERROR (@error, 16, 1);
+            END CATCH
+    END
+END
+
+GO
+
+DROP PROCEDURE AddCraft;
+
+GO
+
+CREATE PROCEDURE AddCraft(@ItemID INT, @CraftingMaterialID INT)
+AS
+BEGIN
+    DECLARE @error VARCHAR(512);
+    BEGIN TRY
+        INSERT INTO Crafts
+        (ItemID, CraftingMaterialID)
+    VALUES
+        (@ItemID, @CraftingMaterialID);
+    END TRY
+    BEGIN CATCH
+        SELECT @error = ERROR_MESSAGE();
+        --SET @error = 'Error, could not add craft to database. Value added incorrectly.'
+        RAISERROR(@error, 16, 1);
+    END CATCH
+END
+
+GO
+
+DROP PROCEDURE EditCraft;
+
+GO
+
+CREATE PROCEDURE EditCraft(@ItemID INT, @CraftingMaterialID INT)
+
+AS
+
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @verification2 INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_ItemID(@ItemID));
+    SET @verification2 = (SELECT dbo.check_CraftingMaterialID(@CraftingMaterialID));
+
+
+    IF (@verification = 0 OR @verification2 = 0)
+        BEGIN
+        SET @error = 'Craft does not exist, please check the ID and try again';
+        RAISERROR (@error, 16, 1);
+    END
+    ELSE
+        SET NOCOUNT ON;
+    BEGIN
+        BEGIN TRY
+                BEGIN TRAN
+
+                    UPDATE Crafts 
+                    SET
+                        ItemID = @ItemID,
+                        CraftingMaterialID = @CraftingMaterialID
+                    WHERE
+                        ItemID = @ItemID;
+                COMMIT TRAN
+            END TRY
+            BEGIN CATCH
+                    Rollback TRAN
+                    SELECT @error = ERROR_MESSAGE(); 
+                    SET @error =  'Error, could not edit craft in database. Value edited incorrectly.'
+                    RAISERROR (@error, 16,1);
+            END CATCH
+    END
+END
+
+GO
+
+DROP PROCEDURE DeleteCraft;
+
+GO
+
+CREATE PROCEDURE DeleteCraft(@ItemID INT, @CraftingMaterialID INT)
+
+AS
+
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_ItemID(@ItemID));
+
+    IF (@verification = 0)
+        BEGIN
+        SET @error = 'Craft does not exist, please check the ID and try again!';
+        RAISERROR (@error, 16, 1);
+    END
+        ELSE
+        BEGIN
+        BEGIN TRY
+                BEGIN TRAN
+                    DELETE FROM Crafts WHERE ItemID = @ItemID AND CraftingMaterialID = @CraftingMaterialID;
+                COMMIT TRAN
+            END TRY
+            BEGIN CATCH
+                ROLLBACK TRAN
+                SELECT @error = ERROR_MESSAGE();
+                SET @error = 'Error, could not delete craft from database. Value deleted incorrectly.';
+                RAISERROR (@error, 16, 1);
+            END CATCH
+    END
+END
+
+GO
+
+DROP PROCEDURE AddEnemy;
+
+GO
+
+CREATE PROCEDURE AddEnemy
+    (
+    @CharacterID INT
+)
+AS
+BEGIN
+    DECLARE @error VARCHAR(512);
+    BEGIN TRY
+        INSERT INTO Enemies
+        (CharacterID)
+    VALUES
+        (@CharacterID);
+    END TRY
+    BEGIN CATCH
+        SELECT @error = ERROR_MESSAGE();
+        --SET @error = 'Error, could not add enemy to database. Value added incorrectly.'
+        RAISERROR(@error, 16, 1);
+    END CATCH
+END
+
+GO
+
+DROP PROCEDURE DeleteEnemy;
+
+GO
+
+CREATE PROCEDURE DeleteEnemy
+    (@ID_Enemy INT)
+AS
+BEGIN
+    DECLARE @verification INT;
+    DECLARE @error VARCHAR(100);
+
+    SET @verification = (SELECT dbo.check_CharacterID(@ID_Enemy));
+
+    IF (@verification = 0)
+        BEGIN
+        SET @error = 'EnemyID does not exist, please check the ID and try again!';
+        RAISERROR (@error, 16, 1);
+    END
+        ELSE
+        BEGIN
+        BEGIN TRY
+                BEGIN TRAN
+                    DELETE FROM Enemies WHERE CharacterID = @ID_Enemy;
+                COMMIT TRAN
+            END TRY
+            BEGIN CATCH
+                ROLLBACK TRAN
+                SELECT @error = ERROR_MESSAGE();
+                --SET @error = 'Error, could not delete enemy from database. Value deleted incorrectly.';
+                RAISERROR (@error, 16, 1);
+            END CATCH
+    END
+END
