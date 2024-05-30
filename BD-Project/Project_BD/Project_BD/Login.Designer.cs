@@ -156,7 +156,7 @@ namespace Project_BD
             bypass.Name = "bypass";
             bypass.Size = new Size(102, 60);
             bypass.TabIndex = 6;
-            bypass.Text = "Bypass";
+            bypass.Text = "Use as a Guest";
             bypass.UseVisualStyleBackColor = true;
             bypass.Click += bypass_Click;
             // 

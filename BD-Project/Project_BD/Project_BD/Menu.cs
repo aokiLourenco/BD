@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,17 +28,19 @@ namespace Project_BD
 
         public string data_type = "";
         private string last_type = "";
-
+        private bool is_admin;
 
         private SqlConnection CN;
 
-        public Menu()
+        public Menu(bool x=true)
         {
             InitializeComponent();
             CN = ConnectionManager.getSGBDConnection();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
-
+            is_admin = x;
+            Hide_Change_Buttons();
+            Show_Change_Buttons();  
         }
 
         public static class ConnectionManager
@@ -1215,9 +1218,13 @@ namespace Project_BD
         }
         private void Show_Change_Buttons()
         {
-            AddButton.Visible = true;
-            EditButton.Visible = true;
-            DeleteButton.Visible = true;
+            if (is_admin)
+            {
+                AddButton.Visible = true;
+                EditButton.Visible = true;
+                DeleteButton.Visible = true;
+
+            }
 
             DropBox.Visible = true;
             SearchDataBox.Visible = true;

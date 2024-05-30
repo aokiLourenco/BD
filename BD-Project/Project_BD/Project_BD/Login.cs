@@ -147,7 +147,7 @@ namespace Project_BD
         private void bypass_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu menu = new Menu();
+            Menu menu = new Menu(false);
             menu.Show();
         }
     }
