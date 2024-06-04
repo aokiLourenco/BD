@@ -172,7 +172,7 @@ namespace Project_BD
             {
                 CN.Open();
                 //SqlCommand cmd = new SqlCommand("SELECT Characters.CharacterID, Characters.Name, Characters.Attacks, Characters.Attributes, Characters.DESCRIPTION,  Characters.Class, Characters.Weakness, Locations.Name, Characters.LEVEL FROM Characters JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Characters.Name", CN);
-                SqlCommand cmd = new SqlCommand("SELECT * From CharactersView_Table", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * From CharactersView_Table ORDER BY id OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY", CN);
 
 
                 Debug.WriteLine(cmd);
