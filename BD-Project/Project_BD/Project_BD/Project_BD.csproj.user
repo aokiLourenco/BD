@@ -25,21 +25,6 @@
     <Compile Update="Add_Locations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Bosses.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Characters.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="CraftingMaterials.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Crafts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Dungeons.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Edit_Bosses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,16 +43,7 @@
     <Compile Update="Edit_Locations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Enemies.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Add_Character.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Items.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Locations.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Menu.cs">

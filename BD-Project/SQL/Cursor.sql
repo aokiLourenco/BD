@@ -15,9 +15,6 @@ BEGIN
 
     IF @@FETCH_STATUS = 0
     BEGIN
-        -- Process the enemy count here
-        --PRINT 'Number of enemies with attack ' + @Attack + ': ' + CAST(@EnemyCount AS VARCHAR(10))
-        --FETCH NEXT FROM enemyCursor INTO @EnemyCount
         SET @AttackTotal = @EnemyCount
     END
 

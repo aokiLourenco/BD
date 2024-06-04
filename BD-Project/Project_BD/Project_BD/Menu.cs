@@ -56,10 +56,6 @@ namespace Project_BD
 
         private void LocationsButton_Click(object sender, EventArgs e)
         {
-            ////GO TO LOCATIONS PAGE
-            //this.Hide();
-            //Locations location = new Locations();
-            //location.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
             Show_Change_Buttons();
@@ -68,7 +64,6 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                //SqlCommand cmd = new SqlCommand("SELECT * FROM Locations ORDER BY Locations.LocationID", CN);
                 SqlCommand cmd = new SqlCommand("SELECT * FROM LocationView_Table", CN);
 
                 Debug.WriteLine(cmd);
@@ -77,18 +72,6 @@ namespace Project_BD
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
                 Debug.WriteLine(sqlDataAdapter);
                 sqlDataAdapter.Fill(detailsTable);
-
-                //string[] columnsToKeep = { "Name", "Class", "Area" };
-
-                //// Drop unwanted columns
-                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
-                //{
-                //    DataColumn column = detailsTable.Columns[i];
-                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
-                //    {
-                //        detailsTable.Columns.Remove(column);
-                //    }
-                //}
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -107,10 +90,6 @@ namespace Project_BD
 
         private void CraftsButton_Click(object sender, EventArgs e)
         {
-            ////GO TO CRAFT PAGE
-            //this.Hide();
-            //Crafts craft = new Crafts();
-            //craft.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
             Show_Change_Buttons();
@@ -126,18 +105,6 @@ namespace Project_BD
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
                 Debug.WriteLine(sqlDataAdapter);
                 sqlDataAdapter.Fill(detailsTable);
-
-                //string[] columnsToKeep = { "Name", "Class", "Area" };
-
-                //// Drop unwanted columns
-                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
-                //{
-                //    DataColumn column = detailsTable.Columns[i];
-                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
-                //    {
-                //        detailsTable.Columns.Remove(column);
-                //    }
-                //}
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -161,10 +128,6 @@ namespace Project_BD
 
         private void CharactersButton_Click(object sender, EventArgs e)
         {
-            //    //GO TO CHARACTER PAGE
-            //    this.Hide();
-            //    Characters character = new Characters();
-            //    character.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
             Show_Change_Buttons();
@@ -174,7 +137,6 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                //SqlCommand cmd = new SqlCommand("SELECT Characters.CharacterID, Characters.Name, Characters.Attacks, Characters.Attributes, Characters.DESCRIPTION,  Characters.Class, Characters.Weakness, Locations.Name, Characters.LEVEL FROM Characters JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Characters.Name", CN);
                 SqlCommand cmd = new SqlCommand("SELECT * From CharactersView_Table", CN);
 
 
@@ -185,19 +147,6 @@ namespace Project_BD
                 Debug.WriteLine(sqlDataAdapter);
                 sqlDataAdapter.Fill(detailsTable);
 
-                //string[] columnsToKeep = { "Name", "Class", "Area" };
-
-                //// Drop unwanted columns
-                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
-                //{
-                //    DataColumn column = detailsTable.Columns[i];
-                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
-                //    {
-                //        detailsTable.Columns.Remove(column);
-                //    }
-                //}
-                //detailsTable.Columns["CharacterID"].ColumnName = "ID";
-                //detailsTable.Columns["Name1"].ColumnName = "Area";
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -216,10 +165,6 @@ namespace Project_BD
 
         private void BossesButton_Click(object sender, EventArgs e)
         {
-            ////GO to bosses page
-            //this.Hide();
-            //Bosses boss = new Bosses();
-            //boss.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
             Show_Change_Buttons();
@@ -229,7 +174,6 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                //SqlCommand cmd = new SqlCommand("SELECT * FROM Bosses JOIN Characters ON Bosses.CharacterID = Characters.CharacterID JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Bosses.CharacterID", CN);
                 SqlCommand cmd = new SqlCommand("SELECT * FROM BossView_Table", CN);
                 Debug.WriteLine(cmd);
 
@@ -237,19 +181,6 @@ namespace Project_BD
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
                 Debug.WriteLine(sqlDataAdapter);
                 sqlDataAdapter.Fill(detailsTable);
-
-                //string[] columnsToKeep = { "Name", "Class", "Area" };
-
-                //// Drop unwanted columns
-                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
-                //{
-                //    DataColumn column = detailsTable.Columns[i];
-                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
-                //    {
-                //        detailsTable.Columns.Remove(column);
-                //    }
-                //}
-
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -267,10 +198,6 @@ namespace Project_BD
 
         private void DungeonsButton_Click(object sender, EventArgs e)
         {
-            ////GO TO DUNGEONS PAGE
-            //this.Hide();
-            //Dungeons dungeon = new Dungeons();
-            //dungeon.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
             Show_Change_Buttons();
@@ -281,7 +208,6 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                //SqlCommand cmd = new SqlCommand("SELECT * FROM Dungeons JOIN Locations ON Dungeons.LocationID = Locations.LocationID ORDER BY Dungeons.Name", CN);
                 SqlCommand cmd = new SqlCommand("SELECT * FROM DungeonView_Table", CN);
 
                 Debug.WriteLine(cmd);
@@ -290,18 +216,6 @@ namespace Project_BD
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
                 Debug.WriteLine(sqlDataAdapter);
                 sqlDataAdapter.Fill(detailsTable);
-
-                //string[] columnsToKeep = { "Name", "Class", "Area" };
-
-                //// Drop unwanted columns
-                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
-                //{
-                //    DataColumn column = detailsTable.Columns[i];
-                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
-                //    {
-                //        detailsTable.Columns.Remove(column);
-                //    }
-                //}
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -320,10 +234,6 @@ namespace Project_BD
 
         private void EnemiesButton_Click(object sender, EventArgs e)
         {
-            ////GO TO ENEMY PAGE
-            //this.Hide();
-            //Enemies enemy = new Enemies();
-            //enemy.Show();
             cell_value.Clear();
             textBox_Attacks.Visible = true;
             button_attack_Search.Visible = true;
@@ -333,7 +243,6 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                //SqlCommand cmd = new SqlCommand("SELECT * FROM Enemies ORDER BY Enemies.CharacterID", CN);
                 SqlCommand cmd = new SqlCommand("SELECT * FROM EnemyView_Table", CN);
 
                 Debug.WriteLine(cmd);
@@ -342,18 +251,6 @@ namespace Project_BD
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
                 Debug.WriteLine(sqlDataAdapter);
                 sqlDataAdapter.Fill(detailsTable);
-
-                //string[] columnsToKeep = { "Name", "Class", "Area" };
-
-                //// Drop unwanted columns
-                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
-                //{
-                //    DataColumn column = detailsTable.Columns[i];
-                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
-                //    {
-                //        detailsTable.Columns.Remove(column);
-                //    }
-                //}
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -372,10 +269,6 @@ namespace Project_BD
 
         private void ItemsButton_Click(object sender, EventArgs e)
         {
-            ////GO TO ITEMS PAGE
-            //this.Hide();
-            //Items item = new Items();
-            //item.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
             Show_Change_Buttons();
@@ -386,7 +279,6 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                //SqlCommand cmd = new SqlCommand("SELECT *\r\nFROM Items \r\nJOIN Dungeons ON Items.Award = Dungeons.DungeonID \r\nJOIN Characters ON Items.Owner = Characters.CharacterID\r\nORDER BY Items.ItemID\r\n", CN);
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Items_Table", CN);
                 Debug.WriteLine(cmd);
 
@@ -394,23 +286,6 @@ namespace Project_BD
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
                 Debug.WriteLine(sqlDataAdapter);
                 sqlDataAdapter.Fill(detailsTable);
-
-                //string[] columnsToKeep = { "Name", "Class", "Area" };
-
-                //// Drop unwanted columns
-                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
-                //{
-                //    DataColumn column = detailsTable.Columns[i];
-                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
-                //    {
-                //        detailsTable.Columns.Remove(column);
-                //    }
-                //}
-                //detailsTable.Columns["ItemID"].ColumnName = "ID";
-                //detailsTable.Columns["Name1"].ColumnName = "Location";
-                //detailsTable.Columns["Owner"].ColumnName = "Owner_ID";
-                //detailsTable.Columns["Name2"].ColumnName = "Owner";
-
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
@@ -429,10 +304,7 @@ namespace Project_BD
         }
 
         private void CraftingButton_Click(object sender, EventArgs e)
-        {
-            ////GO TO CRAFTING MATERIALS PAGE
-            //this.Hide();
-            //CraftingMaterials craftingMaterials = new CraftingMaterials();
+        {CraftingMaterials();
             //craftingMaterials.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
@@ -444,7 +316,6 @@ namespace Project_BD
             try
             {
                 CN.Open();
-                //SqlCommand cmd = new SqlCommand("SELECT * FROM CraftingMaterials ORDER BY CraftingMaterials.CraftingMaterialID", CN);
                 SqlCommand cmd = new SqlCommand("SELECT * FROM CraftingMaterials_Table", CN);
                 Debug.WriteLine(cmd);
 
@@ -452,18 +323,6 @@ namespace Project_BD
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
                 Debug.WriteLine(sqlDataAdapter);
                 sqlDataAdapter.Fill(detailsTable);
-
-                //string[] columnsToKeep = { "Name", "Class", "Area" };
-
-                //// Drop unwanted columns
-                //for (int i = detailsTable.Columns.Count - 1; i >= 0; i--)
-                //{
-                //    DataColumn column = detailsTable.Columns[i];
-                //    if (!Array.Exists(columnsToKeep, element => element == column.ColumnName))
-                //    {
-                //        detailsTable.Columns.Remove(column);
-                //    }
-                //}
 
                 ShowTableInfo.DataSource = detailsTable;
                 ShowTableInfo.AutoResizeRows();
