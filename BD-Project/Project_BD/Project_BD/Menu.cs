@@ -21,10 +21,13 @@ namespace Project_BD
     {
 
         //AOKI
-        public static string SQLConnectionString = "data source = (localdb)\\localEldenVault;initial catalog=master;integrated security=true;encrypt=false";
+        //public static string SQLConnectionString = "data source = (localdb)\\localEldenVault;initial catalog=master;integrated security=true;encrypt=false";
 
         //TÓ
         //public static string SQLConnectionString = "Data Source = localhost;Initial Catalog=master;Integrated Security=True;Encrypt=False";
+
+        //medieetta 
+        public static string SQLConnectionString = "data Source = tcp:mednat.ieeta.pt\\SQLSERVER,8101; Initial Catalog = p1g2; uid = p1g2; password = #Escr@v0sD01t; TrustServerCertificate=true";
 
         public string data_type = "";
         private string last_type = "";
@@ -172,7 +175,7 @@ namespace Project_BD
             {
                 CN.Open();
                 //SqlCommand cmd = new SqlCommand("SELECT Characters.CharacterID, Characters.Name, Characters.Attacks, Characters.Attributes, Characters.DESCRIPTION,  Characters.Class, Characters.Weakness, Locations.Name, Characters.LEVEL FROM Characters JOIN Locations ON Characters.LocationID = Locations.LocationID ORDER BY Characters.Name", CN);
-                SqlCommand cmd = new SqlCommand("SELECT * From CharactersView_Table ORDER BY id OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY", CN);
+                SqlCommand cmd = new SqlCommand("SELECT * From CharactersView_Table", CN);
 
 
                 Debug.WriteLine(cmd);
