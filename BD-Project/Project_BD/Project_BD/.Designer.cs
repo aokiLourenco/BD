@@ -11,14 +11,14 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+       // protected override void Dispose(bool disposing)
+       // {
+       //     if (disposing && (components != null))
+       //     {
+       //         components.Dispose();
+       //     }
+       //     base.Dispose(disposing);
+      //  }
 
         #region Windows Form Designer generated code
 
@@ -34,7 +34,7 @@
             button2 = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            SuspendLayout();
+            //SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
@@ -54,7 +54,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 160F));
             tableLayoutPanel1.Size = new Size(812, 460);
             tableLayoutPanel1.TabIndex = 2;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            //tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // dataGridView1
             // 
@@ -66,7 +66,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(553, 200);
             dataGridView1.TabIndex = 1;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+           // dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button1
             // 
@@ -79,7 +79,7 @@
             button1.TabIndex = 0;
             button1.Text = "Back";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+           // button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -93,19 +93,19 @@
             button2.TabIndex = 2;
             button2.Text = "Add";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+           // button2.Click += button2_Click;
             // 
             // Characters
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(812, 460);
-            Controls.Add(tableLayoutPanel1);
-            Name = "Characters";
-            Text = "Characters";
-            tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ResumeLayout(false);
+           // AutoScaleDimensions = new SizeF(7F, 15F);
+           // AutoScaleMode = AutoScaleMode.Font;
+          //  ClientSize = new Size(812, 460);
+          //  Controls.Add(tableLayoutPanel1);
+          //  Name = "Characters";
+          //  Text = "Characters";
+          //  tableLayoutPanel1.ResumeLayout(false);
+          //  ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+         //  ResumeLayout(false);
         }
 
         #endregion

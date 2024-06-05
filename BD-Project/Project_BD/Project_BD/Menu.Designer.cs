@@ -93,6 +93,7 @@
             textBox_Attacks.PlaceholderText = "Search no. Attack";
             textBox_Attacks.Size = new Size(137, 25);
             textBox_Attacks.TabIndex = 17;
+            textBox_Attacks.TextChanged += textBox_Attacks_TextChanged;
             // 
             // button_attack_Search
             // 

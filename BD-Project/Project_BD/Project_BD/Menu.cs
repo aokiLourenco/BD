@@ -329,7 +329,7 @@ namespace Project_BD
         }
 
         private void CraftingButton_Click(object sender, EventArgs e)
-        {CraftingMaterials();
+        {   //CraftingMaterials();
             //craftingMaterials.Show();
             textBox_Attacks.Visible = false;
             button_attack_Search.Visible = false;
@@ -1171,14 +1171,7 @@ namespace Project_BD
             button2_next.Visible = false;
         }
 
-        private void LogOut_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Login login = new Login();
-            login.Show();
-        }
 
- 
         private int pageSize = 10;
         private int currentPage = 1;
         private int totalRecords;
@@ -1217,8 +1210,8 @@ namespace Project_BD
         }
 
         private void button2_next_Click(object sender, EventArgs e)
-        {               
-            
+        {
+
             Debug.WriteLine("Records");
 
             Debug.WriteLine(totalRecords);
@@ -1232,6 +1225,9 @@ namespace Project_BD
             }
         }
 
+        private void textBox_Attacks_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

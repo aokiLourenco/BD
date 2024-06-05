@@ -139,13 +139,6 @@ C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\bin\Debug\net8.0-w
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.csproj.AssemblyReference.cache
-C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Bosses.resources
-C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Characters.resources
-C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.CraftingMaterials.resources
-C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Dungeons.resources
-C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Enemies.resources
-C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Items.resources
-C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Locations.resources
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Login.resources
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Menu.resources
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Properties.Resources.resources
@@ -161,7 +154,6 @@ C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-w
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.pdb
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.genruntimeconfig.cache
 C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\ref\Project_BD.dll
-C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Crafts.resources
 C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Add_Character.resources
 C:\Users\ander\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Crafts.resources
 C:\Users\asus\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\bin\Debug\net8.0-windows\Azure.Core.dll
@@ -263,3 +255,4 @@ C:\Users\asus\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug
 C:\Users\asus\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Dungeons.resources
 C:\Users\asus\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Items.resources
 C:\Users\asus\Desktop\UA\ano3\sem2\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD.Edit_Locations.resources
+C:\UA\3_Ano\2_semestre\BD\BD\BD-Project\Project_BD\Project_BD\obj\Debug\net8.0-windows\Project_BD..resources
