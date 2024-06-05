@@ -83,7 +83,7 @@ namespace Project_BD
                 cmd.Parameters.AddWithValue("@UsedItems", items[UsedItems]);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Crafting Material added successfully");
+                MessageBox.Show("Crafting Material edited successfully");
                 Back();
             }
             catch (Exception e)

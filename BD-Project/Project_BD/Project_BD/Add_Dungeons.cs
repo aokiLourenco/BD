@@ -73,7 +73,7 @@ namespace Project_BD
                 cmd.Parameters.AddWithValue("@Area", Area);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Character added successfully");
+                MessageBox.Show("Dungeon added successfully");
                 Back();
             }
             catch (Exception e)

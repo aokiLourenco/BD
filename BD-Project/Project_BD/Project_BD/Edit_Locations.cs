@@ -19,7 +19,7 @@ namespace Project_BD
         private int id;
         private SqlConnection CN;
 
-        public Edit_Locations(Dictionary<string,object> cell_value)
+        public Edit_Locations(Dictionary<string, object> cell_value)
         {
             InitializeComponent();
             CN = ConnectionManager.getSGBDConnection();
@@ -85,7 +85,12 @@ namespace Project_BD
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            Back(); 
+            Back();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

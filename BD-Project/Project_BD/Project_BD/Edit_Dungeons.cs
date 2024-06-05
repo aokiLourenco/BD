@@ -91,7 +91,7 @@ namespace Project_BD
 
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Character Edited successfully");
+                MessageBox.Show("Dungeon edited successfully");
                 Back();
 
             }

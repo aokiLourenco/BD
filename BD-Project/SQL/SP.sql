@@ -860,7 +860,7 @@ BEGIN
     END TRY
     BEGIN CATCH
         SELECT @error = ERROR_MESSAGE();
-        --SET @error = 'Error, could not add enemy to database. Value added incorrectly.'
+        SET @error = 'Error, could not add enemy to database. Value added incorrectly.'
         RAISERROR(@error, 16, 1);
     END CATCH
 END
@@ -895,8 +895,10 @@ BEGIN
             BEGIN CATCH
                 ROLLBACK TRAN
                 SELECT @error = ERROR_MESSAGE();
-                --SET @error = 'Error, could not delete enemy from database. Value deleted incorrectly.';
+                SET @error = 'Error, could not delete enemy from database. Value deleted incorrectly.';
                 RAISERROR (@error, 16, 1);
             END CATCH
     END
 END
+
+

@@ -124,7 +124,7 @@ namespace Project_BD
                 cmd.Parameters.AddWithValue("@UseRequisites", UR);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Item Edited successfully");
+                MessageBox.Show("Item edited successfully");
                 Back();
 
             }

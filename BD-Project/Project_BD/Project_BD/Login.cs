@@ -24,6 +24,7 @@ namespace Project_BD
         {
             InitializeComponent();
             CN = ConnectionManager.getSGBDConnection();
+            textBox2.PasswordChar = '*';
         }
 
         private void Login_Load(object sender, EventArgs e)
