@@ -1152,6 +1152,13 @@ namespace Project_BD
             isView = false;
         }
 
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+        }
+
         private void P_Show()
         {
             button1_prev.Visible = true;
